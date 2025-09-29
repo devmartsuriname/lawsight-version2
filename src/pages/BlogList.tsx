@@ -8,7 +8,7 @@ const blogPosts = [
     image: '/images/resource/news-4.jpg',
     date: 'September 12, 2019',
     author: 'Admin',
-    title: 'Strategy for Norway's Peion Fund Global.',
+    title: "Strategy for Norway's Peion Fund Global.",
   },
   {
     id: 2,
@@ -43,7 +43,7 @@ const blogPosts = [
     image: '/images/resource/news-9.jpg',
     date: 'September 12, 2019',
     author: 'Admin',
-    title: 'Dior call Jennifer campaign backlash 'not all justified'.',
+    title: "Dior call Jennifer campaign backlash 'not all justified'.",
   },
 ];
 
