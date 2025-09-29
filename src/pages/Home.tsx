@@ -17,7 +17,7 @@ const testimonials = [
 ];
 
 const blogPosts = [
-  { id: 1, image: '/images/resource/news-1.jpg', date: 'September 12, 2019', title: 'Strategy for Norway's Pension Fund Global.' },
+  { id: 1, image: '/images/resource/news-1.jpg', date: 'September 12, 2019', title: "Strategy for Norway's Pension Fund Global." },
   { id: 2, image: '/images/resource/news-2.jpg', date: 'September 12, 2019', title: 'What we are capable of usually gets discovered.' },
   { id: 3, image: '/images/resource/news-3.jpg', date: 'September 12, 2019', title: 'Food industry leaders often change their promoters.' },
 ];
