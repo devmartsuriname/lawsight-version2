@@ -51,7 +51,7 @@ export default function Home2() {
                 <div className="row clearfix">
                   <div className="image-column col-lg-7 col-md-12 col-sm-12">
                     <div className="image">
-                      <img src="/images/main-slider/content-image-1.png" alt="LawSight" />
+                      <img src="/images/main-slider/2.jpg" alt="LawSight" />
                     </div>
                   </div>
                   <div className="content-column col-lg-5 col-md-12 col-sm-12">
