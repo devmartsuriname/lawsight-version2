@@ -1,23 +1,9 @@
 {
   "dependencies": {
-    "@types/node": "^24.5.2",
-    "@types/react": "^19.1.15",
-    "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^5.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.4",
     "react-router-dom": "^6.21.1",
-    "swiper": "^11.0.5",
-    "typescript": "^5.9.2",
-    "vite": "^7.1.7"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "build:dev": "vite build --mode development",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.{ts,tsx,css}\""
+    "swiper": "^11.0.5"
   }
 }
