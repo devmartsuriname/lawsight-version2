@@ -14,17 +14,11 @@ export default function Home2() {
       </Helmet>
 
       {/* Banner Section Two */}
-      <section className="banner-section-two" style={{ 
-        backgroundImage: 'url(/images/main-slider/2.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        minHeight: '80vh'
-      }}>
+      <section className="banner-section-two" style={{ backgroundImage: 'url(/images/main-slider/2.jpg)' }}>
         <div className="left-side">
           <div className="icon-image"></div>
         </div>
-        <div className="container-wide">
+        <div className="container">
           <Swiper
             modules={[Autoplay, Pagination]}
             spaceBetween={0}
@@ -76,7 +70,7 @@ export default function Home2() {
 
       {/* Feature Section */}
       <section className="feature-section">
-        <div className="container-wide">
+        <div className="container">
           <div className="inner-container">
             <div className="clearfix">
               <div className="feature-block col-lg-4 col-md-6 col-sm-12">
@@ -124,7 +118,7 @@ export default function Home2() {
 
       {/* About Section */}
       <section className="about-section style-two">
-        <div className="container-wide">
+        <div className="container">
           <div className="row clearfix">
             <div className="content-column col-lg-6 col-md-12 col-sm-12">
               <div className="inner-column">
@@ -214,7 +208,7 @@ export default function Home2() {
 
       {/* Feature Section Two */}
       <section className="feature-section-two">
-        <div className="container-wide">
+        <div className="container">
           <div className="inner-container">
             <div className="row clearfix">
               <div className="feature-block-two col-lg-3 col-md-6 col-sm-12">
@@ -261,7 +255,7 @@ export default function Home2() {
       <section className="services-section-three">
         <div className="icon-one wow fadeInLeft" data-wow-delay="250ms" data-wow-duration="1500ms" style={{ backgroundImage: 'url(/images/icons/icon-6.png)' }}></div>
         <div className="icon-two wow fadeInRight" data-wow-delay="500ms" data-wow-duration="1500ms" style={{ backgroundImage: 'url(/images/icons/icon-7.png)' }}></div>
-        <div className="container-fluid-controlled">
+        <div className="container">
           <div className="row clearfix">
             <div className="blocks-column col-lg-8 col-md-12 col-sm-12">
               <div className="inner-column">
@@ -312,7 +306,7 @@ export default function Home2() {
 
       {/* Testimonial Section */}
       <section className="testimonial-section">
-        <div className="container-wide">
+        <div className="container">
           <div className="section-title">
             <div className="title">Testimonial</div>
             <h3>Clients are very satisfied <br /> to work with <span>us</span></h3>
@@ -357,7 +351,7 @@ export default function Home2() {
 
       {/* Team Section */}
       <section className="team-section">
-        <div className="container-wide">
+        <div className="container">
           <div className="section-title light">
             <div className="clearfix">
               <div className="pull-left">
@@ -406,7 +400,7 @@ export default function Home2() {
 
       {/* News Section */}
       <section className="news-section style-two">
-        <div className="container-wide">
+        <div className="container">
           <div className="section-title">
             <div className="clearfix">
               <div className="pull-left">
@@ -450,7 +444,7 @@ export default function Home2() {
 
       {/* Counter Section */}
       <section className="counter-section">
-        <div className="container-wide">
+        <div className="container">
           <div className="fact-counter style-three">
             <div className="row clearfix">
               {[
@@ -476,7 +470,7 @@ export default function Home2() {
 
       {/* Subscribe Section */}
       <section className="subscribe-section">
-        <div className="container-wide">
+        <div className="container">
           <div className="inner-container" style={{ backgroundImage: 'url(/images/background/3.jpg)' }}>
             <h2>Subscribe Your Email for Newsletter <br /> & Promotion</h2>
             <div className="subscribe-form">
