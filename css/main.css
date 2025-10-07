@@ -184,6 +184,24 @@ p{
     }
 }
 
+/* Header-specific container overrides */
+.header-style-two .outer-container {
+    width: 100%;
+    padding: 0 60px;
+}
+
+@media (max-width: 1023px) {
+    .header-style-two .outer-container {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-style-two .outer-container {
+        padding: 0 15px;
+    }
+}
+
 .medium-container{
 	max-width:850px;
 }

@@ -24,65 +24,10 @@ export default function Header2() {
     <>
       {/* Main Header */}
       <header className="main-header header-style-two">
-        {/* Header Top */}
-        <div className="header-top">
-          <div className="auto-container">
+        {/* Header Upper */}
+        <div className="header-upper">
+          <div className="outer-container">
             <div className="clearfix">
-              {/* Top Left */}
-              <div className="top-left pull-left clearfix">
-                <ul className="info-list">
-                  <li>
-                    <span className="icon flaticon-phone-call"></span>
-                    <a href={`tel:${siteInfo.contact.phone.replace(/\s/g, '')}`}>{siteInfo.contact.phone}</a>
-                  </li>
-                  <li>
-                    <span className="icon flaticon-email-1"></span>
-                    <a href={`mailto:${siteInfo.contact.email}`}>{siteInfo.contact.email}</a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Top Right */}
-              <div className="top-right pull-right clearfix">
-                <ul className="social-box">
-                  {siteInfo.social.facebook && (
-                    <li>
-                      <a href={siteInfo.social.facebook} target="_blank" rel="noopener noreferrer">
-                        <span className="fa fa-facebook"></span>
-                      </a>
-                    </li>
-                  )}
-                  {siteInfo.social.twitter && (
-                    <li>
-                      <a href={siteInfo.social.twitter} target="_blank" rel="noopener noreferrer">
-                        <span className="fa fa-twitter"></span>
-                      </a>
-                    </li>
-                  )}
-                  {siteInfo.social.linkedin && (
-                    <li>
-                      <a href={siteInfo.social.linkedin} target="_blank" rel="noopener noreferrer">
-                        <span className="fa fa-linkedin"></span>
-                      </a>
-                    </li>
-                  )}
-                  {siteInfo.social.instagram && (
-                    <li>
-                      <a href={siteInfo.social.instagram} target="_blank" rel="noopener noreferrer">
-                        <span className="fa fa-instagram"></span>
-                      </a>
-                    </li>
-                  )}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Header Lower */}
-        <div className="header-lower">
-          <div className="auto-container">
-            <div className="inner-container clearfix">
               {/* Logo Box */}
               <div className="pull-left logo-box">
                 <div className="logo">
@@ -92,8 +37,14 @@ export default function Header2() {
                 </div>
               </div>
 
+              {/* Phone Number */}
+              <div className="phone-number">
+                <span className="icon flaticon-phone-call"></span>{' '}
+                <a href={`tel:${siteInfo.contact.phone.replace(/\s/g, '')}`}>{siteInfo.contact.phone}</a>
+              </div>
+
               {/* Nav Outer */}
-              <div className="nav-outer pull-left clearfix">
+              <div className="nav-outer clearfix">
                 {/* Main Menu */}
                 <nav className="main-menu navbar-expand-md">
                   <div className="navbar-header">
@@ -141,33 +92,31 @@ export default function Header2() {
                     </ul>
                   </div>
                 </nav>
-              </div>
 
-              {/* Options Box */}
-              <div className="options-box pull-right clearfix">
-                {/* Search Box */}
-                <div className="search-box-btn">
-                  <span
-                    className="icon flaticon-search"
-                    onClick={() => setIsSearchOpen(!isSearchOpen)}
-                  ></span>
-                </div>
+                {/* Outer Box */}
+                <div className="outer-box">
+                  {/* Search Box */}
+                  <div className="search-box-outer">
+                    <div className="dropdown">
+                      <button
+                        className="search-box-btn"
+                        type="button"
+                        onClick={() => setIsSearchOpen(!isSearchOpen)}
+                      >
+                        <span className="fa fa-search"></span>
+                      </button>
+                    </div>
+                  </div>
 
-                {/* Nav Toggler */}
-                <div
-                  className="nav-toggler"
-                  onClick={() => setIsSidebarOpen(true)}
-                >
-                  <button className="hidden-bar-opener">
-                    <span className="icon flaticon-menu-2"></span>
-                  </button>
-                </div>
-
-                {/* Button Box */}
-                <div className="btn-box">
-                  <Link to="/contact" className="theme-btn btn-style-two">
-                    <span className="txt">Get Free Consultation</span>
-                  </Link>
+                  {/* Nav Toggler */}
+                  <div
+                    className="nav-toggler"
+                    onClick={() => setIsSidebarOpen(true)}
+                  >
+                    <button className="hidden-bar-opener">
+                      <span className="icon flaticon-menu-2"></span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -176,7 +125,7 @@ export default function Header2() {
 
         {/* Sticky Header */}
         <div className={`sticky-header ${isSticky ? 'fixed-header animated slideInDown' : ''}`}>
-          <div className="auto-container clearfix">
+          <div className="container clearfix">
             {/* Logo */}
             <div className="logo pull-left">
               <Link to="/" title="">
