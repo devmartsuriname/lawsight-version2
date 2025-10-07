@@ -122,6 +122,24 @@ Defined in `src/data/navigation.ts`:
 
 ---
 
+## Design System & Style Guide
+
+For comprehensive design guidelines, see **[/docs/style-guide.md](/docs/style-guide.md)**
+
+This document covers:
+- Brand identity and logo usage
+- Complete color palette with HSL values
+- Typography scale and font families
+- Button and form component styles
+- Layout system and responsive breakpoints
+- Accessibility standards (WCAG 2.1 AA)
+- Animation patterns and interaction guidelines
+- Icon system documentation
+
+All new components should reference the style guide for consistent visual implementation.
+
+---
+
 ## jQuery Migration Status
 
 ### ✅ Phase 1: Complete (2025-01-09)
