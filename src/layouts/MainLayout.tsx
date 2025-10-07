@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import Header from '@/components/Header';
+import Header2 from '@/components/Header2';
 import Footer from '@/components/Footer';
 import Preloader from '@/components/Preloader';
 import { usePreloader } from '@/hooks/usePreloader';
@@ -10,7 +10,7 @@ export default function MainLayout() {
   return (
     <div className="page-wrapper">
       <Preloader isLoading={isLoading} />
-      <Header />
+      <Header2 />
       <Outlet />
       <Footer />
       
