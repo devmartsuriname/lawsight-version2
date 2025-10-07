@@ -14,6 +14,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [v0.4.3] — 2024-01-XX — Phase P3.3: Feature Cards Layout Polish
+
+### Fixed
+- **Feature Cards Layout**: Added explicit `z-index: 2` to `.feature-section .inner-container` for proper overlay stacking
+- **Card Styling**: Added `border-radius: 8px` to `.feature-block .inner-box` for consistent rounded corners
+- **Visual Consistency**: Ensured cards properly overlay hero banner with correct z-index hierarchy
+
+### Technical Details
+- Updated `src/index.css` with feature section enhancements
+- Verified responsive behavior across all breakpoints (1920px, 1366px, 1024px, 768px, 425px)
+- Confirmed hover animations and click navigation working correctly
+
+### Restore Point
+- **Date**: Phase P3.3 Complete
+- **Commit**: Feature Cards Container & Overlay Fix Complete
+- **Version**: v0.4.3
+
+---
+
 ## [v0.4.0] — 2024-01-XX — Phase P3: Homepage Cards & Content Swap
 
 ### Added

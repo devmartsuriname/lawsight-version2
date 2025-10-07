@@ -263,3 +263,15 @@ button {
   --color-bg-light: hsl(0, 0%, 16%);
   --color-border-light: hsl(0, 0%, 30%);
 }
+
+/* ============================================
+ * Feature Section Enhancements
+ * ============================================ */
+
+.feature-section .inner-container {
+  z-index: 2;
+}
+
+.feature-block .inner-box {
+  border-radius: 8px;
+}

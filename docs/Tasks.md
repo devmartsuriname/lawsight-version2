@@ -11,7 +11,7 @@
 | **P0**  | Setup & Guardrails                | ✅ Complete    | Initial setup, routing, style-guide.md created       | —          |
 | **P1**  | jQuery Removal & React Conversion | ✅ Complete    | Migrated all animations to React/Swiper              | —          |
 | **P2**  | Modular Homepage                  | ✅ Complete    | 10+ modular components, CSS variables implemented    | —          |
-| **P3**  | Homepage Cards & Content Swap     | ✅ Complete    | Updated content, routing, and VP biography           | —          |
+| **P3**  | Homepage Cards & Content Swap     | ✅ Complete    | Layout polish complete - all P3 checklist verified  | —          |
 | **P4**  | Backend Setup & Admin MVP         | ⏳ Pending     | Awaiting Lovable Cloud setup & DB schema creation    | 5–7 days   |
 | **P5**  | Appointments + Calendar Sync      | ⏳ Pending     | Google Calendar OAuth integration                    | 4–5 days   |
 | **P6**  | YouTube Sync                      | ⏳ Pending     | YouTube API v3 integration                           | 3–4 days   |
@@ -93,8 +93,8 @@
 
 ## Phase P3: Homepage Cards & Content Swap ✅
 
-**Status:** Complete  
-**Completed:** Homepage content updated with VP-specific information
+**Status:** Complete (100%)  
+**Completed:** Homepage content updated with VP-specific information + Layout polish verified
 
 ### Tasks
 - [x] Update `FeatureCards.tsx`:
@@ -136,9 +136,19 @@
 - [x] Community Solutions have unique, relevant descriptions
 - [x] New pages created and routed correctly
 
+### Phase P3.3 Layout Polish
+- [x] Added `z-index: 2` to `.feature-section .inner-container`
+- [x] Added `border-radius: 8px` to `.feature-block .inner-box`
+- [x] Verified container structure (`.container` with proper max-width)
+- [x] Confirmed overlay positioning (cards overlap hero by ~20%)
+- [x] Tested responsive grid behavior (3/2/1 card layout)
+- [x] Verified hover animations and click navigation
+- [x] Cross-browser testing completed
+- [x] Documentation updated
+
 ### Restore Point
-- **Date:** P3 Complete
-- **Version:** v0.4.0
+- **Date:** P3.3 Complete - Feature Cards Layout Polish
+- **Version:** v0.4.3
 
 ---
 
