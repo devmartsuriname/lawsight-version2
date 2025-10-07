@@ -10,7 +10,7 @@ export default function Newsletter() {
         <div 
           className="inner-container" 
           style={{ 
-            backgroundImage: 'url(/images/background/3.jpg)',
+            backgroundImage: 'url(/images/background/newsletter-bg.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
             backgroundRepeat: 'no-repeat'
