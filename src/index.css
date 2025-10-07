@@ -50,10 +50,10 @@
    * ============================================ */
   
   /* Font Families */
-  --font-primary: 'Arimo', sans-serif;
-  --font-headings: 'Playfair Display', serif;
+  --font-primary: 'Poppins', sans-serif;
+  --font-headings: 'Poppins', sans-serif;
   --font-signature: 'Great Vibes', cursive;
-  --font-body: 'Arimo', sans-serif;
+  --font-body: 'Muli', sans-serif;
   
   /* Font Weights */
   --font-weight-light: 300;
@@ -198,8 +198,8 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headings);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
+  font-weight: normal;
+  line-height: 1.6em;
   margin: 0;
 }
 

@@ -13,20 +13,20 @@ export default function FeatureCards() {
   ];
 
   return (
-    <section className="feature-section py-[var(--section-padding)] bg-[color:var(--color-bg-white)]">
-      <div className="container max-w-[var(--container-lg)]">
+    <section className="feature-section">
+      <div className="auto-container">
         <div className="inner-container">
           <div className="clearfix">
             {features.map((feature, index) => (
-              <div key={index} className="feature-block col-lg-4 col-md-6 col-sm-12 px-[var(--spacing-md)]">
-                <Link to={feature.link} className="inner-box p-[var(--spacing-lg)] rounded-[var(--border-radius-md)] shadow-[var(--shadow-md)] hover:shadow-[var(--shadow-lg)] transition-all duration-[var(--transition-base)] block">
-                  <div className={`big-icon ${feature.icon} text-[color:var(--color-primary)] text-[length:var(--icon-size-xl)]`}></div>
+              <div key={index} className="feature-block col-lg-4 col-md-6 col-sm-12">
+                <Link to={feature.link} className="inner-box">
+                  <div className={`big-icon ${feature.icon}`}></div>
                   <div className="content">
-                    <div className="icon-box mb-[var(--spacing-sm)]">
-                      <span className={`icon ${feature.icon} text-[color:var(--color-primary)] text-[length:var(--icon-size-lg)]`}></span>
+                    <div className="icon-box">
+                      <span className={`icon ${feature.icon}`}></span>
                     </div>
-                    <div className="title text-[color:var(--color-text-secondary)] text-[length:var(--font-size-sm)] uppercase tracking-wider">{feature.title}</div>
-                    <h4 className="text-[color:var(--color-text-primary)] text-[length:var(--font-size-h4)] font-[var(--font-weight-bold)] mt-[var(--spacing-xs)]">{feature.subtitle}</h4>
+                    <div className="title">{feature.title}</div>
+                    <h4>{feature.subtitle}</h4>
                   </div>
                 </Link>
               </div>
