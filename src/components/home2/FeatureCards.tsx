@@ -6,8 +6,8 @@
 export default function FeatureCards() {
   const features = [
     { icon: 'flaticon-calendar', title: 'Book an', subtitle: 'Appointment' },
-    { icon: 'flaticon-link-symbol', title: 'Join our', subtitle: 'Team member' },
-    { icon: 'flaticon-calendar', title: 'Book an', subtitle: 'Appointment' },
+    { icon: 'flaticon-link-symbol', title: 'Join our', subtitle: 'Community' },
+    { icon: 'flaticon-envelope', title: 'Contact the', subtitle: 'Office' },
   ];
 
   return (

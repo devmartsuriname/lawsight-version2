@@ -14,33 +14,33 @@ export default function AboutSection() {
           <div className="content-column col-lg-6 col-md-12 col-sm-12">
             <div className="inner-column">
               <div className="section-title">
-                <div className="title">about us</div>
-                <h3>We are here to fight against any violance with <span>experience</span></h3>
+                <div className="title">About the Vice President</div>
+                <h3>Dedicated to <span>service</span> and community development</h3>
               </div>
               
               <div className="text">
-                <p>The argument in favor of using filler text goes something like this: If you use real content in the <span>design process,</span> anytime you reach a review point you&apos;ll end up reviewing and negotiating the content itself and not the design.</p>
-                <p>Aenean tincidunt id mauris id auctor. Donec at ligula lacus. Nulla dignissim mi quis neque interdum, quis porta sem finibus.</p>
+                <p>Dr. Gregory Allan Rusland serves as Vice President with a steadfast commitment to <span>community empowerment</span> and inclusive governance. His leadership focuses on bridging the gap between government and citizens through transparent, accessible, and responsive programs.</p>
+                <p>With extensive experience in public policy and community development, Dr. Rusland champions initiatives that prioritize education, economic opportunity, and social equity for all citizens.</p>
               </div>
               <div className="row clearfix">
                 <div className="column col-lg-6 col-md-6 col-sm-12">
                   <ul className="list-style-one">
-                    <li>Praesent feugiat sem mattis.</li>
-                    <li>Premium services beyond you.</li>
+                    <li>Community-centered governance</li>
+                    <li>Transparent public service</li>
                   </ul>
                 </div>
                 <div className="column col-lg-6 col-md-6 col-sm-12">
                   <ul className="list-style-one">
-                    <li>A wonderful serenity.</li>
-                    <li>Set a link back to this photo.</li>
+                    <li>Youth empowerment programs</li>
+                    <li>Economic development initiatives</li>
                   </ul>
                 </div>
               </div>
-              <div className="question">Call to ask <a href="#">any question</a> <strong>540-325-1523</strong> <span className="or">or</span> <strong>540-328-1265</strong></div>
+              <div className="question">Contact the office <a href="tel:+1234567890">for inquiries</a> <strong>+1 (234) 567-8900</strong> <span className="or">or</span> <strong>+1 (234) 567-8901</strong></div>
               <div className="signature">
                 <div className="signature-img"><img src="/images/icons/signature.png" alt="Signature"/></div>
-                <h5>Natalia Duke</h5>
-                <div className="designation">(Chairman and founder)</div>
+                <h5>Dr. Gregory Allan Rusland</h5>
+                <div className="designation">(Vice President)</div>
               </div>
             </div>
           </div>

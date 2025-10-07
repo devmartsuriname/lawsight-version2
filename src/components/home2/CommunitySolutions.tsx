@@ -1,18 +1,18 @@
 /**
- * Services Grid Component
- * Displays service offerings with experience badge
+ * Community Solutions Component
+ * Displays community programs and initiatives with experience badge
  */
 
 import { Link } from 'react-router-dom';
 
-export default function ServicesGrid() {
-  const services = [
-    { icon: 'fa fa-bullhorn', title: 'Market Law' },
-    { icon: 'fa fa-suitcase', title: 'Business Planning' },
-    { icon: 'fa fa-area-chart', title: 'Investment Trade' },
-    { icon: 'fa fa-coffee', title: 'Fund Law' },
-    { icon: 'fa fa-building', title: 'Home Law' },
-    { icon: 'fa fa-pie-chart', title: 'Insurance Law' },
+export default function CommunitySolutions() {
+  const solutions = [
+    { icon: 'fa fa-graduation-cap', title: 'Youth Training' },
+    { icon: 'fa fa-users', title: 'Social Support' },
+    { icon: 'fa fa-database', title: 'Open Data Platform' },
+    { icon: 'fa fa-money', title: 'Small Business Grants' },
+    { icon: 'fa fa-file-text', title: 'Online Permits' },
+    { icon: 'fa fa-road', title: 'Infrastructure Projects' },
   ];
 
   return (
@@ -24,17 +24,17 @@ export default function ServicesGrid() {
           <div className="blocks-column col-lg-8 col-md-12 col-sm-12">
             <div className="inner-column">
               <div className="row clearfix">
-                {services.map((service, index) => (
+                {solutions.map((solution, index) => (
                   <div key={index} className="services-block-three col-lg-6 col-md-6 col-sm-12">
                     <div className={`inner-box wow fadeInUp`} data-wow-delay={`${(index % 2) * 300}ms`} data-wow-duration="1500ms">
                       <div className="border-one"></div>
                       <div className="border-two"></div>
                       <div className="content">
                         <div className="icon-box">
-                          <span className={`icon ${service.icon}`}></span>
+                          <span className={`icon ${solution.icon}`}></span>
                         </div>
-                        <h6><Link to="/services/detail">{service.title}</Link></h6>
-                        <div className="text">Lorem ipsum dolor sit amet, con sectetu adipiscing elit, sed do eius mod tempor incididunt.</div>
+                        <h6><Link to="/services/detail">{solution.title}</Link></h6>
+                        <div className="text">Community-centered programs designed to empower citizens and strengthen local governance through accessible services.</div>
                       </div>
                     </div>
                   </div>

@@ -3,9 +3,9 @@ import Hero from '@/components/home2/Hero';
 import FeatureCards from '@/components/home2/FeatureCards';
 import AboutSection from '@/components/home2/AboutSection';
 import Timeline from '@/components/home2/Timeline';
-import ServicesGrid from '@/components/home2/ServicesGrid';
-import Testimonials from '@/components/home2/Testimonials';
-import Team from '@/components/home2/Team';
+import CommunitySolutions from '@/components/home2/CommunitySolutions';
+import QuotesSection from '@/components/home2/QuotesSection';
+import RecentMedia from '@/components/home2/RecentMedia';
 import NewsSection from '@/components/home2/NewsSection';
 import CounterStats from '@/components/home2/CounterStats';
 import Newsletter from '@/components/home2/Newsletter';
@@ -14,17 +14,17 @@ export default function Home2() {
   return (
     <>
       <Helmet>
-        <title>LawSight Law HTML Template | Home 02</title>
-        <meta name="description" content="Professional legal services and consultation - Alternative homepage" />
+        <title>Office of the Vice President | Dr. Gregory Allan Rusland</title>
+        <meta name="description" content="Official website of the Vice President's Office - Dedicated to community empowerment, transparent governance, and accessible public services." />
       </Helmet>
 
       <Hero />
       <FeatureCards />
       <AboutSection />
       <Timeline />
-      <ServicesGrid />
-      <Testimonials />
-      <Team />
+      <CommunitySolutions />
+      <QuotesSection />
+      <RecentMedia />
       <NewsSection />
       <CounterStats />
       <Newsletter />
