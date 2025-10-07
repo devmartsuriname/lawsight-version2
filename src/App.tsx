@@ -5,7 +5,6 @@ import MainLayout from '@/layouts/MainLayout';
 import ScrollToTop from '@/utils/ScrollToTop';
 
 // Lazy load pages
-const Home = lazy(() => import('@/pages/Home'));
 const Home2 = lazy(() => import('@/pages/Home2'));
 const About = lazy(() => import('@/pages/About'));
 const Services = lazy(() => import('@/pages/Services'));
