@@ -946,23 +946,73 @@ $section-padding-lg: 120px;
 
 ---
 
+## Design Token Files
+
+### SCSS Variables
+All design tokens are available as SCSS variables in `/src/styles/tokens.scss`:
+
+```scss
+@import '@/styles/tokens';
+
+.custom-component {
+  color: $color-text-gold;
+  font-family: $font-headings;
+  padding: $spacing-lg;
+  box-shadow: $shadow-gold;
+}
+```
+
+### TypeScript Constants
+For React components, import design tokens from `/src/styles/tokens.ts`:
+
+```tsx
+import { colors, fonts, spacing } from '@/styles/tokens';
+
+const MyComponent = () => (
+  <div style={{
+    color: colors.text.gold,
+    fontFamily: fonts.families.headings,
+    padding: spacing.lg,
+  }}>
+    Styled with design tokens
+  </div>
+);
+```
+
+### Available Token Categories
+- **colors** - Brand colors, text, backgrounds, borders
+- **fonts** - Families, weights, sizes, line heights
+- **spacing** - Standard spacing scale and section padding
+- **containers** - Container width variants
+- **breakpoints** - Responsive breakpoints with media query helpers
+- **transitions** - Standard transition timings
+- **shadows** - Pre-defined shadow styles
+- **buttons** - Button size and style constants
+- **forms** - Form input specifications
+- **overlays** - Overlay patterns and gradients
+
+---
+
 ## Maintenance & Updates
 
 ### Version History
+- **v1.1** - Added design token files (SCSS & TypeScript) (2025-01-07)
 - **v1.0** - Initial style guide (Post Phase 2 Modularization)
 
 ### Review Schedule
 - Review quarterly or after major feature additions
 - Update when new components are created
 - Validate color contrast after design changes
+- Sync token files when design system evolves
 
 ### Contribution Guidelines
 When adding new components:
 1. Follow existing naming conventions
-2. Use design tokens (colors, fonts) from this guide
+2. Use design tokens (colors, fonts) from `/src/styles/tokens.scss` or `/src/styles/tokens.ts`
 3. Ensure WCAG AA compliance
 4. Document new patterns in this guide
 5. Provide usage examples
+6. Update token files when introducing new design values
 
 ---
 
