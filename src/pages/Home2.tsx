@@ -26,7 +26,6 @@ export default function Home2() {
       <QuotesSection />
       <RecentMedia />
       <NewsSection />
-      <CounterStats />
       <Newsletter />
     </>
   );
