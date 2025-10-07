@@ -144,9 +144,29 @@ p{
 
 .container{
 	position:static;
-	max-width:1200px;
-	padding:0px 15px;
+	max-width:1600px;
+	padding:0px 30px;
 	margin:0 auto;
+}
+
+/* Wide container for modern layouts */
+.container-wide {
+    max-width: 1600px;
+    padding: 0px 30px;
+    margin: 0 auto;
+}
+
+/* Full-width container with controlled inner padding */
+.container-fluid-controlled {
+    width: 100%;
+    padding: 0px 60px;
+}
+
+/* Standard container for specific sections that need narrower width */
+.container-standard {
+    max-width: 1200px;
+    padding: 0px 15px;
+    margin: 0 auto;
 }
 
 .medium-container{
