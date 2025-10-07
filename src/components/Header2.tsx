@@ -33,11 +33,11 @@ export default function Header2() {
                 <ul className="info-list">
                   <li>
                     <span className="icon flaticon-phone-call"></span>
-                    <a href={`tel:${siteInfo.phone.replace(/\s/g, '')}`}>{siteInfo.phone}</a>
+                    <a href={`tel:${siteInfo.contact.phone.replace(/\s/g, '')}`}>{siteInfo.contact.phone}</a>
                   </li>
                   <li>
                     <span className="icon flaticon-email-1"></span>
-                    <a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>
+                    <a href={`mailto:${siteInfo.contact.email}`}>{siteInfo.contact.email}</a>
                   </li>
                 </ul>
               </div>
@@ -349,17 +349,17 @@ export default function Header2() {
                 <li>
                   <span className="icon flaticon-phone-call"></span>
                   <strong>Call Us</strong>
-                  <a href={`tel:${siteInfo.phone.replace(/\s/g, '')}`}>{siteInfo.phone}</a>
+                  <a href={`tel:${siteInfo.contact.phone.replace(/\s/g, '')}`}>{siteInfo.contact.phone}</a>
                 </li>
                 <li>
                   <span className="icon flaticon-email-1"></span>
                   <strong>Email Address</strong>
-                  <a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a>
+                  <a href={`mailto:${siteInfo.contact.email}`}>{siteInfo.contact.email}</a>
                 </li>
                 <li>
                   <span className="icon flaticon-maps-and-flags"></span>
                   <strong>Address</strong>
-                  {siteInfo.address}
+                  {siteInfo.contact.address}
                 </li>
               </ul>
             </div>
