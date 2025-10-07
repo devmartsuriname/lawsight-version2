@@ -14,12 +14,12 @@ export default function CounterStats() {
   ];
 
   return (
-    <section className="counter-section">
-      <div className="container">
+    <section className="counter-section py-[var(--section-padding)] bg-[color:var(--color-bg-light)]">
+      <div className="container max-w-[var(--container-lg)]">
         <div className="fact-counter style-three">
           <div className="row clearfix">
             {stats.map((stat, index) => (
-              <div key={index} className="column counter-column col-lg-3 col-md-6 col-sm-12">
+              <div key={index} className="column counter-column col-lg-3 col-md-6 col-sm-12 px-[var(--spacing-md)]">
                 <CounterBox end={stat.count} suffix="+" title={stat.title} delay={index * 300} />
               </div>
             ))}
