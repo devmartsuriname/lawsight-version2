@@ -7,7 +7,15 @@ export default function Newsletter() {
   return (
     <section className="subscribe-section">
       <div className="container">
-        <div className="inner-container" style={{ backgroundImage: 'url(/images/background/3.jpg)' }}>
+        <div 
+          className="inner-container" 
+          style={{ 
+            backgroundImage: 'url(/images/background/3.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
           <h2>Subscribe Your Email for Newsletter <br /> & Promotion</h2>
           <div className="subscribe-form">
             <form method="post" onSubmit={(e) => e.preventDefault()}>
