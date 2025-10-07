@@ -36,7 +36,6 @@ export default function AboutSection() {
                   </ul>
                 </div>
               </div>
-              <div className="question">Contact the office <a href="tel:+1234567890">for inquiries</a> <strong>+1 (234) 567-8900</strong> <span className="or">or</span> <strong>+1 (234) 567-8901</strong></div>
               <div className="signature">
                 <div className="signature-img"><img src="/images/icons/signature.png" alt="Signature"/></div>
                 <h5>Dr. Gregory Allan Rusland</h5>
