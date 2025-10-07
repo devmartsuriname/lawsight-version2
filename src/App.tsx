@@ -27,8 +27,8 @@ function App() {
         <Suspense fallback={<div className="preloader"></div>}>
           <Routes>
             <Route element={<MainLayout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/home2" element={<Home2 />} />
+              <Route path="/" element={<Home2 />} />
+              <Route path="/home-alternate" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/:slug" element={<ServicesDetail />} />
