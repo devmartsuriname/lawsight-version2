@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
+import { CounterBox } from '@/components/CounterBox';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -169,39 +170,19 @@ export default function Home() {
           <div className="fact-counter">
             <div className="row clearfix">
               <div className="column counter-column col-lg-3 col-md-6 col-sm-12">
-                <div className="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                  <div className="count-outer count-box">
-                    <span className="count-text" data-speed="3000ms" data-stop="1825">1825</span>+
-                    <div className="counter-title">Completed works</div>
-                  </div>
-                </div>
+                <CounterBox end={1825} suffix="+" title="Completed works" delay={0} />
               </div>
               
               <div className="column counter-column col-lg-3 col-md-6 col-sm-12">
-                <div className="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                  <div className="count-outer count-box">
-                    <span className="count-text" data-speed="2000" data-stop="532">532</span>+
-                    <div className="counter-title">Satisfied clients</div>
-                  </div>
-                </div>
+                <CounterBox end={532} suffix="+" title="Satisfied clients" delay={300} />
               </div>
               
               <div className="column counter-column col-lg-3 col-md-6 col-sm-12">
-                <div className="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                  <div className="count-outer count-box">
-                    <span className="count-text" data-speed="2000" data-stop="69">69</span>+
-                    <div className="counter-title">Winning awards</div>
-                  </div>
-                </div>
+                <CounterBox end={69} suffix="+" title="Winning awards" delay={600} />
               </div>
               
               <div className="column counter-column col-lg-3 col-md-6 col-sm-12">
-                <div className="inner wow fadeInLeft" data-wow-delay="900ms" data-wow-duration="1500ms">
-                  <div className="count-outer count-box">
-                    <span className="count-text" data-speed="1500" data-stop="32">32</span>+
-                    <div className="counter-title">Team members</div>
-                  </div>
-                </div>
+                <CounterBox end={32} suffix="+" title="Team members" delay={900} />
               </div>
             </div>
           </div>

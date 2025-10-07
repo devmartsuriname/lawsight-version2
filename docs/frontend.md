@@ -126,6 +126,7 @@ Defined in `src/data/navigation.ts`:
 
 ### ✅ Phase 1: Complete (2025-01-09)
 - **jQuery removal:** All jQuery scripts removed from `index.html`
+- **CSS cleanup:** Removed jQuery plugin CSS (`jquery.fancybox.min.css`, `jquery-ui.css`, `jquery.mCustomScrollbar.min.css`)
 - **Performance:** ~300KB+ bundle size reduction
 - **Counter animations:** Migrated to `useCountUp` hook with Intersection Observer
 - **Lightbox:** Migrated to `yet-another-react-lightbox` package
@@ -133,10 +134,17 @@ Defined in `src/data/navigation.ts`:
 - **Sticky header:** Already migrated to `useStickyHeader` hook
 - **Carousels:** Already using Swiper library
 
+### ✅ Phase 1.5: Integration Complete (2025-01-09)
+- **Home.tsx counters:** Integrated 4 `CounterBox` components
+- **Home2.tsx counters:** Integrated 7 `CounterBox` components
+- **Video lightbox:** Integrated `Lightbox` for About section video
+- **Gallery lightbox:** Integrated `Lightbox` for news image galleries
+- **All interactive features:** Now using React hooks and components
+
 ### Migrated Functionality
 1. **Counter animations** (`count-box`) → `useCountUp` hook + `CounterBox` component
 2. **Image lightbox** (`lightbox-image`) → `Lightbox` component
-3. **Scroll animations** (`wow`, `fadeIn`) → `useScrollAnimation` hook
+3. **Scroll animations** (`wow`, `fadeIn`) → `useScrollAnimation` hook (available for use)
 4. **Portfolio filtering** → Native React state (already implemented)
 
 ---

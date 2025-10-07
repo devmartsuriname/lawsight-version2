@@ -2,6 +2,8 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
+import { CounterBox } from '@/components/CounterBox';
+import { Lightbox } from '@/components/Lightbox';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -160,42 +162,28 @@ export default function Home2() {
                   <figure className="video-image">
                     <img src="/images/resource/video-img.jpg" alt="Video" />
                   </figure>
-                  <a href="https://www.youtube.com/watch?v=kxPCFljwJws" className="lightbox-image overlay-box">
-                    <span className="flaticon-play-button"></span>
-                  </a>
+                  <Lightbox images={['https://www.youtube.com/watch?v=kxPCFljwJws']}>
+                    {({ open }) => (
+                      <a onClick={() => open(0)} className="overlay-box" style={{ cursor: 'pointer' }}>
+                        <span className="flaticon-play-button"></span>
+                      </a>
+                    )}
+                  </Lightbox>
                 </div>
                 
                 <div className="fact-counter style-two">
                   <div className="container">
                     <div className="row clearfix">
                       <div className="column counter-column col-lg-4 col-md-6 col-sm-12">
-                        <div className="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                          <div className="count-outer count-box">
-                            <span className="count-text" data-speed="2000" data-stop="1235">1235</span>
-                            <div className="counter-title">Satisfied Clients</div>
-                            <div className="text">Dolore magna aliq</div>
-                          </div>
-                        </div>
+                        <CounterBox end={1235} title="Satisfied Clients" delay={0} />
                       </div>
                       
                       <div className="column counter-column col-lg-4 col-md-6 col-sm-12">
-                        <div className="inner wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-                          <div className="count-outer count-box">
-                            <span className="count-text" data-speed="3500" data-stop="1402">1402</span>+
-                            <div className="counter-title">Completed works</div>
-                            <div className="text">connstur adicing</div>
-                          </div>
-                        </div>
+                        <CounterBox end={1402} suffix="+" title="Completed works" delay={300} />
                       </div>
                       
                       <div className="column counter-column col-lg-4 col-md-12 col-sm-12">
-                        <div className="inner wow fadeInLeft" data-wow-delay="600ms" data-wow-duration="1500ms">
-                          <div className="count-outer count-box">
-                            <span className="count-text" data-speed="2000" data-stop="35">35</span>
-                            <div className="counter-title">Winning Awards</div>
-                            <div className="text">Lorem ipsum dolor</div>
-                          </div>
-                        </div>
+                        <CounterBox end={35} title="Winning Awards" delay={600} />
                       </div>
                     </div>
                   </div>
@@ -423,9 +411,13 @@ export default function Home2() {
                 <div className={`inner-box wow fadeInLeft`} data-wow-delay={`${index * 300}ms`} data-wow-duration="1500ms">
                   <div className="image">
                     <img src={post.image} alt={post.title} />
-                    <div className="overlay-box">
-                      <a href={post.image} data-fancybox="news" className="plus flaticon-plus"></a>
-                    </div>
+                    <Lightbox images={[post.image]}>
+                      {({ open }) => (
+                        <div className="overlay-box">
+                          <a onClick={() => open(0)} className="plus flaticon-plus" style={{ cursor: 'pointer' }}></a>
+                        </div>
+                      )}
+                    </Lightbox>
                   </div>
                   <div className="lower-content">
                     <ul className="post-meta">
@@ -454,13 +446,7 @@ export default function Home2() {
                 { icon: 'flaticon-multiple-users-silhouette', count: 32, title: 'Team members' },
               ].map((stat, index) => (
                 <div key={index} className="column counter-column col-lg-3 col-md-6 col-sm-12">
-                  <div className={`inner wow fadeInLeft`} data-wow-delay={`${index * 300}ms`} data-wow-duration="1500ms">
-                    <div className="count-outer count-box">
-                      <div className={`icon ${stat.icon}`}></div>
-                      <span className="count-text" data-speed="3000ms" data-stop={stat.count}>{stat.count}</span>+
-                      <div className="counter-title">{stat.title}</div>
-                    </div>
-                  </div>
+                  <CounterBox end={stat.count} suffix="+" title={stat.title} delay={index * 300} />
                 </div>
               ))}
             </div>
