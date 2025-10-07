@@ -21,17 +21,17 @@ export default function PortfolioMasonry() {
   return (
     <>
       <Helmet>
-        <title>Portfolio Masonry | LawSight Law HTML Template</title>
-        <meta name="description" content="Our portfolio in masonry layout" />
+        <title>Portfolio | Office of the Vice President | Republic of Suriname</title>
+        <meta name="description" content="National projects and initiatives led by the Office of the Vice President" />
       </Helmet>
 
-      <PageTitle title="Project Masonry" breadcrumbs={[{ label: 'Project Masonry' }]} />
+      <PageTitle title="National Projects" breadcrumbs={[{ label: 'Projects' }]} />
 
       <section className="portfolio-section-two masonry-section">
         <div className="container">
           <div className="section-title centered">
             <div className="title">Projects</div>
-            <h3>We are here to fight against any <br /> violance with Project <span>experience</span></h3>
+            <h3>Building a stronger Suriname <br /> through impactful <span>initiatives</span></h3>
           </div>
           
           <div className="sortable-masonry">

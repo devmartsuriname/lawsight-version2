@@ -17,8 +17,8 @@ export default function Footer() {
                       </Link>
                     </div>
                     <div className="text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                      tempor incididunt.
+                      Office of the Vice President of the Republic of Suriname. Serving the nation
+                      with integrity, vision, and commitment to progress for all citizens.
                     </div>
                     <ul className="list-style-three">
                       <li>
@@ -49,7 +49,7 @@ export default function Footer() {
                         <Link to="/about">About us</Link>
                       </li>
                       <li>
-                        <Link to="/testimonial">Testimonials</Link>
+                        <Link to="/portfolio/masonry">Portfolio</Link>
                       </li>
                       <li>
                         <Link to="/blog">News</Link>
@@ -126,7 +126,7 @@ export default function Footer() {
           <div className="row clearfix">
             <div className="copyright-column col-lg-6 col-md-6 col-sm-12">
               <div className="copyright">
-                2019 &copy; All rights reserved by <a href="#">Themexriver</a>
+                2025 &copy; Office of the Vice President of the Republic of Suriname
               </div>
             </div>
 

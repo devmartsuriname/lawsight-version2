@@ -1,17 +1,17 @@
 export const siteInfo = {
-  name: 'LawSight',
-  tagline: 'Professional Legal Services',
-  description: 'Expert legal consultation and representation',
+  name: 'Office of the Vice President',
+  tagline: 'Serving the nation with integrity, vision, and commitment',
+  description: 'Official website of the Vice President of the Republic of Suriname',
   contact: {
-    address: '380 St Kilda Road, Melbourne VIC 3004, Australia',
-    phone: '+123 (4567) 890',
-    email: 'info@lawsight.com',
+    address: 'Presidential Palace, Onafhankelijkheidsplein, Paramaribo, Suriname',
+    phone: '+597 472-000',
+    email: 'office@president.gov.sr',
   },
   social: {
     facebook: '#',
     twitter: '#',
     linkedin: '#',
-    googlePlus: '#',
-    rss: '#',
+    instagram: '#',
+    youtube: '#',
   },
 };

@@ -51,10 +51,10 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>Contact | LawSight Law HTML Template</title>
-        <meta name="description" content="Get in touch with LawSight legal professionals" />
-        <meta property="og:title" content="Contact | LawSight" />
-        <meta property="og:description" content="Get in touch with LawSight legal professionals" />
+        <title>Contact | Office of the Vice President | Republic of Suriname</title>
+        <meta name="description" content="Contact the Office of the Vice President of the Republic of Suriname" />
+        <meta property="og:title" content="Contact | Office of the Vice President" />
+        <meta property="og:description" content="Contact the Office of the Vice President of the Republic of Suriname" />
       </Helmet>
 
       <PageTitle title="Contact" breadcrumbs={[{ label: 'Contact' }]} />
@@ -66,13 +66,13 @@ export default function Contact() {
             <div
               className="map-canvas"
               data-zoom="12"
-              data-lat="-37.817085"
-              data-lng="144.955631"
+              data-lat="5.8520"
+              data-lng="-55.2038"
               data-type="roadmap"
               data-hue="#ffc400"
-              data-title="Envato"
+              data-title="Office of the Vice President"
               data-icon-path="/images/icons/map-marker.png"
-              data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>"
+              data-content="Presidential Palace, Onafhankelijkheidsplein, Paramaribo, Suriname<br><a href='mailto:office@president.gov.sr'>office@president.gov.sr</a>"
             ></div>
           </div>
         </div>
@@ -80,27 +80,26 @@ export default function Contact() {
         <div className="container">
           <div className="inner-container">
             <h2>
-              Contact our support guys or make appointment <br /> with <span>our consultan</span>
+              Contact the Office of the Vice President <br /> of the <span>Republic of Suriname</span>
             </h2>
             <div className="row clearfix">
               {/* Info Column */}
               <div className="info-column col-lg-7 col-md-12 col-sm-12">
                 <div className="inner-column">
                   <div className="text">
-                    Please contact us using the information below. For additional information on
-                    our management consulting services, please visit the appropriate page on our
-                    site.
+                    Office of the Vice President of the Republic of Suriname. Serving the nation with
+                    integrity, vision, and commitment to progress for all citizens.
                   </div>
                   <ul className="list-style-six">
                     <li>
-                      <span className="icon fa fa-building"></span> 131 Dartmouth Street <br />{' '}
-                      Boston, Massachusetts 02116 <br /> United States
+                      <span className="icon fa fa-building"></span> Presidential Palace <br />{' '}
+                      Onafhankelijkheidsplein <br /> Paramaribo, Suriname
                     </li>
                     <li>
-                      <span className="icon fa fa-fax"></span> +1 617 572 2000
+                      <span className="icon fa fa-fax"></span> +597 472-000
                     </li>
                     <li>
-                      <span className="icon fa fa-envelope-o"></span>support@lawsight.com
+                      <span className="icon fa fa-envelope-o"></span>office@president.gov.sr
                     </li>
                   </ul>
                 </div>
@@ -141,8 +140,10 @@ export default function Contact() {
                           onChange={handleChange}
                         >
                           <option value="">Select topic</option>
-                          <option value="Topic One">Topic One</option>
-                          <option value="Topic Two">Topic Two</option>
+                          <option value="General Inquiry">General Inquiry</option>
+                          <option value="Appointment Request">Appointment Request</option>
+                          <option value="Community Program">Community Program</option>
+                          <option value="Press Inquiry">Press Inquiry</option>
                         </select>
                       </div>
 
@@ -175,64 +176,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Info Section */}
-      <section
-        className="contact-info-section"
-        style={{ backgroundImage: 'url(/images/background/5.jpg)' }}
-      >
-        <div className="container">
-          <div className="row clearfix">
-            <div className="column col-lg-4 col-md-6 col-sm-12">
-              <h4>United Kingdom</h4>
-              <ul className="list-style-seven">
-                <li>
-                  <span className="icon flaticon-map-1"></span> 49488 Avenida Obregon, <br /> La
-                  Quinta, CA 92253
-                </li>
-                <li>
-                  <span className="icon flaticon-call-answer"></span> +1-(281)-813 926 <br />{' '}
-                  +1-(281)-813 612
-                </li>
-                <li>
-                  <span className="icon fa fa-envelope-o"></span>support@lawsight.com.uk
-                </li>
-              </ul>
-            </div>
-            <div className="column col-lg-4 col-md-6 col-sm-12">
-              <h4>Australia</h4>
-              <ul className="list-style-seven">
-                <li>
-                  <span className="icon flaticon-map-1"></span> 13/1 Dixon Street, Sydney <br />{' '}
-                  NSW 2000
-                </li>
-                <li>
-                  <span className="icon flaticon-call-answer"></span> +1-(281)-813 926 <br />{' '}
-                  +1-(281)-813 612
-                </li>
-                <li>
-                  <span className="icon fa fa-envelope-o"></span>support@lawsight.com.uk
-                </li>
-              </ul>
-            </div>
-            <div className="column col-lg-4 col-md-6 col-sm-12">
-              <h4>Netherlands</h4>
-              <ul className="list-style-seven">
-                <li>
-                  <span className="icon flaticon-map-1"></span> Nieuwe Leliestraat 27-HS <br />{' '}
-                  101J Amsterdam
-                </li>
-                <li>
-                  <span className="icon flaticon-call-answer"></span> +1-(281)-813 926 <br />{' '}
-                  +1-(281)-813 612
-                </li>
-                <li>
-                  <span className="icon fa fa-envelope-o"></span>support@lawsight.com.uk
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

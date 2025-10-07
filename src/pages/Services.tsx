@@ -5,78 +5,39 @@ import { Link } from 'react-router-dom';
 const services = [
   {
     icon: 'flaticon-internet',
-    title: 'Business Law',
-    description: 'It is a long established fact that areader will be distracted by the readable content of a page when looking.',
+    title: 'Agricultural Training Programs',
+    description: 'Empowering local farmers with modern agricultural techniques and sustainable practices for food security.',
+    image: '/images/resource/service-1.jpg',
+  },
+  {
+    icon: 'flaticon-startup',
+    title: 'Digital Social Support Registration',
+    description: 'Streamlined online platform for citizens to register and access social welfare programs efficiently.',
     image: '/images/resource/service-1.jpg',
   },
   {
     icon: 'flaticon-museum',
-    title: 'Civil Law',
-    description: 'It is a long established fact that areader will be distracted by the readable content of a page when looking.',
-    image: '/images/resource/service-1.jpg',
-  },
-  {
-    icon: 'flaticon-gun',
-    title: 'Criminal Law',
-    description: 'It is a long established fact that areader will be distracted by the readable content of a page when looking.',
+    title: 'Public Policy Data Platform',
+    description: 'Transparent access to government data and policy information for informed citizen participation.',
     image: '/images/resource/service-1.jpg',
   },
   {
     icon: 'flaticon-plan',
-    title: 'Business Law',
-    description: 'It is a long established fact that areader will be distracted by the readable content of a page when looking.',
+    title: 'Small Business Development',
+    description: 'Support programs and grants to foster entrepreneurship and economic growth in local communities.',
     image: '/images/resource/service-1.jpg',
   },
   {
     icon: 'flaticon-book',
-    title: 'Education Law',
-    description: 'It is a long established fact that areader will be distracted by the readable content of a page when looking.',
+    title: 'Online Permit Applications',
+    description: 'Simplified digital processes for obtaining permits and licenses, reducing bureaucratic delays.',
     image: '/images/resource/service-1.jpg',
   },
   {
     icon: 'flaticon-house-outline',
-    title: 'Real Estate law',
-    description: 'It is a long established fact that areader will be distracted by the readable content of a page when looking.',
+    title: 'Infrastructure Development',
+    description: 'Building sustainable infrastructure to connect communities and improve quality of life nationwide.',
     image: '/images/resource/service-1.jpg',
-  },
-];
-
-const pricingPlans = [
-  {
-    icon: 'flaticon-startup-1',
-    title: 'Basic Plan',
-    price: 29,
-    features: [
-      'Perspiciatis unde omnis iste natus',
-      'error sit volupta tem accusantium',
-      'doloremque laudantium, totam rem',
-      'aperiam, eaque ipsa quae ab illo',
-      'inventore veritatis.',
-    ],
-  },
-  {
-    icon: 'flaticon-startup',
-    title: 'Standard Plan',
-    price: 49,
-    features: [
-      'Perspiciatis unde omnis iste natus',
-      'error sit volupta tem accusantium',
-      'doloremque laudantium, totam rem',
-      'aperiam, eaque ipsa quae ab illo',
-      'inventore veritatis.',
-    ],
-  },
-  {
-    icon: 'flaticon-startup-2',
-    title: 'Extended Plan',
-    price: 59,
-    features: [
-      'Perspiciatis unde omnis iste natus',
-      'error sit volupta tem accusantium',
-      'doloremque laudantium, totam rem',
-      'aperiam, eaque ipsa quae ab illo',
-      'inventore veritatis.',
-    ],
   },
 ];
 
@@ -84,8 +45,8 @@ export default function Services() {
   return (
     <>
       <Helmet>
-        <title>Services | LawSight Law HTML Template</title>
-        <meta name="description" content="Our comprehensive legal services" />
+        <title>Services | Office of the Vice President | Republic of Suriname</title>
+        <meta name="description" content="Government programs and services provided by the Office of the Vice President of Suriname" />
       </Helmet>
 
       <PageTitle title="Services" breadcrumbs={[{ label: 'Services' }]} />
@@ -95,7 +56,7 @@ export default function Services() {
         <div className="container">
           <div className="section-title centered">
             <div className="title">Services</div>
-            <h3>We are here to fight against any <br /> violance with <span>experience</span></h3>
+            <h3>Programs and initiatives serving <br /> the people of <span>Suriname</span></h3>
           </div>
           <div className="row clearfix">
             {services.map((service, index) => (
@@ -118,53 +79,6 @@ export default function Services() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="pricing-section">
-        <div className="container">
-          <div className="section-title centered">
-            <div className="title">Pricing</div>
-            <h3>Choose the best pricing <br /> to start <span> consulting </span></h3>
-          </div>
-          
-          <div className="pricing-info-tabs">
-            <div className="pricing-tabs tabs-box">
-              <ul className="tab-btns tab-buttons clearfix">
-                <li className="tab-btn active-btn"><span className="circle"></span> Monthly</li>
-                <li className="tab-btn"><span className="circle"></span> Yearly <span className="save">Save 20%</span></li>
-              </ul>
-              
-              <div className="tabs-content">
-                <div className="tab active-tab">
-                  <div className="content">
-                    <div className="row clearfix">
-                      {pricingPlans.map((plan, index) => (
-                        <div key={index} className="price-block col-lg-4 col-md-6 col-sm-12">
-                          <div className="inner-box">
-                            <div className="title-box">
-                              <div className={`icon ${plan.icon}`}></div>
-                              <h5>{plan.title}</h5>
-                            </div>
-                            <div className="price">${plan.price} <span>/ monthly</span></div>
-                            <div className="lower-box">
-                              <ul className="price-list">
-                                {plan.features.map((feature, idx) => (
-                                  <li key={idx}>{feature}</li>
-                                ))}
-                              </ul>
-                              <a href="#" className="theme-btn btn-style-two">Get Started</a>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
