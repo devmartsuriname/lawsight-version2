@@ -7,12 +7,12 @@ import { Link } from 'react-router-dom';
 
 export default function CommunitySolutions() {
   const solutions = [
-    { icon: 'fa fa-graduation-cap', title: 'Youth Training' },
-    { icon: 'fa fa-users', title: 'Social Support' },
-    { icon: 'fa fa-database', title: 'Open Data Platform' },
-    { icon: 'fa fa-money', title: 'Small Business Grants' },
-    { icon: 'fa fa-file-text', title: 'Online Permits' },
-    { icon: 'fa fa-road', title: 'Infrastructure Projects' },
+    { icon: 'fa fa-graduation-cap', title: 'Youth Training', description: 'Free agricultural and vocational training programs designed to equip young Surinamese with practical skills for sustainable employment and entrepreneurship.' },
+    { icon: 'fa fa-users', title: 'Social Support', description: 'Digital registration platform providing accessible social assistance programs, healthcare support, and family welfare services to vulnerable communities.' },
+    { icon: 'fa fa-database', title: 'Open Data Platform', description: 'Transparent public data portal enabling citizens to access government information, budgets, and community resources for informed civic participation.' },
+    { icon: 'fa fa-money', title: 'Small Business Grants', description: 'Financial assistance programs supporting local entrepreneurs and small businesses to drive economic growth and job creation across all districts.' },
+    { icon: 'fa fa-file-text', title: 'Online Permits', description: 'Streamlined digital permit system allowing citizens to request business licenses, construction permits, and official documentation efficiently online.' },
+    { icon: 'fa fa-road', title: 'Infrastructure Projects', description: 'Community-driven infrastructure initiatives improving roads, utilities, and public facilities to enhance quality of life for all Surinamese citizens.' },
   ];
 
   return (
@@ -34,7 +34,7 @@ export default function CommunitySolutions() {
                           <span className={`icon ${solution.icon}`}></span>
                         </div>
                         <h6><Link to="/services/detail">{solution.title}</Link></h6>
-                        <div className="text">Community-centered programs designed to empower citizens and strengthen local governance through accessible services.</div>
+                        <div className="text">{solution.description}</div>
                       </div>
                     </div>
                   </div>

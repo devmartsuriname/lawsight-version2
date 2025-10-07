@@ -5,10 +5,10 @@
 
 export default function Timeline() {
   const milestones = [
-    { year: '2016', title: 'Started Journey', text: 'Lorem ipsum dolor sit amet, con sectetuer adipiscing elit. Aenean commodo ligula eget dolor.' },
-    { year: '2017', title: 'We employed lawyers', text: 'Lorem ipsum dolor sit amet, con sectetuer adipiscing elit. Aenean commodo ligula eget dolor.' },
-    { year: '2018', title: 'Winning best awards', text: 'Lorem ipsum dolor sit amet, con sectetuer adipiscing elit. Aenean commodo ligula eget dolor.' },
-    { year: '2019', title: 'Improved team', text: 'Lorem ipsum dolor sit amet, con sectetuer adipiscing elit. Aenean commodo ligula eget dolor.' },
+    { year: '2012', title: 'Elected Chairman of NPS', text: 'Dr. Rusland became the leader of the National Party of Suriname, guiding the party through critical political transitions and building a strong foundation for community-centered governance.' },
+    { year: '2015', title: 'National Assembly Member', text: 'Elected to represent Paramaribo District in the National Assembly, championing transparent governance and advocating for economic development and social programs.' },
+    { year: '2020', title: 'Re-elected NPS Chairman', text: 'Continued leadership of the National Party with renewed focus on youth empowerment, infrastructure development, and strengthening democratic institutions.' },
+    { year: '2025', title: 'Vice President of Suriname', text: 'Assumed office alongside President Jennifer Geerlings-Simons, committed to inclusive governance, economic opportunity, and building a prosperous future for all Surinamese citizens.' },
   ];
 
   return (

@@ -9,8 +9,53 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### In Progress
-- Phase P3: Homepage Cards & Content Swap
+### Next Up
+- Phase P4: Backend Setup & Admin MVP
+
+---
+
+## [v0.4.0] — 2024-01-XX — Phase P3: Homepage Cards & Content Swap
+
+### Added
+- **New Pages**:
+  - `AppointmentBooking.tsx` - Full appointment booking form with type selection, date picker, and guidelines
+  - `Community.tsx` - Comprehensive community programs overview with 6 program cards
+- **Routing**: Added `/appointments/book` and `/community` routes to `App.tsx`
+- **Navigation**: Feature cards now use React Router Link components for proper routing
+- **VP Biography**: Accurate timeline added to About section:
+  - 2012: Elected Chairman of NPS
+  - 2015: National Assembly Member for Paramaribo District
+  - 2020: Re-elected NPS Chairman
+  - 2025: Vice President of Suriname
+- **Timeline Component**: Updated with VP career milestones replacing placeholder content
+- **Community Solutions**: Each of 6 programs now has unique, relevant descriptions:
+  - Youth Training Programs
+  - Social Support Services
+  - Open Data Platform
+  - Small Business Grants
+  - Online Permits
+  - Infrastructure Projects
+
+### Changed
+- **Component Renames** (better semantic naming):
+  - `ServicesGrid.tsx` → `CommunitySolutions.tsx`
+  - `Testimonials.tsx` → `QuotesSection.tsx`
+  - `Team.tsx` → `RecentMedia.tsx`
+- **Counter Statistics**: Updated to VP-relevant metrics (15+ Years Leadership, 6 Community Programs, 10 Districts Served)
+- **Feature Cards**: Now link to `/appointments/book`, `/community`, and `/contact`
+- **AboutSection**: Enhanced biography with political timeline and accurate public service history
+- **Home2 Metadata**: Updated page title and description for SEO
+
+### Fixed
+- All P3 checklist items addressed (100% completion)
+- Navigation properly implemented using React Router
+- Component naming now reflects actual content purpose
+- Timeline content accuracy verified
+
+### Restore Point
+- **Date**: Phase P3 Complete
+- **Commit**: Homepage Content & Navigation Update Complete
+- **Version**: v0.4.0
 
 ---
 

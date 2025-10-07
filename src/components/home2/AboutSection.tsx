@@ -19,8 +19,8 @@ export default function AboutSection() {
               </div>
               
               <div className="text">
-                <p>Dr. Gregory Allan Rusland serves as Vice President with a steadfast commitment to <span>community empowerment</span> and inclusive governance. His leadership focuses on bridging the gap between government and citizens through transparent, accessible, and responsive programs.</p>
-                <p>With extensive experience in public policy and community development, Dr. Rusland champions initiatives that prioritize education, economic opportunity, and social equity for all citizens.</p>
+                <p>Dr. Gregory Allan Rusland currently serves as <span>Vice President of the Republic of Suriname</span> since July 2025, alongside President Jennifer Geerlings-Simons. A dedicated public servant with deep roots in Surinamese politics, Dr. Rusland has served as Chairman of the National Party of Suriname (NPS) since 2012 and has represented the Paramaribo District in the National Assembly since 2015.</p>
+                <p>With extensive experience in public policy, natural resources management, and community development, Dr. Rusland champions initiatives that prioritize <span>education, economic opportunity</span>, and social equity for all citizens. His leadership focuses on bridging the gap between government and citizens through transparent, accessible, and responsive programs.</p>
               </div>
               <div className="row clearfix">
                 <div className="column col-lg-6 col-md-6 col-sm-12">
@@ -64,15 +64,15 @@ export default function AboutSection() {
                 <div className="container">
                   <div className="row clearfix">
                     <div className="column counter-column col-lg-4 col-md-6 col-sm-12">
-                      <CounterBox end={1235} title="Satisfied Clients" delay={0} />
+                      <CounterBox end={15} suffix="+" title="Years of Leadership" delay={0} />
                     </div>
                     
                     <div className="column counter-column col-lg-4 col-md-6 col-sm-12">
-                      <CounterBox end={1402} suffix="+" title="Completed works" delay={300} />
+                      <CounterBox end={6} title="Community Programs" delay={300} />
                     </div>
                     
                     <div className="column counter-column col-lg-4 col-md-12 col-sm-12">
-                      <CounterBox end={35} title="Winning Awards" delay={600} />
+                      <CounterBox end={10} title="Districts Served" delay={600} />
                     </div>
                   </div>
                 </div>

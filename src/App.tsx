@@ -17,6 +17,8 @@ const BlogList = lazy(() => import('@/pages/BlogList'));
 const BlogSingle = lazy(() => import('@/pages/BlogSingle'));
 const Testimonial = lazy(() => import('@/pages/Testimonial'));
 const Contact = lazy(() => import('@/pages/Contact'));
+const AppointmentBooking = lazy(() => import('@/pages/AppointmentBooking'));
+const Community = lazy(() => import('@/pages/Community'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
 function App() {
@@ -39,6 +41,8 @@ function App() {
               <Route path="/blog/:slug" element={<BlogSingle />} />
               <Route path="/testimonial" element={<Testimonial />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/appointments/book" element={<AppointmentBooking />} />
+              <Route path="/community" element={<Community />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
