@@ -169,6 +169,21 @@ p{
     margin: 0 auto;
 }
 
+/* Responsive padding for mobile */
+@media (max-width: 767px) {
+    .container-wide {
+        padding: 0px 15px;
+    }
+    
+    .container-fluid-controlled {
+        padding: 0px 15px;
+    }
+    
+    .auto-container {
+        padding: 0px 15px;
+    }
+}
+
 .medium-container{
 	max-width:850px;
 }
