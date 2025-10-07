@@ -8,7 +8,7 @@ interface PageTitleProps {
 
 export default function PageTitle({
   title,
-  backgroundImage = '/images/background/4.jpg',
+  backgroundImage = '/images/background/page-title-bg.jpg',
   breadcrumbs = [],
 }: PageTitleProps) {
   return (
