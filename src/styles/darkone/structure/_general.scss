@@ -1,128 +1,123 @@
 //
-// _general.scss
+// general.scss - VP Customized
 //
 
+body {
+    font-family: $font-family-secondary;  // Muli for body
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    line-height: 1.5;
+    color: $body-color;
+    background-color: $body-bg;
+}
+
+// Headings use Poppins
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $font-family-primary;  // Poppins
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+    color: $headings-color;
+}
+
+// Page wrapper
 .wrapper {
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-// Main Content
+// Page content
 .page-content {
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    min-height: calc(100vh - $topbar-height);
-    padding: calc($spacer * 1) calc($spacer * 0.5) $footer-height calc($spacer * 0.5);
+    flex-grow: 1;
     margin-left: $sidebar-width;
+    transition: all 0.3s ease-in-out;
+    padding: $spacer * 1.5;
+    min-height: calc(100vh - $topbar-height - $footer-height);
 }
 
-// Animated Star
-$shooting-time: 3000ms;
-
-.animated-stars {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform: rotateZ(45deg);
+// Scrollbar styling (for webkit browsers)
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
 
-.shooting-star {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 2px;
-    background: linear-gradient(-45deg, rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
-    border-radius: 999px;
-    filter: drop-shadow(0 0 6px rgba(105, 155, 255, 1));
-    animation:
-        tail $shooting-time ease-in-out infinite,
-        shooting $shooting-time ease-in-out infinite;
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: calc(50% - 1px);
-        right: 0;
-        height: 2px;
-        background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
-        transform: translateX(50%) rotateZ(45deg);
-        border-radius: 100%;
-        animation: shining $shooting-time ease-in-out infinite;
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    
+    &:hover {
+        background: rgba(0, 0, 0, 0.3);
+    }
+}
+
+// Dark mode scrollbar
+[data-bs-theme="dark"] {
+    ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
     }
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: calc(50% - 1px);
-        right: 0;
-        height: 2px;
-        background: linear-gradient(-45deg, rgba(0, 0, 255, 0), rgba(95, 145, 255, 1), rgba(0, 0, 255, 0));
-        transform: translateX(50%) rotateZ(45deg);
-        border-radius: 100%;
-        animation: shining $shooting-time ease-in-out infinite;
-        transform: translateX(50%) rotateZ(-45deg);
-    }
-
-    @for $i from 1 through 20 {
-        &:nth-child(#{$i}) {
-            $delay: random(9999) + 0ms;
-            top: calc(50% - #{random(400) - 200px});
-            left: calc(50% - #{random(300) + 0px});
-            animation-delay: $delay;
-
-            &::before,
-            &::after {
-                animation-delay: $delay;
-            }
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
     }
 }
 
-@keyframes tail {
-    0% {
-        width: 0;
-    }
-
-    30% {
-        width: 100px;
-    }
-
-    100% {
-        width: 0;
-    }
+// Preloader
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $body-bg;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes shining {
-    0% {
-        width: 0;
-    }
-
-    50% {
-        width: 30px;
-    }
-
-    100% {
-        width: 0;
-    }
+// VP Brand utilities
+.text-vp-gold {
+    color: $vp-gold !important;
 }
 
-@keyframes shooting {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(300px);
-    }
+.text-vp-purple {
+    color: $vp-purple !important;
 }
 
-@keyframes sky {
-    0% {
-        transform: rotate(45deg);
-    }
+.text-vp-blue {
+    color: $vp-blue !important;
+}
 
-    100% {
-        transform: rotate(45 + 360deg);
-    }
+.bg-vp-gold {
+    background-color: $vp-gold !important;
+}
+
+.bg-vp-purple {
+    background-color: $vp-purple !important;
+}
+
+.bg-vp-blue {
+    background-color: $vp-blue !important;
+}
+
+// VP Soft background utilities
+.bg-soft-primary {
+    background-color: rgba($primary, 0.1) !important;
+}
+
+.bg-soft-secondary {
+    background-color: rgba($secondary, 0.1) !important;
+}
+
+.bg-soft-vp-gold {
+    background-color: rgba($vp-gold, 0.1) !important;
 }

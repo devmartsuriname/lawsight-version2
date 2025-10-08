@@ -1,13 +1,19 @@
 //
-// card.scss
+// card.scss - VP Customized
 //
 
 .card {
     margin-bottom: $spacer;
-    transition: all .35s;
+    transition: all .35s ease-in-out;
     box-shadow: $box-shadow;
-    border-style: double;
-    border-width: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $card-border-color;
+    border-radius: $card-border-radius;
+    
+    &:hover {
+        box-shadow: $box-shadow-lg;
+    }
 }
 
 .card-link+.card-link {
@@ -33,16 +39,30 @@
 
 .card-title {
     font-size: 1rem;
-    font-family: $font-family-primary;
+    font-family: $font-family-primary;  // Poppins for card titles
     font-weight: $font-weight-semibold;
+    color: $headings-color;
 }
 
 .card-subtitle {
     margin: 0;
+    font-family: $font-family-secondary;  // Muli for subtitles
+    color: $text-muted;
 }
 
 .sub-header {
     font-size: $font-size-base;
     margin-bottom: $spacer;
     color: $text-muted;
+    font-family: $font-family-secondary;
+}
+
+// VP Gold accent on hover for interactive cards
+.card.card-hover {
+    cursor: pointer;
+    
+    &:hover {
+        border-color: $vp-gold;
+        box-shadow: 0 4px 12px rgba($vp-gold, 0.2);
+    }
 }
