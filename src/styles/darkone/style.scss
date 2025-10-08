@@ -2,22 +2,17 @@
 // style.scss - Darkone Admin Theme with VP Customization
 //
 
-// Core files - Import Bootstrap functions first
+// Core files - Import Bootstrap functions and variables FIRST
 @import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
 
-// Config - Define custom variables BEFORE Bootstrap variables
+// Config - Define custom variables AFTER Bootstrap (can reference Bootstrap vars)
 @import "config/variables";
 @import "config/css-vars";
 @import "config/variables-dark";
 @import "config/theme-mode";
 
-// Import Bootstrap variables AFTER our custom theme variables
-@import "bootstrap/scss/variables";
-
-// Override Bootstrap defaults with CSS variables
-@import "config/bootstrap-overrides";
-
-// Bootstrap - Import main framework AFTER all variable definitions
+// Bootstrap - Import main framework
 @import "bootstrap/scss/bootstrap";
 
 // Structure
