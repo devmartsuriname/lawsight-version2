@@ -1,0 +1,84 @@
+//
+// _css-vars.scss - CSS Custom Properties for Darkone Admin
+// These variables enable dynamic theming and responsive layout
+//
+
+:root {
+  // Logo sizing
+  --#{$prefix}logo-lg-height: 24px;
+  --#{$prefix}logo-sm-height: 24px;
+
+  // Sidebar dimensions
+  --#{$prefix}sidebar-width: 260px;
+  --#{$prefix}sidebar-width-sm: 70px;
+
+  // Sidebar item styling
+  --#{$prefix}sidebar-item-icon-size: 20px;
+  --#{$prefix}sidebar-item-font-size: 14px;
+  --#{$prefix}sidebar-item-padding-x: 15px;
+  --#{$prefix}sidebar-item-padding-y: 12px;
+  --#{$prefix}sidebar-item-margin-y: 2px;
+
+  // Sidebar colors (light mode defaults)
+  --#{$prefix}sidebar-bg: #{$white};
+  --#{$prefix}sidebar-item-color: #{$gray-700};
+  --#{$prefix}sidebar-item-hover-bg: rgba(#{red($vp-gold)}, #{green($vp-gold)}, #{blue($vp-gold)}, 0.15);
+  --#{$prefix}sidebar-item-hover-color: #{$vp-gold};
+  --#{$prefix}sidebar-border-color: #{$gray-300};
+
+  // Topbar dimensions and colors
+  --#{$prefix}topbar-height: 70px;
+  --#{$prefix}topbar-bg: #{$white};
+  --#{$prefix}topbar-item-color: #{$gray-700};
+  --#{$prefix}topbar-search-bg: #{$gray-200};
+
+  // Footer
+  --#{$prefix}footer-height: 60px;
+}
+
+// Dark mode overrides
+[data-bs-theme="dark"] {
+  // Sidebar colors (dark mode)
+  --#{$prefix}sidebar-bg: #1a1d2e;
+  --#{$prefix}sidebar-item-color: #a0a7b5;
+  --#{$prefix}sidebar-item-hover-bg: rgba(#{red($vp-gold)}, #{green($vp-gold)}, #{blue($vp-gold)}, 0.15);
+  --#{$prefix}sidebar-item-hover-color: #{$vp-gold};
+  --#{$prefix}sidebar-border-color: rgba(255, 255, 255, 0.1);
+
+  // Topbar colors (dark mode)
+  --#{$prefix}topbar-bg: #1a1d2e;
+  --#{$prefix}topbar-item-color: #a0a7b5;
+  --#{$prefix}topbar-search-bg: rgba(255, 255, 255, 0.05);
+}
+
+// Dark sidebar color scheme (when data-sidebar-color="dark")
+[data-sidebar-color="dark"] {
+  --#{$prefix}sidebar-bg: #1a1d2e;
+  --#{$prefix}sidebar-item-color: #a0a7b5;
+  --#{$prefix}sidebar-item-hover-bg: rgba(#{red($vp-gold)}, #{green($vp-gold)}, #{blue($vp-gold)}, 0.15);
+  --#{$prefix}sidebar-item-hover-color: #{$vp-gold};
+  --#{$prefix}sidebar-border-color: rgba(255, 255, 255, 0.1);
+}
+
+// Light sidebar color scheme (when data-sidebar-color="light")
+[data-sidebar-color="light"] {
+  --#{$prefix}sidebar-bg: #{$white};
+  --#{$prefix}sidebar-item-color: #{$gray-700};
+  --#{$prefix}sidebar-item-hover-bg: rgba(#{red($vp-gold)}, #{green($vp-gold)}, #{blue($vp-gold)}, 0.15);
+  --#{$prefix}sidebar-item-hover-color: #{$vp-gold};
+  --#{$prefix}sidebar-border-color: #{$gray-300};
+}
+
+// Dark topbar color scheme (when data-topbar-color="dark")
+[data-topbar-color="dark"] {
+  --#{$prefix}topbar-bg: #1a1d2e;
+  --#{$prefix}topbar-item-color: #a0a7b5;
+  --#{$prefix}topbar-search-bg: rgba(255, 255, 255, 0.05);
+}
+
+// Light topbar color scheme (when data-topbar-color="light")
+[data-topbar-color="light"] {
+  --#{$prefix}topbar-bg: #{$white};
+  --#{$prefix}topbar-item-color: #{$gray-700};
+  --#{$prefix}topbar-search-bg: #{$gray-200};
+}

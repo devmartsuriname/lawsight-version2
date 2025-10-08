@@ -61,10 +61,13 @@ Fully isolate the **Darkone Admin Layout** from the **frontend layout (MainLayou
 
 ### Created
 - `src/styles/admin-root.scss` - Scoped admin styles wrapper
+- `src/styles/darkone/config/_css-vars.scss` - CSS custom properties for layout
+- `docs/P4C_AdminLayout_VerificationReport.md` - Comprehensive verification checklist results
 
 ### Updated
 - `src/layouts/AdminLayout.tsx` - Added `.admin-root` wrapper and style import
 - `src/styles/darkone/structure/_general.scss` - Namespaced admin layout classes
+- `src/styles/darkone/style.scss` - Added _css-vars.scss import
 
 ---
 
