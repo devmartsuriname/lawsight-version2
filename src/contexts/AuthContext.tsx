@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState, ReactNode } from 'react
 import { User, Session } from '@supabase/supabase-js'
 import { supabase } from '@/integrations/supabase/client'
 import { toast } from 'react-toastify'
-import Cookies from 'cookies-next'
+import { setCookie, deleteCookie } from 'cookies-next'
 
 type AuthContextType = {
   user: User | null
@@ -36,7 +36,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
   const saveSession = (session: Session | null) => {
     if (session) {
-      Cookies.set('vp-session', JSON.stringify(session), {
+      setCookie('vp-session', JSON.stringify(session), {
         maxAge: 60 * 60 * 24 * 7, // 7 days
         sameSite: 'lax',
         secure: true
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   }
 
   const removeSession = () => {
-    Cookies.remove('vp-session')
+    deleteCookie('vp-session')
   }
 
   useEffect(() => {

@@ -29,7 +29,7 @@ export default function Contact() {
       // For now, this is a mock submission
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      console.log('Form submitted:', formData);
+      // Form submitted successfully
       setSubmitMessage('Thank you! Your message has been sent successfully.');
       setFormData({ firstname: '', email: '', topic: '', message: '' });
     } catch (error) {
