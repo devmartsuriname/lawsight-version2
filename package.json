@@ -22,7 +22,8 @@
     "swiper": "^11.0.5",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
-    "yet-another-react-lightbox": "^3.25.0"
+    "yet-another-react-lightbox": "^3.25.0",
+    "zod": "^4.1.12"
   },
   "scripts": {
     "dev": "vite",
