@@ -62,7 +62,7 @@ const Notifications = () => {
               <h6 className="m-0 fs-16 fw-semibold">Notifications ({notificationList.length})</h6>
             </Col>
             <Col xs={'auto'}>
-              <Link to="" className="text-dark text-decoration-underline">
+              <Link to="" className="text-theme-dark text-decoration-underline">
                 <small>Clear All</small>
               </Link>
             </Col>
@@ -76,7 +76,7 @@ const Notifications = () => {
           </SimplebarReactClient>
         ) : (
           <div className="text-center py-4">
-            <p className="text-muted">No notifications</p>
+            <p className="text-theme-muted">No notifications</p>
           </div>
         )}
         {notificationList.length > 0 && (

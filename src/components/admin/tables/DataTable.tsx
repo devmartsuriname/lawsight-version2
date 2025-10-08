@@ -59,7 +59,7 @@ function DataTable<T extends Record<string, any>>({
       <tbody>
         {data.length === 0 ? (
           <tr>
-            <td colSpan={columns.length} className="text-center text-muted py-4">
+            <td colSpan={columns.length} className="text-center text-theme-muted py-4">
               No data available
             </td>
           </tr>

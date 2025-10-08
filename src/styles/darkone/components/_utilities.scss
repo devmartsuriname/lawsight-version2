@@ -1,0 +1,30 @@
+//
+// _utilities.scss - Theme-aware utility classes
+//
+
+// Text color utilities that respond to theme
+.text-theme-dark {
+  color: var(--bs-headings-color) !important;
+}
+
+.text-theme-muted {
+  color: var(--bs-text-muted) !important;
+}
+
+.text-theme-body {
+  color: var(--bs-body-color) !important;
+}
+
+// Background utilities
+.bg-theme-card {
+  background-color: var(--bs-card-bg) !important;
+}
+
+.bg-theme-body {
+  background-color: var(--bs-body-bg) !important;
+}
+
+// Border utilities
+.border-theme {
+  border-color: var(--bs-border-color) !important;
+}

@@ -64,8 +64,8 @@ const StatCard = ({ title, count, icon, series, trend }: StatCardProps) => {
       <CardBody>
         <Row className="align-items-center">
           <Col xs={6}>
-            <p className="text-muted mb-1 text-truncate">{title}</p>
-            <h3 className="text-dark mt-2 mb-0">{count}</h3>
+            <p className="text-theme-muted mb-1 text-truncate">{title}</p>
+            <h3 className="text-theme-dark mt-2 mb-0">{count}</h3>
             {trend && (
               <span className={`badge badge-soft-${trend.isPositive ? 'success' : 'danger'} mt-2`}>
                 {trend.isPositive ? '↑' : '↓'} {trend.value}

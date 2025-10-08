@@ -24,7 +24,7 @@ const AdminCard = ({
         <CardHeader className="d-flex align-items-center justify-content-between gap-2">
           <div className="flex-grow-1">
             {title && <h4 className="card-title mb-0">{title}</h4>}
-            {subtitle && <p className="text-muted mb-0 mt-1">{subtitle}</p>}
+            {subtitle && <p className="text-theme-muted mb-0 mt-1">{subtitle}</p>}
           </div>
           {headerActions && <div className="d-flex gap-2">{headerActions}</div>}
         </CardHeader>

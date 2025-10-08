@@ -26,7 +26,7 @@ const Dashboard = () => {
       label: 'Action',
       render: (item: typeof recentActivities[0]) => (
         <span>
-          <span className="text-muted">{item.action}</span>{' '}
+          <span className="text-theme-muted">{item.action}</span>{' '}
           <span className="fw-medium">{item.target}</span>
         </span>
       )
@@ -35,7 +35,7 @@ const Dashboard = () => {
       key: 'timestamp',
       label: 'Time',
       render: (item: typeof recentActivities[0]) => (
-        <span className="text-muted">{item.timestamp}</span>
+        <span className="text-theme-muted">{item.timestamp}</span>
       )
     }
   ]
