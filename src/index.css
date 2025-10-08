@@ -1,4 +1,11 @@
 /**
+ * Tailwind CSS imports
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
  * LaSight Law - Global CSS Custom Properties
  * Runtime theming support using CSS variables
  * Based on design tokens from src/styles/tokens.scss

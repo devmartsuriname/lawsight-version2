@@ -68,16 +68,16 @@ export default function Register() {
           <meta name="robots" content="noindex" />
         </Helmet>
 
-        <div className="min-h-screen flex items-center justify-center bg-[var(--admin-bg-primary)] px-4">
+        <div className="min-h-screen flex items-center justify-center bg-admin-bg-primary px-4">
           <div className="w-full max-w-md">
-            <div className="bg-[var(--admin-bg-card)] rounded-[var(--admin-radius-xl)] border border-[var(--admin-border-subtle)] shadow-[var(--admin-shadow-xl)] p-8 text-center">
-              <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 shadow-[var(--admin-shadow-lg)] mb-6">
+            <div className="bg-admin-bg-card rounded-admin-xl border border-admin-border-subtle shadow-admin-xl p-8 text-center">
+              <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 shadow-admin-lg mb-6">
                 <CheckCircle className="h-8 w-8 text-white" />
               </div>
-              <h2 className="text-2xl font-bold text-[var(--admin-text-primary)] mb-3">
+              <h2 className="text-2xl font-bold text-admin-text-primary mb-3">
                 Registration Successful!
               </h2>
-              <p className="text-[var(--admin-text-secondary)] mb-8">
+              <p className="text-admin-text-secondary mb-8">
                 Please check your email to verify your account before signing in.
               </p>
               <AdminButton
@@ -102,35 +102,35 @@ export default function Register() {
         <meta name="robots" content="noindex" />
       </Helmet>
 
-      <div className="min-h-screen flex items-center justify-center bg-[var(--admin-bg-primary)] px-4 py-8">
+      <div className="min-h-screen flex items-center justify-center bg-admin-bg-primary px-4 py-8">
         <div className="w-full max-w-md">
           {/* Logo/Brand Section */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center h-16 w-16 rounded-[var(--admin-radius-lg)] bg-gradient-to-br from-[var(--admin-accent-gold)] to-[var(--admin-accent-gold-light)] shadow-[var(--admin-shadow-gold)] mb-4">
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-admin-lg bg-gradient-to-br from-admin-accent-gold to-admin-accent-gold-light shadow-admin-gold mb-4">
               <UserPlus className="h-8 w-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold admin-gradient-text mb-2">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-admin-accent-gold to-admin-accent-gold-light bg-clip-text text-transparent mb-2">
               VP Admin Portal
             </h1>
-            <p className="text-[var(--admin-text-secondary)]">
+            <p className="text-admin-text-secondary">
               Office of the Vice President
             </p>
           </div>
 
           {/* Register Card */}
-          <div className="bg-[var(--admin-bg-card)] rounded-[var(--admin-radius-xl)] border border-[var(--admin-border-subtle)] shadow-[var(--admin-shadow-xl)] p-8">
+          <div className="bg-admin-bg-card rounded-admin-xl border border-admin-border-subtle shadow-admin-xl p-6 sm:p-8">
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[var(--admin-text-primary)] mb-2">
+              <h2 className="text-xl sm:text-2xl font-bold text-admin-text-primary mb-2">
                 Create Admin Account
               </h2>
-              <p className="text-[var(--admin-text-secondary)]">
+              <p className="text-sm text-admin-text-secondary">
                 Register to access the admin panel
               </p>
             </div>
 
-            <form onSubmit={handleRegister} className="space-y-5">
+            <form onSubmit={handleRegister} className="space-y-4">
               {error && (
-                <div className="rounded-[var(--admin-radius-md)] bg-red-500/10 border border-red-500/20 p-4">
+                <div className="rounded-admin-md bg-red-500/10 border border-red-500/20 p-4">
                   <p className="text-sm text-red-500">{error}</p>
                 </div>
               )}
@@ -183,24 +183,26 @@ export default function Register() {
                 icon={Lock}
               />
 
-              <AdminButton
-                type="submit"
-                variant="primary"
-                size="lg"
-                fullWidth
-                loading={loading}
-                icon={UserPlus}
-              >
-                {loading ? 'Creating account...' : 'Create Account'}
-              </AdminButton>
+              <div className="pt-2">
+                <AdminButton
+                  type="submit"
+                  variant="primary"
+                  size="lg"
+                  fullWidth
+                  loading={loading}
+                  icon={UserPlus}
+                >
+                  {loading ? 'Creating account...' : 'Create Account'}
+                </AdminButton>
+              </div>
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-sm text-[var(--admin-text-secondary)]">
+              <p className="text-sm text-admin-text-secondary">
                 Already have an account?{' '}
                 <Link
                   to="/auth/login"
-                  className="font-medium text-[var(--admin-accent-gold)] hover:text-[var(--admin-accent-gold-light)] transition-colors"
+                  className="font-medium text-admin-accent-gold hover:text-admin-accent-gold-light transition-colors"
                 >
                   Sign in
                 </Link>
@@ -209,7 +211,7 @@ export default function Register() {
           </div>
 
           {/* Footer */}
-          <p className="text-center text-xs text-[var(--admin-text-muted)] mt-8">
+          <p className="text-center text-xs text-admin-text-muted mt-8">
             Protected by enterprise-grade security
           </p>
         </div>

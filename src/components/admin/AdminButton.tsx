@@ -26,15 +26,15 @@ export default function AdminButton({
   const getVariantClass = () => {
     switch (variant) {
       case 'primary':
-        return 'bg-[var(--admin-accent-gold)] hover:bg-[var(--admin-accent-gold-light)] text-white shadow-[var(--admin-shadow-gold)]';
+        return 'bg-admin-accent-gold hover:bg-admin-accent-gold-light text-white shadow-admin-gold';
       case 'secondary':
-        return 'bg-[var(--admin-bg-tertiary)] hover:bg-[var(--admin-bg-hover)] text-[var(--admin-text-primary)] border border-[var(--admin-border-subtle)]';
+        return 'bg-admin-bg-tertiary hover:bg-admin-bg-hover text-admin-text-primary border border-admin-border-subtle';
       case 'outline':
-        return 'bg-transparent hover:bg-[var(--admin-bg-hover)] text-[var(--admin-text-primary)] border border-[var(--admin-border-medium)]';
+        return 'bg-transparent hover:bg-admin-bg-hover text-admin-text-primary border border-admin-border-medium';
       case 'ghost':
-        return 'bg-transparent hover:bg-[var(--admin-bg-hover)] text-[var(--admin-text-secondary)] hover:text-[var(--admin-text-primary)]';
+        return 'bg-transparent hover:bg-admin-bg-hover text-admin-text-secondary hover:text-admin-text-primary';
       case 'danger':
-        return 'bg-red-500 hover:bg-red-600 text-white shadow-[var(--admin-shadow-md)]';
+        return 'bg-red-500 hover:bg-red-600 text-white shadow-admin-md';
       default:
         return '';
     }
@@ -53,7 +53,7 @@ export default function AdminButton({
 
   return (
     <button
-      className={`inline-flex items-center justify-center gap-2 rounded-[var(--admin-radius-md)] font-medium transition-all duration-300 ${getVariantClass()} ${getSizeClass()} ${
+      className={`inline-flex items-center justify-center gap-2 rounded-admin-md font-medium transition-all duration-300 ${getVariantClass()} ${getSizeClass()} ${
         fullWidth ? 'w-full' : ''
       } ${disabled || loading ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'} ${className}`}
       disabled={disabled || loading}

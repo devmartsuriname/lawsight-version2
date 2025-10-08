@@ -26,13 +26,13 @@ export default function StatCard({
   const getIconBgClass = () => {
     switch (iconColor) {
       case 'purple':
-        return 'bg-gradient-to-br from-purple-500/15 to-purple-500/5';
+        return 'from-purple-500/15 to-purple-500/5';
       case 'blue':
-        return 'bg-gradient-to-br from-blue-500/15 to-blue-500/5';
+        return 'from-blue-500/15 to-blue-500/5';
       case 'green':
-        return 'bg-gradient-to-br from-green-500/15 to-green-500/5';
+        return 'from-green-500/15 to-green-500/5';
       default:
-        return 'bg-gradient-to-br from-[var(--admin-accent-gold)]/15 to-[var(--admin-accent-gold)]/5';
+        return 'from-admin-accent-gold/15 to-admin-accent-gold/5';
     }
   };
 
@@ -45,7 +45,7 @@ export default function StatCard({
       case 'green':
         return 'text-green-500';
       default:
-        return 'text-[var(--admin-accent-gold)]';
+        return 'text-admin-accent-gold';
     }
   };
 
@@ -56,11 +56,11 @@ export default function StatCard({
       case 'negative':
         return 'text-red-500';
       default:
-        return 'text-[var(--admin-text-secondary)]';
+        return 'text-admin-text-secondary';
     }
   };
 
-  const getChartColorClass = () => {
+  const getChartColor = () => {
     switch (iconColor) {
       case 'purple':
         return '#8b5cf6';
@@ -69,32 +69,32 @@ export default function StatCard({
       case 'green':
         return '#10b981';
       default:
-        return 'hsl(42, 48%, 59%)';
+        return '#c5a467';
     }
   };
 
   if (loading) {
     return (
-      <div className="bg-[var(--admin-bg-card)] rounded-[var(--admin-radius-lg)] border border-[var(--admin-border-subtle)] p-6 shadow-[var(--admin-shadow-md)] animate-pulse">
+      <div className="bg-admin-bg-card rounded-admin-lg border border-admin-border-subtle p-6 shadow-admin-md animate-pulse">
         <div className="flex items-start justify-between">
           <div className="space-y-3 flex-1">
-            <div className="h-4 bg-[var(--admin-bg-tertiary)] rounded w-24"></div>
-            <div className="h-8 bg-[var(--admin-bg-tertiary)] rounded w-32"></div>
+            <div className="h-4 bg-admin-bg-tertiary rounded w-24"></div>
+            <div className="h-8 bg-admin-bg-tertiary rounded w-32"></div>
           </div>
-          <div className="h-12 w-12 bg-[var(--admin-bg-tertiary)] rounded-lg"></div>
+          <div className="h-12 w-12 bg-admin-bg-tertiary rounded-lg"></div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-[var(--admin-bg-card)] rounded-[var(--admin-radius-lg)] border border-[var(--admin-border-subtle)] p-6 shadow-[var(--admin-shadow-md)] hover:shadow-[var(--admin-shadow-lg)] transition-all duration-300 group">
+    <div className="bg-admin-bg-card rounded-admin-lg border border-admin-border-subtle p-6 shadow-admin-md hover:shadow-admin-lg transition-all duration-300 group">
       <div className="flex items-start justify-between mb-4">
         <div>
-          <p className="text-sm text-[var(--admin-text-secondary)] font-medium uppercase tracking-wide">
+          <p className="text-sm text-admin-text-secondary font-medium uppercase tracking-wide">
             {title}
           </p>
-          <h3 className="text-3xl font-bold text-[var(--admin-text-primary)] mt-2">
+          <h3 className="text-3xl font-bold text-admin-text-primary mt-2">
             {value}
           </h3>
           {change && (
@@ -104,7 +104,7 @@ export default function StatCard({
           )}
         </div>
         <div
-          className={`h-12 w-12 rounded-lg ${getIconBgClass()} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+          className={`h-12 w-12 rounded-lg bg-gradient-to-br ${getIconBgClass()} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
         >
           <Icon className={`h-6 w-6 ${getIconColorClass()}`} />
         </div>
@@ -118,12 +118,12 @@ export default function StatCard({
                 <linearGradient id={`gradient-${iconColor}`} x1="0" y1="0" x2="0" y2="1">
                   <stop
                     offset="5%"
-                    stopColor={getChartColorClass()}
+                    stopColor={getChartColor()}
                     stopOpacity={0.3}
                   />
                   <stop
                     offset="95%"
-                    stopColor={getChartColorClass()}
+                    stopColor={getChartColor()}
                     stopOpacity={0}
                   />
                 </linearGradient>
@@ -131,7 +131,7 @@ export default function StatCard({
               <Area
                 type="monotone"
                 dataKey="value"
-                stroke={getChartColorClass()}
+                stroke={getChartColor()}
                 strokeWidth={2}
                 fillOpacity={1}
                 fill={`url(#gradient-${iconColor})`}

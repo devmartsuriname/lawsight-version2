@@ -26,14 +26,14 @@ export default function AdminTable({
 }: AdminTableProps) {
   if (loading) {
     return (
-      <div className="w-full overflow-x-auto admin-scrollbar">
+      <div className="w-full overflow-x-auto">
         <table className="w-full">
           <thead>
-            <tr className="border-b border-[var(--admin-border-subtle)]">
+            <tr className="border-b border-admin-border-subtle">
               {columns.map((col) => (
                 <th
                   key={col.key}
-                  className="px-6 py-4 text-left text-xs font-medium text-[var(--admin-text-secondary)] uppercase tracking-wider"
+                  className="px-6 py-4 text-left text-xs font-medium text-admin-text-secondary uppercase tracking-wider"
                 >
                   {col.label}
                 </th>
@@ -43,15 +43,15 @@ export default function AdminTable({
           </thead>
           <tbody>
             {[...Array(5)].map((_, idx) => (
-              <tr key={idx} className="border-b border-[var(--admin-border-subtle)]">
+              <tr key={idx} className="border-b border-admin-border-subtle">
                 {columns.map((col) => (
                   <td key={col.key} className="px-6 py-4">
-                    <div className="h-4 bg-[var(--admin-bg-tertiary)] rounded animate-pulse"></div>
+                    <div className="h-4 bg-admin-bg-tertiary rounded animate-pulse"></div>
                   </td>
                 ))}
                 {actions && (
                   <td className="px-6 py-4">
-                    <div className="h-4 bg-[var(--admin-bg-tertiary)] rounded animate-pulse w-20"></div>
+                    <div className="h-4 bg-admin-bg-tertiary rounded animate-pulse w-20"></div>
                   </td>
                 )}
               </tr>
@@ -65,37 +65,37 @@ export default function AdminTable({
   if (data.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-[var(--admin-text-secondary)]">{emptyMessage}</p>
+        <p className="text-admin-text-secondary">{emptyMessage}</p>
       </div>
     );
   }
 
   return (
-    <div className="w-full overflow-x-auto admin-scrollbar">
+    <div className="w-full overflow-x-auto">
       <table className="w-full">
         <thead>
-          <tr className="border-b border-[var(--admin-border-subtle)] bg-[var(--admin-bg-secondary)]">
+          <tr className="border-b border-admin-border-subtle bg-admin-bg-secondary">
             {columns.map((col) => (
               <th
                 key={col.key}
                 style={{ width: col.width }}
-                className={`px-6 py-4 text-${col.align || 'left'} text-xs font-semibold text-[var(--admin-text-primary)] uppercase tracking-wider`}
+                className={`px-6 py-4 text-${col.align || 'left'} text-xs font-semibold text-admin-text-primary uppercase tracking-wider`}
               >
                 {col.label}
               </th>
             ))}
             {actions && (
-              <th className="px-6 py-4 text-right text-xs font-semibold text-[var(--admin-text-primary)] uppercase tracking-wider">
+              <th className="px-6 py-4 text-right text-xs font-semibold text-admin-text-primary uppercase tracking-wider">
                 Actions
               </th>
             )}
           </tr>
         </thead>
-        <tbody className="divide-y divide-[var(--admin-border-subtle)]">
+        <tbody className="divide-y divide-admin-border-subtle">
           {data.map((row, idx) => (
             <tr
               key={idx}
-              className={`hover:bg-[var(--admin-bg-hover)] transition-colors ${
+              className={`hover:bg-admin-bg-hover transition-colors ${
                 onRowClick ? 'cursor-pointer' : ''
               }`}
               onClick={() => onRowClick?.(row)}
@@ -103,7 +103,7 @@ export default function AdminTable({
               {columns.map((col) => (
                 <td
                   key={col.key}
-                  className={`px-6 py-4 text-sm text-[var(--admin-text-primary)] text-${col.align || 'left'}`}
+                  className={`px-6 py-4 text-sm text-admin-text-primary text-${col.align || 'left'}`}
                 >
                   {row[col.key]}
                 </td>

@@ -66,35 +66,35 @@ export default function Login() {
         <meta name="robots" content="noindex" />
       </Helmet>
 
-      <div className="min-h-screen flex items-center justify-center bg-[var(--admin-bg-primary)] px-4">
+      <div className="min-h-screen flex items-center justify-center bg-admin-bg-primary px-4 py-8">
         <div className="w-full max-w-md">
           {/* Logo/Brand Section */}
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center h-16 w-16 rounded-[var(--admin-radius-lg)] bg-gradient-to-br from-[var(--admin-accent-gold)] to-[var(--admin-accent-gold-light)] shadow-[var(--admin-shadow-gold)] mb-4">
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-admin-lg bg-gradient-to-br from-admin-accent-gold to-admin-accent-gold-light shadow-admin-gold mb-4">
               <LogIn className="h-8 w-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold admin-gradient-text mb-2">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-admin-accent-gold to-admin-accent-gold-light bg-clip-text text-transparent mb-2">
               VP Admin Portal
             </h1>
-            <p className="text-[var(--admin-text-secondary)]">
+            <p className="text-admin-text-secondary">
               Office of the Vice President
             </p>
           </div>
 
           {/* Login Card */}
-          <div className="bg-[var(--admin-bg-card)] rounded-[var(--admin-radius-xl)] border border-[var(--admin-border-subtle)] shadow-[var(--admin-shadow-xl)] p-8">
+          <div className="bg-admin-bg-card rounded-admin-xl border border-admin-border-subtle shadow-admin-xl p-6 sm:p-8">
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[var(--admin-text-primary)] mb-2">
+              <h2 className="text-xl sm:text-2xl font-bold text-admin-text-primary mb-2">
                 Welcome back
               </h2>
-              <p className="text-[var(--admin-text-secondary)]">
+              <p className="text-sm text-admin-text-secondary">
                 Sign in to access the admin panel
               </p>
             </div>
 
-            <form onSubmit={handleLogin} className="space-y-6">
+            <form onSubmit={handleLogin} className="space-y-5">
               {error && (
-                <div className="rounded-[var(--admin-radius-md)] bg-red-500/10 border border-red-500/20 p-4">
+                <div className="rounded-admin-md bg-red-500/10 border border-red-500/20 p-4">
                   <p className="text-sm text-red-500">{error}</p>
                 </div>
               )}
@@ -123,19 +123,19 @@ export default function Login() {
                 icon={Lock}
               />
 
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
-                    className="rounded border-[var(--admin-border-medium)] bg-[var(--admin-bg-tertiary)] text-[var(--admin-accent-gold)] focus:ring-[var(--admin-accent-gold)] focus:ring-offset-[var(--admin-bg-card)]"
+                    className="rounded border-admin-border-medium bg-admin-bg-tertiary text-admin-accent-gold focus:ring-admin-accent-gold focus:ring-offset-admin-bg-card"
                   />
-                  <span className="text-sm text-[var(--admin-text-secondary)]">
+                  <span className="text-sm text-admin-text-secondary">
                     Remember me
                   </span>
                 </label>
                 <Link
                   to="/auth/forgot-password"
-                  className="text-sm font-medium text-[var(--admin-accent-gold)] hover:text-[var(--admin-accent-gold-light)] transition-colors"
+                  className="text-sm font-medium text-admin-accent-gold hover:text-admin-accent-gold-light transition-colors"
                 >
                   Forgot password?
                 </Link>
@@ -154,11 +154,11 @@ export default function Login() {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-sm text-[var(--admin-text-secondary)]">
+              <p className="text-sm text-admin-text-secondary">
                 Don't have an account?{' '}
                 <Link
                   to="/auth/register"
-                  className="font-medium text-[var(--admin-accent-gold)] hover:text-[var(--admin-accent-gold-light)] transition-colors"
+                  className="font-medium text-admin-accent-gold hover:text-admin-accent-gold-light transition-colors"
                 >
                   Register here
                 </Link>
@@ -167,7 +167,7 @@ export default function Login() {
           </div>
 
           {/* Footer */}
-          <p className="text-center text-xs text-[var(--admin-text-muted)] mt-8">
+          <p className="text-center text-xs text-admin-text-muted mt-8">
             Protected by enterprise-grade security
           </p>
         </div>

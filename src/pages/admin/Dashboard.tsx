@@ -110,22 +110,22 @@ export default function Dashboard() {
 
       <div className="space-y-6">
         {/* Welcome Section */}
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-[var(--admin-text-primary)] mb-2">
+            <h1 className="text-2xl sm:text-3xl font-bold text-admin-text-primary mb-2">
               Welcome back, Admin
             </h1>
-            <p className="text-[var(--admin-text-secondary)]">
+            <p className="text-sm sm:text-base text-admin-text-secondary">
               Here's what's happening with your website today.
             </p>
           </div>
-          <AdminButton icon={Plus} variant="primary" size="lg">
+          <AdminButton icon={Plus} variant="primary" size="lg" className="w-full sm:w-auto">
             Quick Add
           </AdminButton>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <StatCard
             title="Total Posts"
             value={stats.totalPosts}
@@ -169,7 +169,7 @@ export default function Dashboard() {
         </div>
 
         {/* Quick Actions & Recent Activity */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Quick Actions */}
           <AdminCard title="Quick Actions" variant="gradient" className="lg:col-span-1">
             <div className="space-y-3">
@@ -244,38 +244,38 @@ export default function Dashboard() {
         </div>
 
         {/* System Info */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           <AdminCard variant="glass" hover>
             <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-[var(--admin-radius-lg)] bg-gradient-to-br from-[var(--admin-accent-gold)]/15 to-[var(--admin-accent-gold)]/5 flex items-center justify-center">
-                <Users className="h-6 w-6 text-[var(--admin-accent-gold)]" />
+              <div className="h-12 w-12 rounded-admin-lg bg-gradient-to-br from-admin-accent-gold/15 to-admin-accent-gold/5 flex items-center justify-center">
+                <Users className="h-6 w-6 text-admin-accent-gold" />
               </div>
               <div>
-                <p className="text-sm text-[var(--admin-text-secondary)]">Active Users</p>
-                <p className="text-2xl font-bold text-[var(--admin-text-primary)]">1,234</p>
+                <p className="text-sm text-admin-text-secondary">Active Users</p>
+                <p className="text-2xl font-bold text-admin-text-primary">1,234</p>
               </div>
             </div>
           </AdminCard>
 
           <AdminCard variant="glass" hover>
             <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-[var(--admin-radius-lg)] bg-gradient-to-br from-purple-500/15 to-purple-500/5 flex items-center justify-center">
+              <div className="h-12 w-12 rounded-admin-lg bg-gradient-to-br from-purple-500/15 to-purple-500/5 flex items-center justify-center">
                 <TrendingUp className="h-6 w-6 text-purple-500" />
               </div>
               <div>
-                <p className="text-sm text-[var(--admin-text-secondary)]">Page Views</p>
-                <p className="text-2xl font-bold text-[var(--admin-text-primary)]">45.2K</p>
+                <p className="text-sm text-admin-text-secondary">Page Views</p>
+                <p className="text-2xl font-bold text-admin-text-primary">45.2K</p>
               </div>
             </div>
           </AdminCard>
 
-          <AdminCard variant="glass" hover>
+          <AdminCard variant="glass" hover className="sm:col-span-2 md:col-span-1">
             <div className="flex items-center gap-4">
-              <div className="h-12 w-12 rounded-[var(--admin-radius-lg)] bg-gradient-to-br from-blue-500/15 to-blue-500/5 flex items-center justify-center">
+              <div className="h-12 w-12 rounded-admin-lg bg-gradient-to-br from-blue-500/15 to-blue-500/5 flex items-center justify-center">
                 <Activity className="h-6 w-6 text-blue-500" />
               </div>
               <div>
-                <p className="text-sm text-[var(--admin-text-secondary)]">Server Status</p>
+                <p className="text-sm text-admin-text-secondary">Server Status</p>
                 <p className="text-2xl font-bold text-green-500">Healthy</p>
               </div>
             </div>

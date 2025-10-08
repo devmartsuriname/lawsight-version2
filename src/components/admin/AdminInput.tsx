@@ -40,23 +40,9 @@ const AdminInput = forwardRef<
     },
     ref
   ) => {
-    const inputClasses = `
-    w-full px-4 py-2.5 
-    bg-[var(--admin-bg-tertiary)] 
-    border border-[var(--admin-border-subtle)] 
-    rounded-[var(--admin-radius-md)] 
-    text-[var(--admin-text-primary)] 
-    placeholder-[var(--admin-text-muted)]
-    transition-all duration-300
-    focus:outline-none 
-    focus:ring-2 
-    focus:ring-[var(--admin-accent-gold)] 
-    focus:border-transparent
-    hover:border-[var(--admin-border-medium)]
-    ${error ? 'border-red-500 focus:ring-red-500' : ''}
-    ${Icon ? 'pl-10' : ''}
-    ${className}
-  `;
+    const inputClasses = `w-full px-4 py-2.5 bg-admin-bg-tertiary border border-admin-border-subtle rounded-admin-md text-admin-text-primary placeholder-admin-text-muted transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-admin-accent-gold focus:border-transparent hover:border-admin-border-medium ${
+      error ? 'border-red-500 focus:ring-red-500' : ''
+    } ${Icon ? 'pl-10' : ''} ${className}`;
 
     const InputElement =
       as === 'textarea' ? (
@@ -77,25 +63,21 @@ const AdminInput = forwardRef<
     return (
       <div className={fullWidth ? 'w-full' : ''}>
         {label && (
-          <label className="block text-sm font-medium text-[var(--admin-text-primary)] mb-2">
+          <label className="block text-sm font-medium text-admin-text-primary mb-2">
             {label}
           </label>
         )}
         <div className="relative">
           {Icon && (
             <div className="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
-              <Icon className="h-5 w-5 text-[var(--admin-text-muted)]" />
+              <Icon className="h-5 w-5 text-admin-text-muted" />
             </div>
           )}
           {InputElement}
         </div>
-        {error && (
-          <p className="mt-1 text-sm text-red-500">{error}</p>
-        )}
+        {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
         {helperText && !error && (
-          <p className="mt-1 text-sm text-[var(--admin-text-secondary)]">
-            {helperText}
-          </p>
+          <p className="mt-1 text-sm text-admin-text-secondary">{helperText}</p>
         )}
       </div>
     );

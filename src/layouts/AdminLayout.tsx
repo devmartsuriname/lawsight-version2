@@ -63,25 +63,27 @@ export default function AdminLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--admin-bg-primary)] admin-scrollbar">
+    <div className="min-h-screen bg-admin-bg-primary">
       {/* Sidebar */}
       <aside
         className={`fixed left-0 top-0 z-40 h-screen transition-all duration-300 ${
           sidebarOpen ? 'w-64' : 'w-16'
-        } bg-[var(--admin-bg-secondary)] border-r border-[var(--admin-border-subtle)] shadow-[var(--admin-shadow-xl)]`}
+        } bg-admin-bg-secondary border-r border-admin-border-subtle shadow-admin-xl`}
       >
-        <div className="flex h-full flex-col overflow-y-auto admin-scrollbar">
+        <div className="flex h-full flex-col overflow-y-auto">
           {/* Logo/Brand */}
-          <div className="flex h-16 items-center justify-between border-b border-[var(--admin-border-subtle)] px-4">
+          <div className="flex h-16 items-center justify-between border-b border-admin-border-subtle px-4">
             {sidebarOpen ? (
               <>
                 <div>
-                  <h1 className="text-lg font-bold admin-gradient-text">VP Admin</h1>
-                  <p className="text-xs text-[var(--admin-text-secondary)]">Content Management</p>
+                  <h1 className="text-lg font-bold bg-gradient-to-r from-admin-accent-gold to-admin-accent-gold-light bg-clip-text text-transparent">
+                    VP Admin
+                  </h1>
+                  <p className="text-xs text-admin-text-secondary">Content Management</p>
                 </div>
                 <button
                   onClick={() => setSidebarOpen(false)}
-                  className="p-1.5 rounded-md hover:bg-[var(--admin-bg-hover)] text-[var(--admin-text-secondary)] hover:text-[var(--admin-text-primary)] transition-colors"
+                  className="p-1.5 rounded-md hover:bg-admin-bg-hover text-admin-text-secondary hover:text-admin-text-primary transition-colors"
                   aria-label="Collapse sidebar"
                 >
                   <X className="h-5 w-5" />
@@ -90,7 +92,7 @@ export default function AdminLayout() {
             ) : (
               <button
                 onClick={() => setSidebarOpen(true)}
-                className="p-1.5 rounded-md hover:bg-[var(--admin-bg-hover)] text-[var(--admin-text-secondary)] hover:text-[var(--admin-text-primary)] transition-colors mx-auto"
+                className="p-1.5 rounded-md hover:bg-admin-bg-hover text-admin-text-secondary hover:text-admin-text-primary transition-colors mx-auto"
                 aria-label="Expand sidebar"
               >
                 <Menu className="h-5 w-5" />
@@ -107,10 +109,10 @@ export default function AdminLayout() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center gap-3 rounded-[var(--admin-radius-md)] px-3 py-2.5 text-sm font-medium transition-all duration-300 group ${
+                  className={`flex items-center gap-3 rounded-admin-md px-3 py-2.5 text-sm font-medium transition-all duration-300 group ${
                     active
-                      ? 'bg-[var(--admin-accent-gold)] text-white shadow-[var(--admin-shadow-gold)]'
-                      : 'text-[var(--admin-text-secondary)] hover:bg-[var(--admin-bg-hover)] hover:text-[var(--admin-text-primary)]'
+                      ? 'bg-admin-accent-gold text-white shadow-admin-gold'
+                      : 'text-admin-text-secondary hover:bg-admin-bg-hover hover:text-admin-text-primary'
                   }`}
                   title={!sidebarOpen ? item.name : undefined}
                 >
@@ -122,10 +124,10 @@ export default function AdminLayout() {
           </nav>
 
           {/* Footer Actions */}
-          <div className="border-t border-[var(--admin-border-subtle)] p-3 space-y-1">
+          <div className="border-t border-admin-border-subtle p-3 space-y-1">
             <button
               onClick={toggleTheme}
-              className="flex w-full items-center gap-3 rounded-[var(--admin-radius-md)] px-3 py-2.5 text-sm font-medium text-[var(--admin-text-secondary)] hover:bg-[var(--admin-bg-hover)] hover:text-[var(--admin-text-primary)] transition-all duration-300"
+              className="flex w-full items-center gap-3 rounded-admin-md px-3 py-2.5 text-sm font-medium text-admin-text-secondary hover:bg-admin-bg-hover hover:text-admin-text-primary transition-all duration-300"
               title={!sidebarOpen ? 'Toggle theme' : undefined}
             >
               {getThemeIcon()}
@@ -133,7 +135,7 @@ export default function AdminLayout() {
             </button>
             <button
               onClick={handleLogout}
-              className="flex w-full items-center gap-3 rounded-[var(--admin-radius-md)] px-3 py-2.5 text-sm font-medium text-[var(--admin-text-secondary)] hover:bg-red-500/10 hover:text-red-500 transition-all duration-300"
+              className="flex w-full items-center gap-3 rounded-admin-md px-3 py-2.5 text-sm font-medium text-admin-text-secondary hover:bg-red-500/10 hover:text-red-500 transition-all duration-300"
               title={!sidebarOpen ? 'Logout' : undefined}
             >
               <LogOut className="h-5 w-5" />
@@ -150,19 +152,19 @@ export default function AdminLayout() {
         }`}
       >
         {/* Top Bar */}
-        <header className="sticky top-0 z-30 border-b border-[var(--admin-border-subtle)] bg-[var(--admin-bg-card)] shadow-[var(--admin-shadow-md)] backdrop-blur-sm bg-opacity-95">
+        <header className="sticky top-0 z-30 border-b border-admin-border-subtle bg-admin-bg-card/95 shadow-admin-md backdrop-blur-sm">
           <div className="flex h-16 items-center justify-between px-6">
             <div className="flex items-center gap-4">
               {!sidebarOpen && (
                 <button
                   onClick={() => setSidebarOpen(true)}
-                  className="rounded-[var(--admin-radius-md)] p-2 text-[var(--admin-text-secondary)] hover:bg-[var(--admin-bg-hover)] hover:text-[var(--admin-text-primary)] transition-colors"
+                  className="rounded-admin-md p-2 text-admin-text-secondary hover:bg-admin-bg-hover hover:text-admin-text-primary transition-colors"
                   aria-label="Open sidebar"
                 >
                   <Menu className="h-5 w-5" />
                 </button>
               )}
-              <h2 className="text-lg font-semibold text-[var(--admin-text-primary)]">
+              <h2 className="text-lg font-semibold text-admin-text-primary">
                 {menuItems.find((item) => item.path === location.pathname)?.name || 'Admin Panel'}
               </h2>
             </div>
@@ -172,9 +174,9 @@ export default function AdminLayout() {
                 to="/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-[var(--admin-text-secondary)] hover:text-[var(--admin-accent-gold)] transition-colors font-medium"
+                className="flex items-center gap-2 text-sm text-admin-text-secondary hover:text-admin-accent-gold transition-colors font-medium"
               >
-                <span>View Site</span>
+                <span className="hidden sm:inline">View Site</span>
                 <ExternalLink className="h-4 w-4" />
               </Link>
             </div>
@@ -182,7 +184,7 @@ export default function AdminLayout() {
         </header>
 
         {/* Page Content */}
-        <main className="p-6 min-h-[calc(100vh-4rem)]">
+        <main className="p-4 sm:p-6 min-h-[calc(100vh-4rem)]">
           <Outlet />
         </main>
       </div>
