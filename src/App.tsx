@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import MainLayout from '@/layouts/MainLayout';
 import AdminLayout from '@/layouts/AdminLayout';
 import AuthLayout from '@/layouts/AuthLayout';
-import { LayoutProvider } from '@/contexts/LayoutContext';
+import AdminProviders from '@/providers/AdminProviders';
 import { AuthProvider } from '@/contexts/AuthContext';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import ScrollToTop from '@/utils/ScrollToTop';
@@ -79,13 +79,13 @@ function App() {
               {/* Admin routes - Protected */}
               <Route path="/admin/*" element={
                 <ProtectedRoute>
-                  <LayoutProvider>
+                  <AdminProviders>
                     <AdminLayout>
                       <Routes>
                         <Route path="dashboard" element={<Dashboard />} />
                       </Routes>
                     </AdminLayout>
-                  </LayoutProvider>
+                  </AdminProviders>
                 </ProtectedRoute>
               } />
 
