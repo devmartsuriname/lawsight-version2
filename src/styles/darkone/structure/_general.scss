@@ -20,20 +20,22 @@ h1, h2, h3, h4, h5, h6,
     color: $headings-color;
 }
 
-// Page wrapper
-.wrapper {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
+// Page wrapper (scoped to admin-root)
+.admin-root {
+    .wrapper {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
 
-// Page content
-.page-content {
-    flex-grow: 1;
-    margin-left: $sidebar-width;
-    transition: all 0.3s ease-in-out;
-    padding: $spacer * 1.5;
-    min-height: calc(100vh - $topbar-height - $footer-height);
+    // Page content
+    .page-content {
+        flex-grow: 1;
+        margin-left: $sidebar-width;
+        transition: all 0.3s ease-in-out;
+        padding: $spacer * 1.5;
+        min-height: calc(100vh - $topbar-height - $footer-height);
+    }
 }
 
 // Scrollbar styling (for webkit browsers)
