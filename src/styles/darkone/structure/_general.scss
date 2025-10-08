@@ -27,13 +27,14 @@ h1, h2, h3, h4, h5, h6,
     transition: background-color 0.3s ease;
     
     // Add smooth color transitions for theme switching
-    * {
+    // Exclude charts, SVG, and canvas from transitions for performance
+    *:not(svg):not(canvas):not(.apexcharts-canvas):not(.apexcharts-svg) {
         transition: background-color 0.3s ease, 
                     color 0.3s ease, 
                     border-color 0.3s ease;
     }
     
-    // Exclude transitions for interactive elements to maintain snappy feel
+    // Faster transitions for interactive elements
     a, button, .btn, input, select, textarea {
         transition: background-color 0.2s ease, 
                     color 0.2s ease, 

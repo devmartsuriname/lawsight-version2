@@ -108,8 +108,10 @@ html[data-bs-theme="light"],
     // Form variables
     --#{$prefix}input-bg: #ffffff;
     --#{$prefix}input-color: #5d7186;
+    --#{$prefix}input-border-color: #dee2e6;
     --#{$prefix}input-placeholder-color: #8391a2;
     --#{$prefix}input-focus-bg: #ffffff;
+    --#{$prefix}input-focus-border-color: #c5a467;
     
     // Dropdown variables
     --#{$prefix}dropdown-bg: #ffffff;

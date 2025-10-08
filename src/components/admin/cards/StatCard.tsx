@@ -3,10 +3,13 @@ import { ApexOptions } from 'apexcharts'
 import ReactApexChart from 'react-apexcharts'
 import IconifyIcon from '@/components/admin/wrappers/IconifyIcon'
 import type { StatCardData } from '@/data/admin-mock'
+import { useLayoutContext } from '@/contexts/LayoutContext'
 
 type StatCardProps = StatCardData
 
 const StatCard = ({ title, count, icon, series, trend }: StatCardProps) => {
+  const { themeMode } = useLayoutContext()
+  
   const chartOptions: ApexOptions = {
     chart: {
       type: 'area',
@@ -79,7 +82,13 @@ const StatCard = ({ title, count, icon, series, trend }: StatCardProps) => {
           </Col>
         </Row>
       </CardBody>
-      <ReactApexChart options={chartOptions} series={chartOptions.series} height={50} type="area" />
+      <ReactApexChart 
+        key={`stat-chart-${title}-${themeMode}`}
+        options={chartOptions} 
+        series={chartOptions.series} 
+        height={50} 
+        type="area" 
+      />
     </Card>
   )
 }

@@ -3,8 +3,11 @@ import ReactApexChart from 'react-apexcharts'
 import { Col } from 'react-bootstrap'
 import AdminCard from '@/components/admin/cards/AdminCard'
 import { revenueData } from '@/data/admin-mock'
+import { useLayoutContext } from '@/contexts/LayoutContext'
 
 const RevenueChart = () => {
+  const { themeMode } = useLayoutContext()
+  
   const chartOptions: ApexOptions = {
     series: [
       {
@@ -150,6 +153,7 @@ const RevenueChart = () => {
       <AdminCard title="Revenue Overview" headerActions={headerActions} bodyClassName="pt-0">
         <div dir="ltr">
           <ReactApexChart 
+            key={`revenue-chart-${themeMode}`}
             options={chartOptions} 
             series={chartOptions.series} 
             height={313} 
