@@ -1,0 +1,249 @@
+//
+// _sidebar.scss - VP Customized
+//
+
+// Logo
+.logo-box {
+    position: sticky;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+    line-height: $topbar-height;
+    padding: 0 calc($sidebar-width-sm * 0.5 - $logo-sm-height * 0.5);
+
+    .logo-sm {
+        display: none;
+        height: $logo-sm-height;
+    }
+
+    .logo-lg {
+        height: $logo-lg-height;
+    }
+
+    .logo-light {
+        display: none;
+    }
+
+    .logo-dark {
+        display: block;
+    }
+}
+
+// Main Nav
+.app-sidebar {
+    top: 0;
+    bottom: 0;
+    z-index: 1010;
+    margin-left: 0;
+    position: fixed;
+    transition: all 0.3s ease-in-out;
+    width: $sidebar-width;
+    font-family: $font-family-secondary;
+    background: $sidebar-bg;
+    min-width: $sidebar-width;
+    padding-bottom: $spacer;
+    border-right: $card-border-width solid $sidebar-border-color !important;
+    border-left: $card-border-width solid $sidebar-border-color;
+
+    .scrollbar {
+        height: calc(100% - $topbar-height);
+    }
+
+    .menu-arrow {
+        right: calc($sidebar-item-padding-x * 1.5);
+        display: flex;
+        margin-left: auto;
+        position: absolute;
+        transition: transform 0.2s;
+        color: inherit;
+        font-size: calc($sidebar-item-font-size * 1.25);
+        opacity: 0.6;
+    }
+
+    .menu-title {
+        cursor: default;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $sidebar-item-color;
+        opacity: 0.6;
+        font-weight: $font-weight-semibold;
+        padding: $sidebar-item-padding-y calc($sidebar-item-padding-x * 1.25);
+        transition: all 0.3s ease-in-out;
+        height: 36px;
+    }
+
+    .navbar-nav {
+        margin: 0 15px;
+
+        .nav-item {
+            padding: calc($sidebar-item-padding-y * 0.1) 0;
+
+            .nav-link {
+                display: flex;
+                gap: 12px;
+                line-height: 1;
+                font-weight: 400;
+                align-items: center;
+                white-space: nowrap;
+                transition: all 0.3s ease-in-out;
+                border-radius: 8px;
+                color: $sidebar-item-color;
+                font-size: $sidebar-item-font-size;
+                padding: $sidebar-item-padding-y $sidebar-item-padding-x;
+                margin: $sidebar-item-margin-y 0;
+
+                &.show,
+                &:active,
+                &.active,
+                &:hover,
+                &:focus {
+                    color: $sidebar-item-hover-color;
+                }
+
+                &.active {
+                    background-color: $sidebar-item-hover-bg;
+                    font-weight: $font-weight-medium;
+                }
+
+                .nav-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: $sidebar-item-icon-size;
+                }
+
+                .badge {
+                    margin-left: auto;
+                }
+            }
+
+            [aria-expanded='true'] {
+                .menu-arrow {
+                    transform: rotate(-180deg);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .sub-navbar-nav {
+            flex-direction: column;
+            padding-left: $sidebar-item-padding-x;
+
+            .menu-arrow {
+                right: 0;
+            }
+
+            .sub-nav-item {
+                padding: calc($sidebar-item-padding-y * 0.5) $sidebar-item-padding-x;
+
+                .sub-nav-link {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    white-space: nowrap;
+                    transition: all 0.3s ease-in-out;
+                    color: $sidebar-item-color;
+                    font-size: calc($sidebar-item-font-size * 0.95);
+                    padding: calc($sidebar-item-padding-y * 0.25) $sidebar-item-padding-x;
+
+                    &.active {
+                        font-weight: $font-weight-medium;
+                    }
+
+                    .badge {
+                        margin-left: auto;
+                    }
+
+                    &.active,
+                    &:active,
+                    &:hover,
+                    &:focus {
+                        color: $sidebar-item-hover-color;
+
+                        &::before {
+                            background-color: $sidebar-item-hover-color;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            .sub-navbar-nav {
+                padding-left: calc($sidebar-width-sm - $sidebar-item-padding-x * 5.25);
+            }
+        }
+
+        .disabled {
+            opacity: 0.5;
+            pointer-events: none;
+            cursor: default;
+        }
+    }
+}
+
+// Dark mode logo handling
+[data-bs-theme="dark"] {
+    .logo-box {
+        .logo-light {
+            display: block;
+        }
+
+        .logo-dark {
+            display: none;
+        }
+    }
+}
+
+// Sidebar size variations
+html[data-sidebar-size="condensed"] {
+    .app-sidebar {
+        position: absolute;
+        width: $sidebar-width-sm;
+        min-width: $sidebar-width-sm;
+    }
+
+    .app-topbar {
+        padding-left: $sidebar-width-sm;
+    }
+
+    .page-content {
+        margin-left: $sidebar-width-sm;
+    }
+}
+
+html[data-sidebar-size="hidden"] {
+    .app-sidebar {
+        display: none;
+    }
+
+    .app-topbar {
+        padding-left: 0;
+    }
+
+    .page-content {
+        margin-left: 0;
+    }
+}
+
+// Mobile responsive
+@media (max-width: 768px) {
+    .app-sidebar {
+        margin-left: -$sidebar-width;
+    }
+
+    .page-content {
+        margin-left: 0;
+    }
+
+    html.sidebar-enable {
+        .app-sidebar {
+            margin-left: 0;
+        }
+    }
+
+    .offcanvas-backdrop {
+        z-index: 1009;
+    }
+}

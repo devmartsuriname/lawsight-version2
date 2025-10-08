@@ -1,0 +1,28 @@
+//
+// style.scss - Darkone Admin Theme with VP Customization
+//
+
+// Core files
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// Config
+@import "config/variables";
+@import "config/variables-dark";
+@import "config/theme-mode";
+
+// Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Structure
+@import "structure/general";
+@import "structure/topbar";
+@import "structure/sidebar";
+@import "structure/footer";
+
+// Components
+@import "components/card";
+@import "components/buttons";
+
+// Simplebar plugin
+@import "simplebar-react/dist/simplebar.min.css";

@@ -1,0 +1,54 @@
+//
+// buttons.scss - VP Customized
+//
+
+.btn {
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-medium;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+// VP Gold button
+.btn-vp-gold {
+    color: $white;
+    background-color: $vp-gold;
+    border-color: $vp-gold;
+
+    &:hover {
+        background-color: darken($vp-gold, 10%);
+        border-color: darken($vp-gold, 10%);
+    }
+}
+
+// VP Purple button
+.btn-vp-purple {
+    color: $white;
+    background-color: $vp-purple;
+    border-color: $vp-purple;
+
+    &:hover {
+        background-color: darken($vp-purple, 10%);
+        border-color: darken($vp-purple, 10%);
+    }
+}
+
+// VP Blue button
+.btn-vp-blue {
+    color: $white;
+    background-color: $vp-blue;
+    border-color: $vp-blue;
+
+    &:hover {
+        background-color: darken($vp-blue, 10%);
+        border-color: darken($vp-blue, 10%);
+    }
+}

@@ -18,6 +18,13 @@ export default defineConfig(({ mode }) => ({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/styles/darkone/config/_variables.scss";`,
+      },
+    },
+  },
   build: {
     outDir: 'dist',
     sourcemap: false,
