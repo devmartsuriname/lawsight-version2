@@ -1,5 +1,5 @@
 import IconifyIcon from '@/components/admin/wrappers/IconifyIcon'
-import { useAuth } from '@/hooks/useAuth'
+import { useAuth } from '@/contexts/AuthContext'
 import { Dropdown, DropdownHeader, DropdownItem, DropdownMenu, DropdownToggle } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
