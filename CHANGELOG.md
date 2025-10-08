@@ -6,6 +6,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Phase P4C-C] - Admin Layout Polish & Theme Correction - 2025-01-08
+
+### Fixed
+- Removed frontend PageTitle from admin dashboard (replaced with AdminPageTitle)
+- Corrected dark/light theme variable coverage in _theme-mode.scss
+- Enhanced card contrast and visual hierarchy with proper CSS variables
+- Refined topbar spacing and alignment (search bar, navbar gap, item margins)
+- Added proper admin body background styling with smooth transitions
+
+### Added
+- New AdminPageTitle component for clean admin page titles
+- Enhanced dark mode CSS variable definitions (body-bg, card-bg, text-muted, etc.)
+- VP gold hover effects on cards with transform animation
+- Stat card typography enhancements (proper font sizes, weights, colors)
+- Dark mode box shadow adjustments for better depth perception
+
+### Files Modified
+- src/components/admin/AdminPageTitle.tsx [NEW]
+- src/styles/darkone/components/_admin-page-title.scss [NEW]
+- src/pages/admin/Dashboard.tsx
+- src/styles/darkone/config/_theme-mode.scss
+- src/styles/darkone/components/_card.scss
+- src/styles/darkone/structure/_topbar.scss
+- src/styles/darkone/structure/_general.scss
+- src/styles/admin.scss
+- docs/RestorePoint_P4C_C_AdminLayoutPolish.md [NEW]
+
+---
+
 ## [P4C-B - Admin Sidebar & Header Alignment Fix] - 2025-10-08
 
 ### 🎯 Fixed (Critical Architecture Issues)

@@ -35,9 +35,36 @@ html[data-bs-theme="dark"],
     --#{$prefix}dark: #{$body-tertiary-color-dark};
     --#{$prefix}light-rgb: #{to-rgb($body-tertiary-bg-dark)};
     --#{$prefix}dark-rgb: #{to-rgb($body-tertiary-color-dark)};
-    --#{$prefix}headings-color: #{$body-color-dark};
+    --#{$prefix}headings-color: #dee2e6;
     --#{$prefix}input-border-color: #3a4551;
     --#{$prefix}input-focus-border-color: #4a5663;
+    
+    // Background colors
+    --#{$prefix}body-bg: #191e23;
+    --#{$prefix}body-color: #aab8c5;
+    
+    // Card colors
+    --#{$prefix}card-bg: #1a1d2e;
+    --#{$prefix}card-border-color: #272f37;
+    
+    // Text colors
+    --#{$prefix}text-muted: #8391a2;
+}
+
+/* Light Mode */
+html[data-bs-theme="light"],
+[data-bs-theme="light"] {
+    // Background colors
+    --#{$prefix}body-bg: #f8f7fa;
+    --#{$prefix}body-color: #5d7186;
+    
+    // Card colors
+    --#{$prefix}card-bg: #ffffff;
+    --#{$prefix}card-border-color: rgba(0, 0, 0, 0.125);
+    
+    // Text colors
+    --#{$prefix}headings-color: #424e5a;
+    --#{$prefix}text-muted: #687d92;
 }
 
 /* Main sidebar Light */

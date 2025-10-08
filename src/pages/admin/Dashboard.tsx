@@ -5,7 +5,7 @@ import SaleChart from '@/components/admin/charts/SaleChart'
 import AdminCard from '@/components/admin/cards/AdminCard'
 import DataTable from '@/components/admin/tables/DataTable'
 import { dashboardStats, recentActivities } from '@/data/admin-mock'
-import PageTitle from '@/components/PageTitle'
+import AdminPageTitle from '@/components/admin/AdminPageTitle'
 
 const Dashboard = () => {
   const activityColumns = [
@@ -41,12 +41,14 @@ const Dashboard = () => {
   ]
 
   return (
-    <>
-      <PageTitle subName="VP Engineering" title="Dashboard" />
+    <Container fluid>
+      <AdminPageTitle 
+        title="Dashboard" 
+        subtitle="Welcome back, manage your content and analytics"
+      />
       
-      <Container fluid>
-        {/* Stat Cards */}
-        <Row className="mb-4">
+      {/* Stat Cards */}
+      <Row className="mb-4">
           {dashboardStats.map((stat, idx) => (
             <Col md={6} xl={3} key={idx} className="mb-3">
               <StatCard {...stat} />
@@ -74,7 +76,6 @@ const Dashboard = () => {
           </Col>
         </Row>
       </Container>
-    </>
   )
 }
 
