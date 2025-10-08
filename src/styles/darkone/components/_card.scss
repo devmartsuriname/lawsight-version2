@@ -50,19 +50,19 @@
     font-size: 1rem;
     font-family: $font-family-primary;  // Poppins for card titles
     font-weight: $font-weight-semibold;
-    color: $headings-color;
+    color: var(--bs-headings-color);
 }
 
 .card-subtitle {
     margin: 0;
     font-family: $font-family-secondary;  // Muli for subtitles
-    color: $text-muted;
+    color: var(--bs-text-muted);
 }
 
 .sub-header {
     font-size: $font-size-base;
     margin-bottom: $spacer;
-    color: $text-muted;
+    color: var(--bs-text-muted);
     font-family: $font-family-secondary;
 }
 
@@ -71,8 +71,8 @@
     cursor: pointer;
     
     &:hover {
-        border-color: $vp-gold;
-        box-shadow: 0 4px 12px rgba($vp-gold, 0.2);
+        border-color: var(--vp-gold);
+        box-shadow: 0 4px 12px rgba(197, 164, 103, 0.2);
         transform: translateY(-2px);
     }
 }

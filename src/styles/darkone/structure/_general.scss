@@ -7,8 +7,8 @@ body {
     font-size: $font-size-base;
     font-weight: $font-weight-normal;
     line-height: 1.5;
-    color: $body-color;
-    background-color: $body-bg;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
 }
 
 // Headings use Poppins
@@ -17,7 +17,7 @@ h1, h2, h3, h4, h5, h6,
     font-family: $font-family-primary;  // Poppins
     font-weight: $headings-font-weight;
     line-height: $headings-line-height;
-    color: $headings-color;
+    color: var(--bs-headings-color);
 }
 
 // Page wrapper (scoped to admin-root)
@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6,
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $body-bg;
+    background-color: var(--bs-body-bg);
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -108,38 +108,38 @@ h1, h2, h3, h4, h5, h6,
 
 // VP Brand utilities
 .text-vp-gold {
-    color: $vp-gold !important;
+    color: var(--vp-gold) !important;
 }
 
 .text-vp-purple {
-    color: $vp-purple !important;
+    color: var(--vp-purple) !important;
 }
 
 .text-vp-blue {
-    color: $vp-blue !important;
+    color: var(--vp-blue) !important;
 }
 
 .bg-vp-gold {
-    background-color: $vp-gold !important;
+    background-color: var(--vp-gold) !important;
 }
 
 .bg-vp-purple {
-    background-color: $vp-purple !important;
+    background-color: var(--vp-purple) !important;
 }
 
 .bg-vp-blue {
-    background-color: $vp-blue !important;
+    background-color: var(--vp-blue) !important;
 }
 
-// VP Soft background utilities
+// VP Soft background utilities with CSS variables
 .bg-soft-primary {
-    background-color: rgba($primary, 0.1) !important;
+    background-color: rgba(139, 92, 246, 0.1) !important;
 }
 
 .bg-soft-secondary {
-    background-color: rgba($secondary, 0.1) !important;
+    background-color: rgba(197, 164, 103, 0.1) !important;
 }
 
 .bg-soft-vp-gold {
-    background-color: rgba($vp-gold, 0.1) !important;
+    background-color: rgba(197, 164, 103, 0.1) !important;
 }
