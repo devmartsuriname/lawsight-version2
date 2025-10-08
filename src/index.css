@@ -1,8 +1,28 @@
 /**
- * LaSight Law - Global CSS Custom Properties
+ * VP Website - Global CSS Custom Properties
  * Runtime theming support using CSS variables
- * Based on design tokens from src/styles/tokens.scss
+ * Includes Tailwind directives for admin panel
  */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+ * Admin Theme Variables (Darkone-inspired)
+ * ============================================ */
+
+:root {
+  --admin-bg-primary: hsl(230, 27%, 15%);
+  --admin-bg-secondary: hsl(228, 20%, 19%);
+  --admin-bg-tertiary: hsl(225, 15%, 23%);
+  --admin-accent-purple: hsl(258, 90%, 66%);
+  --admin-accent-blue: hsl(217, 91%, 60%);
+  --admin-accent-gold: hsl(43, 49%, 59%);
+  --admin-text-primary: hsl(0, 0%, 95%);
+  --admin-text-secondary: hsl(220, 13%, 69%);
+  --admin-border: hsl(228, 15%, 25%);
+}
 
 :root {
   /* ============================================
