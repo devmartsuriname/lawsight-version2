@@ -1,7 +1,7 @@
 import { Card, CardBody, Col, Row } from 'react-bootstrap'
 import { ApexOptions } from 'apexcharts'
 import ReactApexChart from 'react-apexcharts'
-import IconifyIcon from '@/components/wrapper/IconifyIcon'
+import IconifyIcon from '@/components/admin/wrappers/IconifyIcon'
 import type { StatCardData } from '@/data/admin-mock'
 
 type StatCardProps = StatCardData
