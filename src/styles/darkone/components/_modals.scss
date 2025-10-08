@@ -1,0 +1,61 @@
+//
+// _modals.scss - VP Customized Modals
+//
+
+.modal-content {
+    background-color: var(--bs-modal-bg);
+    border-color: var(--bs-modal-border-color);
+    color: var(--bs-body-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-header {
+    border-bottom-color: var(--bs-modal-header-border-color);
+    padding: 1.25rem 1.5rem;
+    
+    .modal-title {
+        color: var(--bs-headings-color);
+        font-weight: $font-weight-semibold;
+    }
+    
+    .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+    }
+}
+
+.modal-body {
+    padding: 1.5rem;
+    color: var(--bs-body-color);
+}
+
+.modal-footer {
+    border-top-color: var(--bs-modal-footer-border-color);
+    padding: 1rem 1.5rem;
+    background-color: var(--bs-body-bg);
+}
+
+.modal-backdrop {
+    background-color: #000;
+    
+    &.show {
+        opacity: 0.5;
+    }
+}
+
+[data-bs-theme="dark"] {
+    .modal-content {
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6);
+    }
+    
+    .modal-header .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+    }
+}
+
+[data-bs-theme="light"] {
+    .modal-header .btn-close {
+        filter: none;
+    }
+}

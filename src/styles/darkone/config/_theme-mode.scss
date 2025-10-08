@@ -49,6 +49,38 @@ html[data-bs-theme="dark"],
     
     // Text colors
     --#{$prefix}text-muted: #8391a2;
+    
+    // Table variables
+    --#{$prefix}table-bg: #1a1d2e;
+    --#{$prefix}table-striped-bg: rgba(255, 255, 255, 0.02);
+    --#{$prefix}table-hover-bg: rgba(197, 164, 103, 0.1);
+    --#{$prefix}table-border-color: #272f37;
+    --#{$prefix}table-thead-bg: rgba(0, 0, 0, 0.2);
+    
+    // Form variables
+    --#{$prefix}input-bg: #1e2230;
+    --#{$prefix}input-color: #aab8c5;
+    --#{$prefix}input-placeholder-color: #6c757d;
+    --#{$prefix}input-focus-bg: #232837;
+    
+    // Dropdown variables
+    --#{$prefix}dropdown-bg: #1a1d2e;
+    --#{$prefix}dropdown-color: #aab8c5;
+    --#{$prefix}dropdown-border-color: #272f37;
+    --#{$prefix}dropdown-link-hover-bg: rgba(197, 164, 103, 0.1);
+    --#{$prefix}dropdown-link-hover-color: #c5a467;
+    
+    // Modal variables
+    --#{$prefix}modal-bg: #1a1d2e;
+    --#{$prefix}modal-border-color: #272f37;
+    --#{$prefix}modal-header-border-color: #272f37;
+    --#{$prefix}modal-footer-border-color: #272f37;
+    
+    // Badge/Alert variables
+    --#{$prefix}badge-bg: rgba(139, 92, 246, 0.15);
+    --#{$prefix}badge-color: #a78bfa;
+    --#{$prefix}alert-bg: rgba(139, 92, 246, 0.1);
+    --#{$prefix}alert-border-color: rgba(139, 92, 246, 0.2);
 }
 
 /* Light Mode */
@@ -65,6 +97,38 @@ html[data-bs-theme="light"],
     // Text colors
     --#{$prefix}headings-color: #424e5a;
     --#{$prefix}text-muted: #687d92;
+    
+    // Table variables
+    --#{$prefix}table-bg: #ffffff;
+    --#{$prefix}table-striped-bg: rgba(0, 0, 0, 0.02);
+    --#{$prefix}table-hover-bg: rgba(197, 164, 103, 0.08);
+    --#{$prefix}table-border-color: #e5e7eb;
+    --#{$prefix}table-thead-bg: #f8f9fa;
+    
+    // Form variables
+    --#{$prefix}input-bg: #ffffff;
+    --#{$prefix}input-color: #5d7186;
+    --#{$prefix}input-placeholder-color: #8391a2;
+    --#{$prefix}input-focus-bg: #ffffff;
+    
+    // Dropdown variables
+    --#{$prefix}dropdown-bg: #ffffff;
+    --#{$prefix}dropdown-color: #5d7186;
+    --#{$prefix}dropdown-border-color: rgba(0, 0, 0, 0.125);
+    --#{$prefix}dropdown-link-hover-bg: rgba(197, 164, 103, 0.08);
+    --#{$prefix}dropdown-link-hover-color: #c5a467;
+    
+    // Modal variables
+    --#{$prefix}modal-bg: #ffffff;
+    --#{$prefix}modal-border-color: #dee2e6;
+    --#{$prefix}modal-header-border-color: #dee2e6;
+    --#{$prefix}modal-footer-border-color: #dee2e6;
+    
+    // Badge/Alert variables
+    --#{$prefix}badge-bg: rgba(139, 92, 246, 0.1);
+    --#{$prefix}badge-color: #7c3aed;
+    --#{$prefix}alert-bg: rgba(139, 92, 246, 0.05);
+    --#{$prefix}alert-border-color: rgba(139, 92, 246, 0.1);
 }
 
 /* Main sidebar Light */

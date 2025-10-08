@@ -1,0 +1,73 @@
+//
+// _forms.scss - VP Customized Forms
+//
+
+.form-control,
+.form-select {
+    background-color: var(--bs-input-bg);
+    border-color: var(--bs-input-border-color);
+    color: var(--bs-input-color);
+    transition: all 0.3s ease;
+    
+    &::placeholder {
+        color: var(--bs-input-placeholder-color);
+    }
+    
+    &:focus {
+        background-color: var(--bs-input-focus-bg);
+        border-color: var(--bs-input-focus-border-color);
+        box-shadow: 0 0 0 0.2rem rgba(197, 164, 103, 0.25);
+        color: var(--bs-input-color);
+    }
+    
+    &:disabled,
+    &[readonly] {
+        background-color: var(--bs-body-bg);
+        opacity: 0.6;
+    }
+}
+
+.form-label {
+    color: var(--bs-headings-color);
+    font-weight: $font-weight-medium;
+    margin-bottom: 0.5rem;
+}
+
+.form-text {
+    color: var(--bs-text-muted);
+}
+
+// Custom checkbox/radio
+.form-check-input {
+    background-color: var(--bs-input-bg);
+    border-color: var(--bs-input-border-color);
+    
+    &:checked {
+        background-color: var(--vp-purple);
+        border-color: var(--vp-purple);
+    }
+    
+    &:focus {
+        border-color: var(--vp-gold);
+        box-shadow: 0 0 0 0.2rem rgba(197, 164, 103, 0.25);
+    }
+}
+
+// Form validation
+.was-validated .form-control:valid,
+.form-control.is-valid {
+    border-color: var(--bs-success);
+    
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(33, 215, 96, 0.25);
+    }
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+    border-color: var(--bs-danger);
+    
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(237, 50, 31, 0.25);
+    }
+}

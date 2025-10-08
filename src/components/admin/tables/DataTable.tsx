@@ -42,6 +42,10 @@ function DataTable<T extends Record<string, any>>({
       bordered={bordered} 
       size={size}
       className={`mb-0 ${className}`}
+      style={{
+        backgroundColor: 'var(--bs-table-bg)',
+        color: 'var(--bs-body-color)'
+      }}
     >
       <thead className="bg-light bg-opacity-50">
         <tr>

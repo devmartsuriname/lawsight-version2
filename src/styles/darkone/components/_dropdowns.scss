@@ -1,0 +1,61 @@
+//
+// _dropdowns.scss - VP Customized Dropdowns
+//
+
+.dropdown-menu {
+    background-color: var(--bs-dropdown-bg);
+    border-color: var(--bs-dropdown-border-color);
+    color: var(--bs-dropdown-color);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    min-width: 180px;
+    z-index: 1050;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    
+    .dropdown-item {
+        color: var(--bs-dropdown-color);
+        padding: 0.5rem 1rem;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+        margin: 0 0.5rem;
+        
+        &:hover,
+        &:focus {
+            background-color: var(--bs-dropdown-link-hover-bg);
+            color: var(--bs-dropdown-link-hover-color);
+        }
+        
+        &.active,
+        &:active {
+            background-color: var(--vp-purple);
+            color: #ffffff;
+        }
+        
+        &.disabled,
+        &:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+    
+    .dropdown-divider {
+        border-top-color: var(--bs-dropdown-border-color);
+        margin: 0.5rem 0;
+    }
+    
+    .dropdown-header {
+        color: var(--bs-text-muted);
+        font-size: 0.75rem;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 0.5rem 1rem;
+    }
+}
+
+[data-bs-theme="dark"] {
+    .dropdown-menu {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+}

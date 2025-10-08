@@ -1,0 +1,75 @@
+//
+// _tables.scss - VP Customized Tables
+//
+
+.table {
+    background-color: var(--bs-table-bg);
+    color: var(--bs-body-color);
+    border-color: var(--bs-table-border-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    
+    > :not(caption) > * > * {
+        background-color: var(--bs-table-bg);
+        border-bottom-color: var(--bs-table-border-color);
+        color: var(--bs-body-color);
+    }
+    
+    thead {
+        background-color: var(--bs-table-thead-bg);
+        color: var(--bs-headings-color);
+        font-weight: $font-weight-semibold;
+        
+        th {
+            border-bottom: 2px solid var(--bs-table-border-color);
+            padding: 0.75rem;
+            text-transform: uppercase;
+            font-size: 0.8125rem;
+            letter-spacing: 0.5px;
+        }
+    }
+    
+    tbody {
+        tr {
+            transition: background-color 0.2s ease;
+            
+            &:hover {
+                background-color: var(--bs-table-hover-bg) !important;
+            }
+        }
+        
+        td {
+            padding: 0.75rem;
+            vertical-align: middle;
+        }
+    }
+}
+
+.table-striped {
+    > tbody > tr:nth-of-type(odd) > * {
+        background-color: var(--bs-table-striped-bg);
+    }
+}
+
+.table-bordered {
+    border-color: var(--bs-table-border-color);
+    
+    > :not(caption) > * {
+        border-color: var(--bs-table-border-color);
+    }
+}
+
+.table-responsive {
+    background-color: var(--bs-card-bg);
+    border-radius: 8px;
+}
+
+// Dark mode enhancements
+[data-bs-theme="dark"] {
+    .table {
+        --bs-table-color: #aab8c5;
+        --bs-table-bg: #1a1d2e;
+        --bs-table-striped-color: #aab8c5;
+        --bs-table-active-color: #aab8c5;
+        --bs-table-hover-color: #dee2e6;
+    }
+}
