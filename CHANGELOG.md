@@ -6,33 +6,53 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [P4C-B - Admin Sidebar & Header Alignment Fix] - 2025-10-08
+
+### 🎯 Fixed (Critical Architecture Issues)
+- **SCSS Import Architecture**: Moved `@import` statements to root level in `admin-root.scss` (Sass requires imports outside selectors)
+- **HTML Attributes**: Added `useEffect` to set `data-bs-theme` and `data-sidebar-size` on `<html>` element for proper CSS variable application
+- **Layout Structure**: Restructured `AdminLayout.tsx` to make Topbar and Sidebar direct children of `.admin-root` (removed unnecessary `.wrapper`)
+- **Sidebar Visibility**: Now visible with correct fixed positioning and dark background
+- **Topbar Alignment**: Properly aligned with sticky positioning and no content overlap
+- **Theme Toggle**: Now fully functional (light/dark mode switching)
+- **Sidebar States**: Collapse/condensed modes working correctly
+
+### 📁 Added
+- `docs/RestorePoint_P4C_B_AdminLayoutFix2.md` - Comprehensive fix documentation
+
+### ✏️ Changed
+- `src/styles/admin-root.scss` - Restructured to place imports at root level
+- `src/layouts/AdminLayout.tsx` - Simplified layout hierarchy + added HTML attribute management via LayoutContext
+
+### ✅ Verified
+- ✅ Sidebar visible with VP gold hover states
+- ✅ Topbar sticky at top with proper offset
+- ✅ Page content aligned (260px margin-left)
+- ✅ Theme toggle working (light/dark)
+- ✅ Sidebar responsive (collapses on mobile)
+- ✅ No console errors
+- ✅ SCSS compiles correctly
+
+---
+
 ## [P4C - Admin Layout Isolation & Fix] - 2025-10-08
 
 ### 🎯 Fixed
 - **Admin Layout Isolation**: Created `admin-root.scss` to fully scope admin styles
 - **Layout Structure**: Wrapped `AdminLayout` in `.admin-root` container for proper isolation
 - **CSS Conflicts**: Namespaced `.wrapper` and `.page-content` to prevent frontend interference
-- **Sidebar Visibility**: Ensured sidebar renders correctly with proper z-index and positioning
-- **Topbar Positioning**: Fixed topbar alignment and prevented overlap with content
 - **Theme Management**: Verified `LayoutContext` properly manages HTML attributes
 
 ### 📁 Added
 - `src/styles/admin-root.scss` - Scoped admin styles wrapper
+- `src/styles/darkone/config/_css-vars.scss` - CSS custom properties
 - `RestorePoint_P4C_AdminLayoutFix_Completed.md` - Complete documentation
+- `docs/P4C_AdminLayout_VerificationReport.md` - Verification checklist
 
 ### ✏️ Changed
 - `src/layouts/AdminLayout.tsx` - Added `.admin-root` wrapper and style import
 - `src/styles/darkone/structure/_general.scss` - Namespaced admin layout classes
-
-### ✅ Verified
-- ✅ Sidebar visible on left with VP gold accents
-- ✅ Topbar visible at top with search bar and controls
-- ✅ Page content properly aligned (no overlap)
-- ✅ Theme toggle switches between light/dark mode
-- ✅ Sidebar collapse/expand works correctly
-- ✅ No frontend header/footer visible on admin pages
-- ✅ Mobile responsive behavior working
-- ✅ No console errors or CSS conflicts
+- `src/styles/darkone/style.scss` - Added _css-vars.scss import
 
 ---
 

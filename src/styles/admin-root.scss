@@ -1,19 +1,19 @@
-// 
+//
 // admin-root.scss - Scoped Admin Layout Styles
 // This file isolates admin styles from frontend Tailwind/CSS
 //
+// CRITICAL: Imports MUST be at root level, not inside selectors
+//
 
+// Import all Darkone admin styles at root level
+@import './admin.scss';
+
+// Then apply scoping and custom overrides
 .admin-root {
-  // Import all Darkone admin styles within this scope
-  @import './admin.scss';
-  
   // Ensure admin layout takes full viewport
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  
-  // Reset any potential frontend styles
-  font-family: $font-family-secondary;
   
   // Ensure proper box-sizing
   * {
