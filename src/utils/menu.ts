@@ -2,7 +2,7 @@ import type { MenuItemType } from '@/config/admin-menu'
 
 export const findAllParent = (menuItems: MenuItemType[], menuItem: MenuItemType): string[] => {
   let parents: string[] = []
-  const parent = findMenuItem(menuItems, menuItem.key)
+  const parent = findParentMenuItem(menuItems, menuItem.key)
   if (parent) {
     parents.push(parent.key)
     if (parent.key) {
@@ -10,6 +10,24 @@ export const findAllParent = (menuItems: MenuItemType[], menuItem: MenuItemType)
     }
   }
   return parents
+}
+
+const findParentMenuItem = (
+  menuItems: MenuItemType[],
+  childKey: string
+): MenuItemType | null => {
+  for (const item of menuItems) {
+    if (item.children) {
+      // Check if this item has the child we're looking for
+      if (item.children.some(child => child.key === childKey)) {
+        return item
+      }
+      // Recursively search in nested children
+      const found = findParentMenuItem(item.children, childKey)
+      if (found) return found
+    }
+  }
+  return null
 }
 
 export const getMenuItemFromURL = (items: MenuItemType | MenuItemType[], url: string): MenuItemType | undefined => {
