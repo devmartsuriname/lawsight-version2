@@ -1,11 +1,8 @@
 import { Suspense } from 'react'
+import { Outlet } from 'react-router-dom'
 import AnimationStar from '@/components/AnimationStar'
 
-type AuthLayoutProps = {
-  children: React.ReactNode
-}
-
-const AuthLayout = ({ children }: AuthLayoutProps) => {
+const AuthLayout = () => {
   return (
     <div className="auth-wrapper min-vh-100 position-relative">
       <AnimationStar />
@@ -16,7 +13,7 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
           </div>
         </div>
       }>
-        {children}
+        <Outlet />
       </Suspense>
     </div>
   )

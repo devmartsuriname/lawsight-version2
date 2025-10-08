@@ -3,12 +3,9 @@ import Sidebar from '@/components/admin/Sidebar'
 import Topbar from '@/components/admin/Topbar'
 import { Container } from 'react-bootstrap'
 import { Suspense } from 'react'
+import { Outlet } from 'react-router-dom'
 
-type AdminLayoutProps = {
-  children: React.ReactNode
-}
-
-const AdminLayout = ({ children }: AdminLayoutProps) => {
+const AdminLayout = () => {
   return (
     <div className="wrapper">
       <Suspense fallback={<div>Loading...</div>}>
@@ -17,7 +14,9 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
       <Sidebar />
       <AnimationStar />
       <div className="page-content">
-        <Container fluid>{children}</Container>
+        <Container fluid>
+          <Outlet />
+        </Container>
         <footer className="footer">
           <Container fluid>
             <div className="row">

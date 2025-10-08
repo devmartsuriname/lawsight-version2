@@ -6,6 +6,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Root Cleanup & Debug Pass] - 2025-10-08
+
+### 🔧 Fixed - Critical Routing Issues
+- **AuthLayout Rendering**: Fixed blank screen issue at `/auth/login` and `/auth/register`
+  - Changed from `children` prop pattern to `<Outlet />` pattern
+  - Added `react-router-dom` import for Outlet component
+  - Now properly renders nested auth routes
+  
+- **AdminLayout Rendering**: Fixed admin routes to use proper React Router v6 nesting
+  - Changed from `children` prop pattern to `<Outlet />` pattern
+  - Removed nested `<Routes>` components causing route conflicts
+  - Admin dashboard now renders correctly at `/admin/dashboard`
+
+- **App.tsx Routing Structure**: Cleaned up and simplified route definitions
+  - Removed `/*` wildcards from route paths (changed `/auth/*` to `/auth`)
+  - Fixed nested route structure for proper Outlet rendering
+  - Removed unnecessary nested `<Routes>` wrapper in admin section
+  - Proper route hierarchy: `ProtectedRoute > AdminProviders > AdminLayout > Outlet`
+
+### 📝 Changed
+- `src/layouts/AuthLayout.tsx` - Converted from children prop to Outlet pattern
+- `src/layouts/AdminLayout.tsx` - Converted from children prop to Outlet pattern  
+- `src/App.tsx` - Simplified routing structure to follow React Router v6 best practices
+
+### ✅ Verified
+- `/auth/login` page renders correctly with AnimationStar background
+- `/auth/register` page renders correctly with form fields
+- `/admin/dashboard` renders with full admin layout (sidebar + topbar + footer)
+- ProtectedRoute logic works correctly, redirects unauthenticated users
+- No console errors or blank screens
+- Clean URL structure without unnecessary wildcards
+
+### 📚 Technical Notes
+**Why This Was Critical:**
+React Router v6 requires parent route elements to use `<Outlet />` to render child routes. Using the `children` prop pattern with nested `<Route>` components causes child routes to not render at all, resulting in blank screens.
+
+**Best Practice Applied:**
+- Layout components should always use `<Outlet />` when used as parent routes
+- The `children` prop pattern is only for directly passing JSX, not for nested routing
+- Avoid nested `<Routes>` components; use proper route nesting instead
+
+**Restore Point**: `RestorePoint_P4C_RootCleanup_Completed.md`
+
+---
+
 ## [Phase P4C - Phase 7] - 2025-10-08
 
 ### 🎯 Final Polish & Testing Complete

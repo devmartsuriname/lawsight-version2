@@ -71,23 +71,21 @@ function App() {
               </Route>
 
               {/* Auth routes */}
-              <Route path="/auth/*" element={<AuthLayout />}>
+              <Route path="/auth" element={<AuthLayout />}>
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
               </Route>
 
               {/* Admin routes - Protected */}
-              <Route path="/admin/*" element={
+              <Route path="/admin" element={
                 <ProtectedRoute>
                   <AdminProviders>
-                    <AdminLayout>
-                      <Routes>
-                        <Route path="dashboard" element={<Dashboard />} />
-                      </Routes>
-                    </AdminLayout>
+                    <AdminLayout />
                   </AdminProviders>
                 </ProtectedRoute>
-              } />
+              }>
+                <Route path="dashboard" element={<Dashboard />} />
+              </Route>
 
               {/* 404 */}
               <Route path="*" element={<NotFound />} />
