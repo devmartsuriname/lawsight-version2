@@ -57,7 +57,7 @@ export default function About() {
             <div className="image-column col-lg-6 col-md-8 col-sm-12">
               <div className="inner-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
                 <div className="image">
-                  <img src="/images/resource/about-2.jpg" alt="About LawSight" />
+                  <img src="/images/resource/about-2.jpg" alt="Vice President Dr. Gregory Allan Rusland serving the Republic of Suriname" loading="lazy" />
                   <div className="overlay-box">
                     <div className="overlay-inner">
                       <div className="content">
@@ -202,19 +202,19 @@ export default function About() {
             <div className="team-block col-lg-3 col-md-6 col-sm-12">
               <div className="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                 <div className="image">
-                  <a href="#"><img src="/images/resource/team-1.jpg" alt="Jonson Leo" /></a>
+                  <a href="#" aria-label="Dr. Gregory Allan Rusland profile"><img src="/images/resource/team-1.jpg" alt="Dr. Gregory Allan Rusland, Vice President of Suriname" loading="lazy" /></a>
                 </div>
                 <div className="lower-content">
-                  <h3><a href="#">Dr. Gregory Allan Rusland</a></h3>
+                  <h3><a href="#" aria-label="View Dr. Gregory Allan Rusland details">Dr. Gregory Allan Rusland</a></h3>
                   <div className="designation">Vice President</div>
                   <div className="overlay-box">
                     <div className="overlay-content">
                       <div className="title">Contact info</div>
-                      <ul className="social-icons">
-                        <li><a href="#"><span className="fa fa-facebook"></span></a></li>
-                        <li><a href="#"><span className="fa fa-twitter"></span></a></li>
-                        <li><a href="#"><span className="fa fa-pinterest-p"></span></a></li>
-                        <li><a href="#"><span className="fa fa-vimeo"></span></a></li>
+                      <ul className="social-icons" role="list" aria-label="Social media links">
+                        <li><a href="#" aria-label="Facebook profile"><span className="fa fa-facebook"></span></a></li>
+                        <li><a href="#" aria-label="Twitter profile"><span className="fa fa-twitter"></span></a></li>
+                        <li><a href="#" aria-label="LinkedIn profile"><span className="fa fa-linkedin"></span></a></li>
+                        <li><a href="#" aria-label="Instagram profile"><span className="fa fa-instagram"></span></a></li>
                       </ul>
                     </div>
                   </div>
@@ -225,19 +225,19 @@ export default function About() {
             <div className="team-block col-lg-3 col-md-6 col-sm-12">
               <div className="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                 <div className="image">
-                  <a href="#"><img src="/images/resource/team-2.jpg" alt="Malina Leo" /></a>
+                  <a href="#" aria-label="Chief of Staff profile"><img src="/images/resource/team-2.jpg" alt="Chief of Staff, Executive Office" loading="lazy" /></a>
                 </div>
                 <div className="lower-content">
-                  <h3><a href="#">Chief of Staff</a></h3>
+                  <h3><a href="#" aria-label="View Chief of Staff details">Chief of Staff</a></h3>
                   <div className="designation">Executive Office</div>
                   <div className="overlay-box">
                     <div className="overlay-content">
                       <div className="title">Contact info</div>
-                      <ul className="social-icons">
-                        <li><a href="#"><span className="fa fa-facebook"></span></a></li>
-                        <li><a href="#"><span className="fa fa-twitter"></span></a></li>
-                        <li><a href="#"><span className="fa fa-pinterest-p"></span></a></li>
-                        <li><a href="#"><span className="fa fa-vimeo"></span></a></li>
+                      <ul className="social-icons" role="list" aria-label="Social media links">
+                        <li><a href="#" aria-label="Facebook profile"><span className="fa fa-facebook"></span></a></li>
+                        <li><a href="#" aria-label="Twitter profile"><span className="fa fa-twitter"></span></a></li>
+                        <li><a href="#" aria-label="LinkedIn profile"><span className="fa fa-linkedin"></span></a></li>
+                        <li><a href="#" aria-label="Instagram profile"><span className="fa fa-instagram"></span></a></li>
                       </ul>
                     </div>
                   </div>
@@ -248,19 +248,19 @@ export default function About() {
             <div className="team-block col-lg-3 col-md-6 col-sm-12">
               <div className="inner-box wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1500ms">
                 <div className="image">
-                  <a href="#"><img src="/images/resource/team-3.jpg" alt="Neobir Fro" /></a>
+                  <a href="#" aria-label="Policy Director profile"><img src="/images/resource/team-3.jpg" alt="Policy Director, Policy & Planning Department" loading="lazy" /></a>
                 </div>
                 <div className="lower-content">
-                  <h3><a href="#">Policy Director</a></h3>
+                  <h3><a href="#" aria-label="View Policy Director details">Policy Director</a></h3>
                   <div className="designation">Policy & Planning</div>
                   <div className="overlay-box">
                     <div className="overlay-content">
                       <div className="title">Contact info</div>
-                      <ul className="social-icons">
-                        <li><a href="#"><span className="fa fa-facebook"></span></a></li>
-                        <li><a href="#"><span className="fa fa-twitter"></span></a></li>
-                        <li><a href="#"><span className="fa fa-pinterest-p"></span></a></li>
-                        <li><a href="#"><span className="fa fa-vimeo"></span></a></li>
+                      <ul className="social-icons" role="list" aria-label="Social media links">
+                        <li><a href="#" aria-label="Facebook profile"><span className="fa fa-facebook"></span></a></li>
+                        <li><a href="#" aria-label="Twitter profile"><span className="fa fa-twitter"></span></a></li>
+                        <li><a href="#" aria-label="LinkedIn profile"><span className="fa fa-linkedin"></span></a></li>
+                        <li><a href="#" aria-label="Instagram profile"><span className="fa fa-instagram"></span></a></li>
                       </ul>
                     </div>
                   </div>
@@ -271,19 +271,19 @@ export default function About() {
             <div className="team-block col-lg-3 col-md-6 col-sm-12">
               <div className="inner-box wow fadeInUp" data-wow-delay="900ms" data-wow-duration="1500ms">
                 <div className="image">
-                  <a href="#"><img src="/images/resource/team-4.jpg" alt="Neobir Fro" /></a>
+                  <a href="#" aria-label="Communications Director profile"><img src="/images/resource/team-4.jpg" alt="Communications Director, Public Affairs Department" loading="lazy" /></a>
                 </div>
                 <div className="lower-content">
-                  <h3><a href="#">Communications Director</a></h3>
+                  <h3><a href="#" aria-label="View Communications Director details">Communications Director</a></h3>
                   <div className="designation">Public Affairs</div>
                   <div className="overlay-box">
                     <div className="overlay-content">
                       <div className="title">Contact info</div>
-                      <ul className="social-icons">
-                        <li><a href="#"><span className="fa fa-facebook"></span></a></li>
-                        <li><a href="#"><span className="fa fa-twitter"></span></a></li>
-                        <li><a href="#"><span className="fa fa-pinterest-p"></span></a></li>
-                        <li><a href="#"><span className="fa fa-vimeo"></span></a></li>
+                      <ul className="social-icons" role="list" aria-label="Social media links">
+                        <li><a href="#" aria-label="Facebook profile"><span className="fa fa-facebook"></span></a></li>
+                        <li><a href="#" aria-label="Twitter profile"><span className="fa fa-twitter"></span></a></li>
+                        <li><a href="#" aria-label="LinkedIn profile"><span className="fa fa-linkedin"></span></a></li>
+                        <li><a href="#" aria-label="Instagram profile"><span className="fa fa-instagram"></span></a></li>
                       </ul>
                     </div>
                   </div>

@@ -43,7 +43,7 @@ export default function QuotesSection() {
                   <div className="text text-[color:var(--color-text-secondary)] text-[length:var(--font-size-base)] leading-[var(--line-height-relaxed)] mb-[var(--spacing-lg)]">The programs and initiatives of the Vice President's office have truly transformed our community. The support and accessibility to services has made a significant difference in our daily lives.</div>
                   <div className="author-post">
                     <div className="author-inner flex items-center gap-[var(--spacing-md)]">
-                      <div className="image w-16 h-16 rounded-full overflow-hidden border-2 border-[color:var(--color-border)]"><img src={quote.image} alt={quote.name} className="w-full h-full object-cover" /></div>
+                      <div className="image w-16 h-16 rounded-full overflow-hidden border-2 border-[color:var(--color-border)]"><img src={quote.image} alt={`${quote.name}, ${quote.role}`} className="w-full h-full object-cover" loading="lazy" /></div>
                       <div>
                         <h3 className="text-[color:var(--color-text-primary)] text-[length:var(--font-size-lg)] font-[var(--font-weight-bold)]">{quote.name}</h3>
                         <div className="designation text-[color:var(--color-text-secondary)] text-[length:var(--font-size-sm)]">{quote.role}</div>
