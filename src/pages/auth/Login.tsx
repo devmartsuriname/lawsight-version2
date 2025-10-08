@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { supabase } from '@/integrations/supabase/client';
+import AdminInput from '@/components/admin/AdminInput';
+import AdminButton from '@/components/admin/AdminButton';
+import { Mail, Lock, LogIn } from 'lucide-react';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -63,88 +66,110 @@ export default function Login() {
         <meta name="robots" content="noindex" />
       </Helmet>
 
-      <div className="min-h-screen flex items-center justify-center bg-background px-4">
-        <div className="max-w-md w-full space-y-8">
-          <div>
-            <h2 className="mt-6 text-center text-3xl font-bold text-foreground">
-              Sign in to Admin Panel
-            </h2>
-            <p className="mt-2 text-center text-sm text-muted-foreground">
+      <div className="min-h-screen flex items-center justify-center bg-[var(--admin-bg-primary)] px-4">
+        <div className="w-full max-w-md">
+          {/* Logo/Brand Section */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-[var(--admin-radius-lg)] bg-gradient-to-br from-[var(--admin-accent-gold)] to-[var(--admin-accent-gold-light)] shadow-[var(--admin-shadow-gold)] mb-4">
+              <LogIn className="h-8 w-8 text-white" />
+            </div>
+            <h1 className="text-3xl font-bold admin-gradient-text mb-2">
+              VP Admin Portal
+            </h1>
+            <p className="text-[var(--admin-text-secondary)]">
               Office of the Vice President
             </p>
           </div>
 
-          <form className="mt-8 space-y-6" onSubmit={handleLogin}>
-            {error && (
-              <div className="rounded-md bg-destructive/10 p-4">
-                <p className="text-sm text-destructive">{error}</p>
-              </div>
-            )}
-
-            <div className="rounded-md shadow-sm space-y-4">
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Email address
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent sm:text-sm"
-                  placeholder="Email address"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="password" className="block text-sm font-medium text-foreground mb-2">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="current-password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent sm:text-sm"
-                  placeholder="Password"
-                />
-              </div>
+          {/* Login Card */}
+          <div className="bg-[var(--admin-bg-card)] rounded-[var(--admin-radius-xl)] border border-[var(--admin-border-subtle)] shadow-[var(--admin-shadow-xl)] p-8">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-[var(--admin-text-primary)] mb-2">
+                Welcome back
+              </h2>
+              <p className="text-[var(--admin-text-secondary)]">
+                Sign in to access the admin panel
+              </p>
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="text-sm">
+            <form onSubmit={handleLogin} className="space-y-6">
+              {error && (
+                <div className="rounded-[var(--admin-radius-md)] bg-red-500/10 border border-red-500/20 p-4">
+                  <p className="text-sm text-red-500">{error}</p>
+                </div>
+              )}
+
+              <AdminInput
+                label="Email address"
+                type="email"
+                name="email"
+                autoComplete="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="admin@example.com"
+                icon={Mail}
+              />
+
+              <AdminInput
+                label="Password"
+                type="password"
+                name="password"
+                autoComplete="current-password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+                icon={Lock}
+              />
+
+              <div className="flex items-center justify-between">
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    className="rounded border-[var(--admin-border-medium)] bg-[var(--admin-bg-tertiary)] text-[var(--admin-accent-gold)] focus:ring-[var(--admin-accent-gold)] focus:ring-offset-[var(--admin-bg-card)]"
+                  />
+                  <span className="text-sm text-[var(--admin-text-secondary)]">
+                    Remember me
+                  </span>
+                </label>
                 <Link
                   to="/auth/forgot-password"
-                  className="font-medium text-primary hover:text-primary/80"
+                  className="text-sm font-medium text-[var(--admin-accent-gold)] hover:text-[var(--admin-accent-gold-light)] transition-colors"
                 >
-                  Forgot your password?
+                  Forgot password?
                 </Link>
               </div>
-            </div>
 
-            <div>
-              <button
+              <AdminButton
                 type="submit"
-                disabled={loading}
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-primary-foreground bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                variant="primary"
+                size="lg"
+                fullWidth
+                loading={loading}
+                icon={LogIn}
               >
                 {loading ? 'Signing in...' : 'Sign in'}
-              </button>
-            </div>
+              </AdminButton>
+            </form>
 
-            <div className="text-center text-sm">
-              <span className="text-muted-foreground">Don't have an account? </span>
-              <Link to="/auth/register" className="font-medium text-primary hover:text-primary/80">
-                Register here
-              </Link>
+            <div className="mt-6 text-center">
+              <p className="text-sm text-[var(--admin-text-secondary)]">
+                Don't have an account?{' '}
+                <Link
+                  to="/auth/register"
+                  className="font-medium text-[var(--admin-accent-gold)] hover:text-[var(--admin-accent-gold-light)] transition-colors"
+                >
+                  Register here
+                </Link>
+              </p>
             </div>
-          </form>
+          </div>
+
+          {/* Footer */}
+          <p className="text-center text-xs text-[var(--admin-text-muted)] mt-8">
+            Protected by enterprise-grade security
+          </p>
         </div>
       </div>
     </>

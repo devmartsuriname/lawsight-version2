@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { supabase } from '@/integrations/supabase/client';
+import AdminInput from '@/components/admin/AdminInput';
+import AdminButton from '@/components/admin/AdminButton';
+import { Mail, Lock, User, UserPlus, CheckCircle } from 'lucide-react';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -65,21 +68,26 @@ export default function Register() {
           <meta name="robots" content="noindex" />
         </Helmet>
 
-        <div className="min-h-screen flex items-center justify-center bg-background px-4">
-          <div className="max-w-md w-full space-y-8 text-center">
-            <div className="rounded-md bg-primary/10 p-6">
-              <h2 className="text-2xl font-bold text-foreground mb-4">
+        <div className="min-h-screen flex items-center justify-center bg-[var(--admin-bg-primary)] px-4">
+          <div className="w-full max-w-md">
+            <div className="bg-[var(--admin-bg-card)] rounded-[var(--admin-radius-xl)] border border-[var(--admin-border-subtle)] shadow-[var(--admin-shadow-xl)] p-8 text-center">
+              <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 shadow-[var(--admin-shadow-lg)] mb-6">
+                <CheckCircle className="h-8 w-8 text-white" />
+              </div>
+              <h2 className="text-2xl font-bold text-[var(--admin-text-primary)] mb-3">
                 Registration Successful!
               </h2>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-[var(--admin-text-secondary)] mb-8">
                 Please check your email to verify your account before signing in.
               </p>
-              <Link
-                to="/auth/login"
-                className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-primary-foreground bg-primary hover:bg-primary/90"
+              <AdminButton
+                variant="primary"
+                size="lg"
+                fullWidth
+                onClick={() => navigate('/auth/login')}
               >
                 Go to Login
-              </Link>
+              </AdminButton>
             </div>
           </div>
         </div>
@@ -94,110 +102,116 @@ export default function Register() {
         <meta name="robots" content="noindex" />
       </Helmet>
 
-      <div className="min-h-screen flex items-center justify-center bg-background px-4">
-        <div className="max-w-md w-full space-y-8">
-          <div>
-            <h2 className="mt-6 text-center text-3xl font-bold text-foreground">
-              Create Admin Account
-            </h2>
-            <p className="mt-2 text-center text-sm text-muted-foreground">
+      <div className="min-h-screen flex items-center justify-center bg-[var(--admin-bg-primary)] px-4 py-8">
+        <div className="w-full max-w-md">
+          {/* Logo/Brand Section */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center h-16 w-16 rounded-[var(--admin-radius-lg)] bg-gradient-to-br from-[var(--admin-accent-gold)] to-[var(--admin-accent-gold-light)] shadow-[var(--admin-shadow-gold)] mb-4">
+              <UserPlus className="h-8 w-8 text-white" />
+            </div>
+            <h1 className="text-3xl font-bold admin-gradient-text mb-2">
+              VP Admin Portal
+            </h1>
+            <p className="text-[var(--admin-text-secondary)]">
               Office of the Vice President
             </p>
           </div>
 
-          <form className="mt-8 space-y-6" onSubmit={handleRegister}>
-            {error && (
-              <div className="rounded-md bg-destructive/10 p-4">
-                <p className="text-sm text-destructive">{error}</p>
-              </div>
-            )}
-
-            <div className="space-y-4">
-              <div>
-                <label htmlFor="fullName" className="block text-sm font-medium text-foreground mb-2">
-                  Full Name
-                </label>
-                <input
-                  id="fullName"
-                  name="fullName"
-                  type="text"
-                  required
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent sm:text-sm"
-                  placeholder="Full name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Email address
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent sm:text-sm"
-                  placeholder="Email address"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="password" className="block text-sm font-medium text-foreground mb-2">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  autoComplete="new-password"
-                  required
-                  value={formData.password}
-                  onChange={handleChange}
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent sm:text-sm"
-                  placeholder="Password (min. 6 characters)"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-foreground mb-2">
-                  Confirm Password
-                </label>
-                <input
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  type="password"
-                  autoComplete="new-password"
-                  required
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-input bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent sm:text-sm"
-                  placeholder="Confirm password"
-                />
-              </div>
+          {/* Register Card */}
+          <div className="bg-[var(--admin-bg-card)] rounded-[var(--admin-radius-xl)] border border-[var(--admin-border-subtle)] shadow-[var(--admin-shadow-xl)] p-8">
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-[var(--admin-text-primary)] mb-2">
+                Create Admin Account
+              </h2>
+              <p className="text-[var(--admin-text-secondary)]">
+                Register to access the admin panel
+              </p>
             </div>
 
-            <div>
-              <button
+            <form onSubmit={handleRegister} className="space-y-5">
+              {error && (
+                <div className="rounded-[var(--admin-radius-md)] bg-red-500/10 border border-red-500/20 p-4">
+                  <p className="text-sm text-red-500">{error}</p>
+                </div>
+              )}
+
+              <AdminInput
+                label="Full Name"
+                type="text"
+                name="fullName"
+                required
+                value={formData.fullName}
+                onChange={handleChange}
+                placeholder="John Doe"
+                icon={User}
+              />
+
+              <AdminInput
+                label="Email address"
+                type="email"
+                name="email"
+                autoComplete="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="admin@example.com"
+                icon={Mail}
+              />
+
+              <AdminInput
+                label="Password"
+                type="password"
+                name="password"
+                autoComplete="new-password"
+                required
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="••••••••"
+                icon={Lock}
+                helperText="Minimum 6 characters"
+              />
+
+              <AdminInput
+                label="Confirm Password"
+                type="password"
+                name="confirmPassword"
+                autoComplete="new-password"
+                required
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                placeholder="••••••••"
+                icon={Lock}
+              />
+
+              <AdminButton
                 type="submit"
-                disabled={loading}
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-primary-foreground bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                variant="primary"
+                size="lg"
+                fullWidth
+                loading={loading}
+                icon={UserPlus}
               >
                 {loading ? 'Creating account...' : 'Create Account'}
-              </button>
-            </div>
+              </AdminButton>
+            </form>
 
-            <div className="text-center text-sm">
-              <span className="text-muted-foreground">Already have an account? </span>
-              <Link to="/auth/login" className="font-medium text-primary hover:text-primary/80">
-                Sign in
-              </Link>
+            <div className="mt-6 text-center">
+              <p className="text-sm text-[var(--admin-text-secondary)]">
+                Already have an account?{' '}
+                <Link
+                  to="/auth/login"
+                  className="font-medium text-[var(--admin-accent-gold)] hover:text-[var(--admin-accent-gold-light)] transition-colors"
+                >
+                  Sign in
+                </Link>
+              </p>
             </div>
-          </form>
+          </div>
+
+          {/* Footer */}
+          <p className="text-center text-xs text-[var(--admin-text-muted)] mt-8">
+            Protected by enterprise-grade security
+          </p>
         </div>
       </div>
     </>

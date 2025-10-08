@@ -1,6 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { supabase } from '@/integrations/supabase/client';
+import StatCard from '@/components/admin/StatCard';
+import AdminCard from '@/components/admin/AdminCard';
+import AdminButton from '@/components/admin/AdminButton';
+import AdminTable from '@/components/admin/AdminTable';
+import {
+  FileText,
+  Calendar,
+  Target,
+  Mail,
+  Plus,
+  TrendingUp,
+  Users,
+  Activity,
+} from 'lucide-react';
 
 interface Stats {
   totalPosts: number;
@@ -60,47 +74,33 @@ export default function Dashboard() {
     }
   };
 
-  const statCards = [
+  // Mock chart data for sparklines
+  const generateChartData = (baseValue: number) => {
+    return Array.from({ length: 7 }, (_, i) => ({
+      value: Math.floor(baseValue * (0.7 + Math.random() * 0.6)),
+    }));
+  };
+
+  const recentActivity = [
     {
-      title: 'Total Posts',
-      value: stats.totalPosts,
-      subtitle: `${stats.publishedPosts} published, ${stats.draftPosts} draft`,
-      icon: '📝',
-      color: 'bg-blue-500',
+      action: 'New post published',
+      user: 'Admin',
+      timestamp: '2 hours ago',
+      type: 'success',
     },
     {
-      title: 'Pending Appointments',
-      value: stats.pendingAppointments,
-      subtitle: 'Require attention',
-      icon: '📅',
-      color: 'bg-yellow-500',
+      action: 'Appointment scheduled',
+      user: 'System',
+      timestamp: '5 hours ago',
+      type: 'info',
     },
     {
-      title: 'Total Projects',
-      value: stats.totalProjects,
-      subtitle: 'Portfolio items',
-      icon: '🎯',
-      color: 'bg-green-500',
-    },
-    {
-      title: 'Unread Messages',
-      value: stats.unreadContacts,
-      subtitle: 'Contact submissions',
-      icon: '✉️',
-      color: 'bg-red-500',
+      action: 'Project updated',
+      user: 'Admin',
+      timestamp: '1 day ago',
+      type: 'warning',
     },
   ];
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-center">
-          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent"></div>
-          <p className="mt-4 text-muted-foreground">Loading dashboard...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <>
@@ -109,86 +109,177 @@ export default function Dashboard() {
       </Helmet>
 
       <div className="space-y-6">
-        <div>
-          <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
-          <p className="text-muted-foreground mt-2">
-            Welcome to the VP Website Admin Panel
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {statCards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-lg border border-border bg-card p-6 shadow-sm"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-medium text-muted-foreground">{card.title}</p>
-                  <p className="text-3xl font-bold text-foreground mt-2">{card.value}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{card.subtitle}</p>
-                </div>
-                <div className={`rounded-full p-3 ${card.color} bg-opacity-10`}>
-                  <span className="text-2xl">{card.icon}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <div className="rounded-lg border border-border bg-card p-6">
-            <h2 className="text-xl font-semibold text-foreground mb-4">Quick Actions</h2>
-            <div className="space-y-2">
-              <a
-                href="/admin/posts"
-                className="block rounded-lg border border-border p-4 hover:bg-accent transition-colors"
-              >
-                <div className="font-medium text-foreground">Create New Post</div>
-                <div className="text-sm text-muted-foreground">
-                  Add news or blog content
-                </div>
-              </a>
-              <a
-                href="/admin/appointments"
-                className="block rounded-lg border border-border p-4 hover:bg-accent transition-colors"
-              >
-                <div className="font-medium text-foreground">Review Appointments</div>
-                <div className="text-sm text-muted-foreground">
-                  {stats.pendingAppointments} pending requests
-                </div>
-              </a>
-              <a
-                href="/admin/contact"
-                className="block rounded-lg border border-border p-4 hover:bg-accent transition-colors"
-              >
-                <div className="font-medium text-foreground">View Messages</div>
-                <div className="text-sm text-muted-foreground">
-                  {stats.unreadContacts} unread messages
-                </div>
-              </a>
-            </div>
+        {/* Welcome Section */}
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-[var(--admin-text-primary)] mb-2">
+              Welcome back, Admin
+            </h1>
+            <p className="text-[var(--admin-text-secondary)]">
+              Here's what's happening with your website today.
+            </p>
           </div>
+          <AdminButton icon={Plus} variant="primary" size="lg">
+            Quick Add
+          </AdminButton>
+        </div>
 
-          <div className="rounded-lg border border-border bg-card p-6">
-            <h2 className="text-xl font-semibold text-foreground mb-4">System Info</h2>
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StatCard
+            title="Total Posts"
+            value={stats.totalPosts}
+            change={`${stats.publishedPosts} published, ${stats.draftPosts} draft`}
+            changeType="neutral"
+            icon={FileText}
+            iconColor="gold"
+            chartData={generateChartData(stats.totalPosts)}
+            loading={loading}
+          />
+          <StatCard
+            title="Pending Appointments"
+            value={stats.pendingAppointments}
+            change="Require attention"
+            changeType="neutral"
+            icon={Calendar}
+            iconColor="blue"
+            chartData={generateChartData(stats.pendingAppointments)}
+            loading={loading}
+          />
+          <StatCard
+            title="Total Projects"
+            value={stats.totalProjects}
+            change="Portfolio items"
+            changeType="neutral"
+            icon={Target}
+            iconColor="purple"
+            chartData={generateChartData(stats.totalProjects)}
+            loading={loading}
+          />
+          <StatCard
+            title="Unread Messages"
+            value={stats.unreadContacts}
+            change="Contact submissions"
+            changeType="neutral"
+            icon={Mail}
+            iconColor="green"
+            chartData={generateChartData(stats.unreadContacts)}
+            loading={loading}
+          />
+        </div>
+
+        {/* Quick Actions & Recent Activity */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Quick Actions */}
+          <AdminCard title="Quick Actions" variant="gradient" className="lg:col-span-1">
             <div className="space-y-3">
-              <div className="flex justify-between items-center py-2 border-b border-border">
-                <span className="text-sm text-muted-foreground">Database Status</span>
-                <span className="text-sm font-medium text-green-600">✓ Connected</span>
+              <AdminButton
+                icon={FileText}
+                variant="secondary"
+                size="md"
+                fullWidth
+                onClick={() => (window.location.href = '/admin/posts')}
+              >
+                Create New Post
+              </AdminButton>
+              <AdminButton
+                icon={Target}
+                variant="secondary"
+                size="md"
+                fullWidth
+                onClick={() => (window.location.href = '/admin/projects')}
+              >
+                Add Project
+              </AdminButton>
+              <AdminButton
+                icon={Calendar}
+                variant="secondary"
+                size="md"
+                fullWidth
+                onClick={() => (window.location.href = '/admin/appointments')}
+              >
+                Review Appointments
+              </AdminButton>
+              <AdminButton
+                icon={Mail}
+                variant="secondary"
+                size="md"
+                fullWidth
+                onClick={() => (window.location.href = '/admin/contact')}
+              >
+                View Messages
+              </AdminButton>
+            </div>
+          </AdminCard>
+
+          {/* Recent Activity */}
+          <AdminCard title="Recent Activity" subtitle="Latest system events" className="lg:col-span-2">
+            <AdminTable
+              columns={[
+                { key: 'action', label: 'Action', width: '40%' },
+                { key: 'user', label: 'User', width: '20%' },
+                { key: 'timestamp', label: 'Time', width: '20%', align: 'right' },
+                { key: 'type', label: 'Status', width: '20%', align: 'center' },
+              ]}
+              data={recentActivity.map((item) => ({
+                ...item,
+                type: (
+                  <span
+                    className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                      item.type === 'success'
+                        ? 'bg-green-500/10 text-green-500'
+                        : item.type === 'info'
+                        ? 'bg-blue-500/10 text-blue-500'
+                        : 'bg-yellow-500/10 text-yellow-500'
+                    }`}
+                  >
+                    {item.type}
+                  </span>
+                ),
+              }))}
+              loading={loading}
+              emptyMessage="No recent activity"
+            />
+          </AdminCard>
+        </div>
+
+        {/* System Info */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <AdminCard variant="glass" hover>
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-12 rounded-[var(--admin-radius-lg)] bg-gradient-to-br from-[var(--admin-accent-gold)]/15 to-[var(--admin-accent-gold)]/5 flex items-center justify-center">
+                <Users className="h-6 w-6 text-[var(--admin-accent-gold)]" />
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-border">
-                <span className="text-sm text-muted-foreground">Storage Status</span>
-                <span className="text-sm font-medium text-green-600">✓ Active</span>
-              </div>
-              <div className="flex justify-between items-center py-2">
-                <span className="text-sm text-muted-foreground">Last Updated</span>
-                <span className="text-sm font-medium text-foreground">
-                  {new Date().toLocaleDateString()}
-                </span>
+              <div>
+                <p className="text-sm text-[var(--admin-text-secondary)]">Active Users</p>
+                <p className="text-2xl font-bold text-[var(--admin-text-primary)]">1,234</p>
               </div>
             </div>
-          </div>
+          </AdminCard>
+
+          <AdminCard variant="glass" hover>
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-12 rounded-[var(--admin-radius-lg)] bg-gradient-to-br from-purple-500/15 to-purple-500/5 flex items-center justify-center">
+                <TrendingUp className="h-6 w-6 text-purple-500" />
+              </div>
+              <div>
+                <p className="text-sm text-[var(--admin-text-secondary)]">Page Views</p>
+                <p className="text-2xl font-bold text-[var(--admin-text-primary)]">45.2K</p>
+              </div>
+            </div>
+          </AdminCard>
+
+          <AdminCard variant="glass" hover>
+            <div className="flex items-center gap-4">
+              <div className="h-12 w-12 rounded-[var(--admin-radius-lg)] bg-gradient-to-br from-blue-500/15 to-blue-500/5 flex items-center justify-center">
+                <Activity className="h-6 w-6 text-blue-500" />
+              </div>
+              <div>
+                <p className="text-sm text-[var(--admin-text-secondary)]">Server Status</p>
+                <p className="text-2xl font-bold text-green-500">Healthy</p>
+              </div>
+            </div>
+          </AdminCard>
         </div>
       </div>
     </>

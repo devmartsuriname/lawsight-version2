@@ -1,114 +1,188 @@
 import { useState } from 'react';
 import { Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
+import {
+  LayoutDashboard,
+  FileText,
+  Target,
+  Lightbulb,
+  Calendar,
+  Mail,
+  MessageSquare,
+  Image as ImageIcon,
+  Settings,
+  LogOut,
+  Menu,
+  X,
+  Sun,
+  Moon,
+  Monitor,
+  ExternalLink,
+} from 'lucide-react';
 
 export default function AdminLayout() {
   const navigate = useNavigate();
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [theme, setTheme] = useState<'light' | 'dark' | 'system'>('dark');
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
     navigate('/auth/login');
   };
 
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : theme === 'light' ? 'system' : 'dark';
+    setTheme(nextTheme);
+    document.documentElement.setAttribute('data-theme', nextTheme);
+  };
+
   const menuItems = [
-    { name: 'Dashboard', path: '/admin/dashboard', icon: '📊' },
-    { name: 'Posts', path: '/admin/posts', icon: '📝' },
-    { name: 'Projects', path: '/admin/projects', icon: '🎯' },
-    { name: 'Solutions', path: '/admin/solutions', icon: '💡' },
-    { name: 'Appointments', path: '/admin/appointments', icon: '📅' },
-    { name: 'Contact Submissions', path: '/admin/contact', icon: '✉️' },
-    { name: 'Quotes', path: '/admin/quotes', icon: '💬' },
-    { name: 'Media Library', path: '/admin/media', icon: '🖼️' },
-    { name: 'Settings', path: '/admin/settings', icon: '⚙️' },
+    { name: 'Dashboard', path: '/admin/dashboard', icon: LayoutDashboard },
+    { name: 'Posts', path: '/admin/posts', icon: FileText },
+    { name: 'Projects', path: '/admin/projects', icon: Target },
+    { name: 'Solutions', path: '/admin/solutions', icon: Lightbulb },
+    { name: 'Appointments', path: '/admin/appointments', icon: Calendar },
+    { name: 'Contact Submissions', path: '/admin/contact', icon: Mail },
+    { name: 'Quotes', path: '/admin/quotes', icon: MessageSquare },
+    { name: 'Media Library', path: '/admin/media', icon: ImageIcon },
+    { name: 'Settings', path: '/admin/settings', icon: Settings },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
+  const getThemeIcon = () => {
+    switch (theme) {
+      case 'light':
+        return <Sun className="h-5 w-5" />;
+      case 'dark':
+        return <Moon className="h-5 w-5" />;
+      default:
+        return <Monitor className="h-5 w-5" />;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[var(--admin-bg-primary)] admin-scrollbar">
       {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-0 z-40 h-screen transition-transform ${
-          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
-        } w-64 border-r border-border bg-card`}
+        className={`fixed left-0 top-0 z-40 h-screen transition-all duration-300 ${
+          sidebarOpen ? 'w-64' : 'w-16'
+        } bg-[var(--admin-bg-secondary)] border-r border-[var(--admin-border-subtle)] shadow-[var(--admin-shadow-xl)]`}
       >
-        <div className="flex h-full flex-col overflow-y-auto px-3 py-4">
-          <div className="mb-6 px-3">
-            <h1 className="text-xl font-bold text-foreground">VP Admin</h1>
-            <p className="text-sm text-muted-foreground">Content Management</p>
+        <div className="flex h-full flex-col overflow-y-auto admin-scrollbar">
+          {/* Logo/Brand */}
+          <div className="flex h-16 items-center justify-between border-b border-[var(--admin-border-subtle)] px-4">
+            {sidebarOpen ? (
+              <>
+                <div>
+                  <h1 className="text-lg font-bold admin-gradient-text">VP Admin</h1>
+                  <p className="text-xs text-[var(--admin-text-secondary)]">Content Management</p>
+                </div>
+                <button
+                  onClick={() => setSidebarOpen(false)}
+                  className="p-1.5 rounded-md hover:bg-[var(--admin-bg-hover)] text-[var(--admin-text-secondary)] hover:text-[var(--admin-text-primary)] transition-colors"
+                  aria-label="Collapse sidebar"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </>
+            ) : (
+              <button
+                onClick={() => setSidebarOpen(true)}
+                className="p-1.5 rounded-md hover:bg-[var(--admin-bg-hover)] text-[var(--admin-text-secondary)] hover:text-[var(--admin-text-primary)] transition-colors mx-auto"
+                aria-label="Expand sidebar"
+              >
+                <Menu className="h-5 w-5" />
+              </button>
+            )}
           </div>
 
-          <nav className="flex-1 space-y-1">
-            {menuItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`flex items-center rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
-                  isActive(item.path)
-                    ? 'bg-primary text-primary-foreground'
-                    : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'
-                }`}
-              >
-                <span className="mr-3">{item.icon}</span>
-                {item.name}
-              </Link>
-            ))}
+          {/* Navigation */}
+          <nav className="flex-1 space-y-1 p-3">
+            {menuItems.map((item) => {
+              const Icon = item.icon;
+              const active = isActive(item.path);
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`flex items-center gap-3 rounded-[var(--admin-radius-md)] px-3 py-2.5 text-sm font-medium transition-all duration-300 group ${
+                    active
+                      ? 'bg-[var(--admin-accent-gold)] text-white shadow-[var(--admin-shadow-gold)]'
+                      : 'text-[var(--admin-text-secondary)] hover:bg-[var(--admin-bg-hover)] hover:text-[var(--admin-text-primary)]'
+                  }`}
+                  title={!sidebarOpen ? item.name : undefined}
+                >
+                  <Icon className={`h-5 w-5 ${active ? 'scale-110' : 'group-hover:scale-110'} transition-transform`} />
+                  {sidebarOpen && <span>{item.name}</span>}
+                </Link>
+              );
+            })}
           </nav>
 
-          <div className="border-t border-border pt-4">
+          {/* Footer Actions */}
+          <div className="border-t border-[var(--admin-border-subtle)] p-3 space-y-1">
+            <button
+              onClick={toggleTheme}
+              className="flex w-full items-center gap-3 rounded-[var(--admin-radius-md)] px-3 py-2.5 text-sm font-medium text-[var(--admin-text-secondary)] hover:bg-[var(--admin-bg-hover)] hover:text-[var(--admin-text-primary)] transition-all duration-300"
+              title={!sidebarOpen ? 'Toggle theme' : undefined}
+            >
+              {getThemeIcon()}
+              {sidebarOpen && <span>Theme: {theme}</span>}
+            </button>
             <button
               onClick={handleLogout}
-              className="flex w-full items-center rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+              className="flex w-full items-center gap-3 rounded-[var(--admin-radius-md)] px-3 py-2.5 text-sm font-medium text-[var(--admin-text-secondary)] hover:bg-red-500/10 hover:text-red-500 transition-all duration-300"
+              title={!sidebarOpen ? 'Logout' : undefined}
             >
-              <span className="mr-3">🚪</span>
-              Logout
+              <LogOut className="h-5 w-5" />
+              {sidebarOpen && <span>Logout</span>}
             </button>
           </div>
         </div>
       </aside>
 
       {/* Main Content */}
-      <div className={`transition-all ${sidebarOpen ? 'pl-64' : 'pl-0'}`}>
+      <div
+        className={`transition-all duration-300 ${
+          sidebarOpen ? 'pl-64' : 'pl-16'
+        }`}
+      >
         {/* Top Bar */}
-        <header className="sticky top-0 z-30 border-b border-border bg-card">
-          <div className="flex h-16 items-center justify-between px-4">
-            <button
-              onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="rounded-lg p-2 text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-              aria-label="Toggle sidebar"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
+        <header className="sticky top-0 z-30 border-b border-[var(--admin-border-subtle)] bg-[var(--admin-bg-card)] shadow-[var(--admin-shadow-md)] backdrop-blur-sm bg-opacity-95">
+          <div className="flex h-16 items-center justify-between px-6">
+            <div className="flex items-center gap-4">
+              {!sidebarOpen && (
+                <button
+                  onClick={() => setSidebarOpen(true)}
+                  className="rounded-[var(--admin-radius-md)] p-2 text-[var(--admin-text-secondary)] hover:bg-[var(--admin-bg-hover)] hover:text-[var(--admin-text-primary)] transition-colors"
+                  aria-label="Open sidebar"
+                >
+                  <Menu className="h-5 w-5" />
+                </button>
+              )}
+              <h2 className="text-lg font-semibold text-[var(--admin-text-primary)]">
+                {menuItems.find((item) => item.path === location.pathname)?.name || 'Admin Panel'}
+              </h2>
+            </div>
 
             <div className="flex items-center gap-4">
               <Link
                 to="/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-foreground"
+                className="flex items-center gap-2 text-sm text-[var(--admin-text-secondary)] hover:text-[var(--admin-accent-gold)] transition-colors font-medium"
               >
-                View Site →
+                <span>View Site</span>
+                <ExternalLink className="h-4 w-4" />
               </Link>
             </div>
           </div>
         </header>
 
         {/* Page Content */}
-        <main className="p-6">
+        <main className="p-6 min-h-[calc(100vh-4rem)]">
           <Outlet />
         </main>
       </div>
