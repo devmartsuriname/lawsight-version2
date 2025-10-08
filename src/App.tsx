@@ -2,6 +2,8 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import MainLayout from '@/layouts/MainLayout';
+import AdminLayout from '@/layouts/AdminLayout';
+import { LayoutProvider } from '@/contexts/LayoutContext';
 import ScrollToTop from '@/utils/ScrollToTop';
 
 // Lazy load pages
@@ -20,6 +22,9 @@ const AppointmentBooking = lazy(() => import('@/pages/AppointmentBooking'));
 const Community = lazy(() => import('@/pages/Community'));
 const NotFound = lazy(() => import('@/pages/NotFound'));
 
+// Admin pages
+const Dashboard = lazy(() => import('@/pages/admin/Dashboard'));
+
 function App() {
   return (
     <HelmetProvider>
@@ -27,6 +32,7 @@ function App() {
         <ScrollToTop />
         <Suspense fallback={<div className="preloader"></div>}>
           <Routes>
+            {/* Public routes */}
             <Route element={<MainLayout />}>
               <Route path="/" element={<Home2 />} />
               <Route path="/about" element={<About />} />
@@ -40,8 +46,21 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/appointments/book" element={<AppointmentBooking />} />
               <Route path="/community" element={<Community />} />
-              <Route path="*" element={<NotFound />} />
             </Route>
+
+            {/* Admin routes */}
+            <Route path="/admin/*" element={
+              <LayoutProvider>
+                <AdminLayout>
+                  <Routes>
+                    <Route path="dashboard" element={<Dashboard />} />
+                  </Routes>
+                </AdminLayout>
+              </LayoutProvider>
+            } />
+
+            {/* 404 */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
