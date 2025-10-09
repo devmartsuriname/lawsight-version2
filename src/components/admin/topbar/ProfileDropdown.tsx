@@ -1,15 +1,8 @@
 import IconifyIcon from '@/components/admin/wrappers/IconifyIcon'
-import { useAuth } from '@/contexts/AuthContext'
 import { Dropdown, DropdownHeader, DropdownItem, DropdownMenu, DropdownToggle } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const ProfileDropdown = () => {
-  const { logout, user } = useAuth()
-
-  const handleLogout = () => {
-    logout()
-  }
-
   return (
     <Dropdown className="topbar-item">
       <DropdownToggle
@@ -27,7 +20,7 @@ const ProfileDropdown = () => {
         </span>
       </DropdownToggle>
       <DropdownMenu className="dropdown-menu-end">
-        <DropdownHeader>Welcome{user?.email ? `, ${user.email.split('@')[0]}` : ''}!</DropdownHeader>
+        <DropdownHeader>Welcome, Admin!</DropdownHeader>
         <DropdownItem as={Link} to="/admin/profile">
           <IconifyIcon icon="solar:user-outline" className="align-middle me-2 fs-18" />
           <span className="align-middle">My Account</span>
@@ -35,11 +28,6 @@ const ProfileDropdown = () => {
         <DropdownItem as={Link} to="/admin/settings">
           <IconifyIcon icon="solar:settings-outline" className="align-middle me-2 fs-18" />
           <span className="align-middle">Settings</span>
-        </DropdownItem>
-        <div className="dropdown-divider my-1" />
-        <DropdownItem className="text-danger" onClick={handleLogout}>
-          <IconifyIcon icon="solar:logout-3-outline" className="align-middle me-2 fs-18" />
-          <span className="align-middle">Logout</span>
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>

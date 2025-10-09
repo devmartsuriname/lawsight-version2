@@ -66,6 +66,30 @@
 }>
 ```
 
+### `src/components/admin/topbar/ProfileDropdown.tsx`
+**Changes:**
+- ❌ Removed `useAuth` hook import and usage
+- ❌ Removed logout functionality
+- ❌ Removed dynamic user email display
+- ✅ Simplified to static "Welcome, Admin!" message
+- ✅ Kept profile and settings menu items
+
+**Before:**
+```tsx
+const { logout, user } = useAuth()
+<DropdownHeader>Welcome{user?.email ? `, ${user.email.split('@')[0]}` : ''}!</DropdownHeader>
+<DropdownItem className="text-danger" onClick={handleLogout}>
+  <IconifyIcon icon="solar:logout-3-outline" />
+  <span>Logout</span>
+</DropdownItem>
+```
+
+**After:**
+```tsx
+<DropdownHeader>Welcome, Admin!</DropdownHeader>
+// Logout item removed
+```
+
 ---
 
 ## 🎯 Current State
