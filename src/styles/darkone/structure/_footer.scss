@@ -12,7 +12,7 @@
     padding: 0 calc(#{$spacer} * 0.5);
     color: $footer-color;
     height: $footer-height;
-    border-top: $card-border-width solid $card-border-color;
+    border-top: $card-border-width solid var(--bs-card-border-color);
 }
 
 .footer-text {

@@ -5,6 +5,10 @@ import AdminCard from '@/components/admin/cards/AdminCard'
 import { revenueData } from '@/data/admin-mock'
 import { useLayoutContext } from '@/contexts/LayoutContext'
 
+const getCssVar = (varName: string) => {
+  return getComputedStyle(document.documentElement).getPropertyValue(varName).trim()
+}
+
 const RevenueChart = () => {
   const { themeMode } = useLayoutContext()
   
@@ -31,7 +35,11 @@ const RevenueChart = () => {
       type: 'line',
       toolbar: {
         show: false
-      }
+      },
+      foreColor: getCssVar('--bs-body-color')
+    },
+    theme: {
+      mode: themeMode === 'dark' ? 'dark' : 'light'
     },
     stroke: {
       dashArray: [0, 0, 2],
@@ -63,17 +71,28 @@ const RevenueChart = () => {
       },
       axisBorder: {
         show: false
+      },
+      labels: {
+        style: {
+          colors: getCssVar('--bs-text-muted')
+        }
       }
     },
     yaxis: {
       min: 0,
       axisBorder: {
         show: false
+      },
+      labels: {
+        style: {
+          colors: getCssVar('--bs-text-muted')
+        }
       }
     },
     grid: {
       show: true,
       strokeDashArray: 3,
+      borderColor: getCssVar('--bs-border-color'),
       xaxis: {
         lines: {
           show: false
@@ -109,6 +128,7 @@ const RevenueChart = () => {
     },
     colors: ['#8b5cf6', '#c5a467', '#3b82f6'], // VP Purple, Gold, Blue
     tooltip: {
+      theme: themeMode === 'dark' ? 'dark' : 'light',
       shared: true,
       y: [
         {
@@ -133,16 +153,16 @@ const RevenueChart = () => {
 
   const headerActions = (
     <>
-      <button type="button" className="btn btn-sm btn-outline-light">
+      <button type="button" className="btn btn-sm btn-outline-secondary">
         ALL
       </button>
-      <button type="button" className="btn btn-sm btn-outline-light">
+      <button type="button" className="btn btn-sm btn-outline-secondary">
         1M
       </button>
-      <button type="button" className="btn btn-sm btn-outline-light">
+      <button type="button" className="btn btn-sm btn-outline-secondary">
         6M
       </button>
-      <button type="button" className="btn btn-sm btn-outline-light active">
+      <button type="button" className="btn btn-sm btn-outline-secondary active">
         1Y
       </button>
     </>

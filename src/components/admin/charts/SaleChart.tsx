@@ -5,6 +5,10 @@ import AdminCard from '@/components/admin/cards/AdminCard'
 import { salesByCategory } from '@/data/admin-mock'
 import { useLayoutContext } from '@/contexts/LayoutContext'
 
+const getCssVar = (varName: string) => {
+  return getComputedStyle(document.documentElement).getPropertyValue(varName).trim()
+}
+
 const SaleChart = () => {
   const { themeMode } = useLayoutContext()
   const chartData = [44.25, 52.68, 45.98]
@@ -12,7 +16,11 @@ const SaleChart = () => {
   const chartOptions: ApexOptions = {
     chart: {
       height: 180,
-      type: 'donut'
+      type: 'donut',
+      foreColor: getCssVar('--bs-body-color')
+    },
+    theme: {
+      mode: themeMode === 'dark' ? 'dark' : 'light'
     },
     series: chartData,
     legend: {
@@ -40,6 +48,9 @@ const SaleChart = () => {
     dataLabels: {
       enabled: false
     },
+    tooltip: {
+      theme: themeMode === 'dark' ? 'dark' : 'light'
+    },
     responsive: [
       {
         breakpoint: 480,
@@ -57,16 +68,16 @@ const SaleChart = () => {
 
   const headerActions = (
     <>
-      <button type="button" className="btn btn-sm btn-outline-light">
+      <button type="button" className="btn btn-sm btn-outline-secondary">
         ALL
       </button>
-      <button type="button" className="btn btn-sm btn-outline-light">
+      <button type="button" className="btn btn-sm btn-outline-secondary">
         1M
       </button>
-      <button type="button" className="btn btn-sm btn-outline-light">
+      <button type="button" className="btn btn-sm btn-outline-secondary">
         6M
       </button>
-      <button type="button" className="btn btn-sm btn-outline-light active">
+      <button type="button" className="btn btn-sm btn-outline-secondary active">
         1Y
       </button>
     </>

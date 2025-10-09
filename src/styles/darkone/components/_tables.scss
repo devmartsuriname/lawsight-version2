@@ -66,14 +66,3 @@
         margin-bottom: 0;
     }
 }
-
-// Dark mode enhancements
-[data-bs-theme="dark"] {
-    .table {
-        --bs-table-color: #aab8c5;
-        --bs-table-bg: #1a1d2e;
-        --bs-table-striped-color: #aab8c5;
-        --bs-table-active-color: #aab8c5;
-        --bs-table-hover-color: #dee2e6;
-    }
-}

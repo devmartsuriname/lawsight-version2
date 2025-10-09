@@ -10,7 +10,7 @@
     height: $topbar-height;
     background-color: $topbar-bg;
     padding-left: $sidebar-width;
-    border-bottom: $card-border-width solid $card-border-color;
+    border-bottom: $card-border-width solid var(--bs-card-border-color);
 
     .navbar-header {
         display: flex;
@@ -46,7 +46,7 @@
             font-size: 18px;
             left: 11px;
             top: 50%;
-            color: $gray-500;
+            color: var(--bs-text-muted);
             transform: translateY(-50%);
             cursor: pointer;
         }
