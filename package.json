@@ -1,13 +1,11 @@
 {
   "dependencies": {
     "@iconify/react": "^6.0.2",
-    "@supabase/supabase-js": "^2.74.0",
     "@types/react": "^19.1.15",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.4",
     "apexcharts": "^5.3.5",
     "bootstrap": "^5.3.8",
-    "cookies-next": "^6.1.0",
     "lovable-tagger": "^1.1.10",
     "react": "^18.2.0",
     "react-apexcharts": "^1.7.0",
@@ -22,8 +20,7 @@
     "swiper": "^11.0.5",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
-    "yet-another-react-lightbox": "^3.25.0",
-    "zod": "^4.1.12"
+    "yet-another-react-lightbox": "^3.25.0"
   },
   "scripts": {
     "dev": "vite",
