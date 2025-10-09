@@ -277,6 +277,7 @@ To restore backend functionality from this point:
 ---
 
 **Status:** ✅ **Phases 1-7 Complete** — Frontend-only codebase validated, compiling cleanly, and running without errors  
+**CHANGELOG:** See `CHANGELOG.md` v0.6.0 for complete removal documentation  
 **Next Action:** Await user direction for backend architecture design and implementation strategy
 
 ---

@@ -6,6 +6,179 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [v0.6.0] - 2025-10-09
+
+### Backend Removal — Complete Cleanup (Phases 1-7)
+
+**Status:** ✅ Complete — Frontend-only codebase ready for fresh backend architecture
+
+**Objective:** Remove all existing Supabase backend integration to prepare for ground-up backend rebuild with new architecture and database design.
+
+#### Removed
+- **Backend Integration Files:**
+  - `src/integrations/supabase/client.ts` — Supabase client initialization
+  - `src/integrations/supabase/types.ts` — Auto-generated database types
+  - Entire `src/integrations/supabase/` directory deleted
+  
+- **Authentication System:**
+  - `src/contexts/AuthContext.tsx` — Auth state management and session handling
+  - `src/pages/auth/Login.tsx` — Login page component
+  - `src/pages/auth/Register.tsx` — Registration page component
+  - `src/components/ProtectedRoute.tsx` — Route protection wrapper
+  - `src/layouts/AuthLayout.tsx` — Authentication pages layout
+  - `src/utils/auth-validation.ts` — Zod validation schemas for auth forms
+  
+- **Configuration Files:**
+  - `supabase/config.toml` — Supabase project configuration
+  - `.env` — Cleared all Supabase environment variables
+  - `sendemail.php` — Legacy PHP email handler
+  
+- **NPM Dependencies:**
+  - `@supabase/supabase-js` (v2.74.0) — Supabase JavaScript client
+  - `cookies-next` (v6.1.0) — Cookie management for sessions
+  - `zod` (v4.1.12) — Schema validation library
+
+#### Changed
+- **`src/App.tsx`:**
+  - Removed `AuthProvider` wrapper from app root
+  - Removed `ProtectedRoute` wrapper from admin routes
+  - Deleted auth route definitions (`/auth/login`, `/auth/register`)
+  - Removed imports: `AuthLayout`, `AuthProvider`, `ProtectedRoute`, `Login`, `Register`
+  - Admin dashboard now publicly accessible at `/admin/dashboard`
+  
+- **`src/components/admin/topbar/ProfileDropdown.tsx`:**
+  - Removed `useAuth` hook import and usage
+  - Removed logout functionality
+  - Changed dynamic user email display to static "Welcome, Admin!" message
+  - Kept profile and settings menu items for future implementation
+  
+- **`src/data/admin-mock.ts`:**
+  - Updated comment from "Supabase queries" to "real backend queries"
+  - Removed Supabase-specific references
+  
+- **`.env` file:**
+  - Cleared all Supabase credentials
+  - Reset to clean state with placeholder comment
+
+#### Fixed
+- Build errors from missing Supabase imports
+- TypeScript errors from deleted AuthContext references
+- Route configuration issues after auth removal
+- All compilation errors resolved
+
+#### Migration Impact
+
+**Before Removal:**
+- Total Files: 130+ files
+- Backend Files: 10+ files
+- Dependencies: 26 packages
+- Auth Routes: 2 routes (`/auth/login`, `/auth/register`)
+- Admin Access: Protected (authentication required)
+
+**After Removal:**
+- Total Files: 120+ files
+- Backend Files: 0 files ✅
+- Dependencies: 23 packages (3 removed)
+- Auth Routes: 0 routes ✅
+- Admin Access: Public (no authentication)
+
+#### Testing & Validation
+
+**Phase 6: Build Compilation ✅**
+- Vite production build: Success
+- TypeScript compilation: 0 errors
+- ESLint validation: 0 errors
+- Import resolution: All valid
+
+**Phase 7: Runtime Validation ✅**
+- Application loads: Success
+- Console errors: 0 warnings/errors
+- Route accessibility: All routes functional
+- Component rendering: All components render correctly
+- Theme toggle: Functional (light/dark mode)
+- Admin dashboard: Accessible and interactive
+- Charts/tables: Rendering properly
+
+#### Security Notes
+
+⚠️ **CRITICAL:** Admin dashboard is now publicly accessible without authentication. This is intentional for development phase but **MUST** be secured before production deployment.
+
+**Current State:**
+- No authentication system active
+- No role-based access control (RBAC)
+- All admin routes publicly accessible
+- No user session management
+- No protected data queries
+
+**Required Before Production:**
+- Implement new authentication system
+- Add role-based access control (RBAC)
+- Protect admin routes with auth guards
+- Implement secure session management
+- Add JWT or session-based validation
+
+#### Documentation
+
+**New Files Created:**
+- `RestorePoint_BackendRemoval_Phase1.md` — Complete removal documentation with restoration instructions
+
+**Files Updated:**
+- `CHANGELOG.md` — This entry
+
+#### Next Steps
+
+This removal prepares the codebase for:
+1. Fresh backend architecture design
+2. New database schema implementation
+3. Modern authentication system rebuild
+4. Protected route restoration with proper RBAC
+5. Production-ready backend deployment
+
+#### Package.json Impact
+
+**Removed Dependencies:**
+```json
+{
+  "@supabase/supabase-js": "^2.74.0",
+  "cookies-next": "^6.1.0",
+  "zod": "^4.1.12"
+}
+```
+
+**Remaining Dependencies (23 Frontend Packages):**
+- Core: React, React DOM, React Router
+- UI: Bootstrap, React Bootstrap, Sass
+- Admin: ApexCharts, Simplebar, Iconify
+- Utilities: Swiper, Lightbox, Toast notifications
+- Build: Vite, TypeScript, Lovable Tagger
+
+#### Files Modified Summary
+- **Deleted:** 10+ backend files
+- **Modified:** 3 frontend files
+- **Created:** 1 documentation file
+- **Dependencies:** -3 packages
+
+#### Commit Message
+```
+feat(backend): complete backend removal - phases 1-7
+
+BREAKING CHANGE: All Supabase backend integration removed
+
+- Delete entire Supabase integration (client, types, auth)
+- Remove authentication system (login, register, protected routes)
+- Uninstall backend dependencies (@supabase, zod, cookies-next)
+- Clear .env configuration
+- Update ProfileDropdown to remove auth hooks
+- Make admin dashboard publicly accessible
+- Validate build compilation (zero errors)
+- Verify runtime execution (no console warnings)
+
+Closes: Backend Removal Phases 1-7
+Refs: RestorePoint_BackendRemoval_Phase1.md
+```
+
+---
+
 ## [v0.5.1] - 2025-10-09
 
 ### Phase P4E: Complete Theme Synchronization & Visual Polish
