@@ -19,34 +19,25 @@
 
 ## System Overview
 
-The VP website is a full-stack web application built with a modern, modular architecture designed for:
-- **Maintainability**: Clear separation of concerns, modular components
-- **Scalability**: API-first design, database-backed content management
-- **Portability**: Built on Lovable Cloud, exportable to Hostinger VPS
-- **Performance**: Optimized builds, lazy loading, CDN-ready
+> **⚠️ BACKEND REMOVED IN v0.6.0**  
+> This project is currently a **frontend-only application**. All backend integrations, authentication systems, and Supabase connections were removed to prepare for new backend architecture implementation.
 
-### High-Level Architecture
+The VP website is a **frontend-only React application** built with a modular architecture designed for:
+- **Maintainability**: Clear separation of concerns, modular components
+- **Performance**: Optimized builds, lazy loading, code splitting
+- **Extensibility**: Ready for backend integration (planned Phase B1+)
+- **Portability**: Pure frontend build, deployable to any static host
+
+### Current Architecture (Frontend-Only)
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                        Frontend Layer                        │
-│  React + TypeScript + Vite + React Router + React Query     │
+│       React + TypeScript + Vite + React Router              │
+│                  (Static Build / No Backend)                 │
 └─────────────────────────────────────────────────────────────┘
-                              ↓ ↑
-┌─────────────────────────────────────────────────────────────┐
-│                         API Layer                            │
-│              REST Endpoints (Lovable Cloud)                  │
-└─────────────────────────────────────────────────────────────┘
-                              ↓ ↑
-┌─────────────────────────────────────────────────────────────┐
-│                      Database Layer                          │
-│              PostgreSQL (Supabase)                           │
-└─────────────────────────────────────────────────────────────┘
-                              ↓ ↑
-┌─────────────────────────────────────────────────────────────┐
-│                   External Integrations                      │
-│          Google Calendar API | YouTube Data API v3          │
-└─────────────────────────────────────────────────────────────┘
+
+[Backend layer removed — ready for fresh implementation]
 ```
 
 ---
@@ -67,22 +58,30 @@ The VP website is a full-stack web application built with a modern, modular arch
 | Tailwind CSS       | (via Vite) | Utility-first CSS             |
 | Yet Another React Lightbox | 3.25.0 | Image lightbox |
 
-### Backend (Lovable Cloud / Supabase)
+### Backend
 
-| Technology       | Purpose                              |
-| ---------------- | ------------------------------------ |
-| PostgreSQL       | Primary database                     |
-| Supabase Auth    | Authentication & authorization       |
-| Supabase Storage | File and media storage               |
-| Edge Functions   | Serverless backend logic             |
-| PostgREST        | Auto-generated REST API              |
+> **⚠️ REMOVED IN v0.6.0**  
+> All backend infrastructure was removed. This section documents the previous architecture for reference only.
+
+**Previous Stack (Archived):**
+- PostgreSQL (Supabase) - Database
+- Supabase Auth - Authentication
+- Supabase Storage - File storage
+- Edge Functions - Serverless logic
+- PostgREST - REST API
+
+**Status:** Backend to be redesigned and reimplemented in Phase B1+
 
 ### Integrations
 
-| Service              | Purpose                       |
-| -------------------- | ----------------------------- |
-| Google Calendar API  | Appointment sync              |
-| YouTube Data API v3  | Video content synchronization |
+> **⚠️ REMOVED IN v0.6.0**  
+> External integrations were removed with the backend.
+
+**Previous Integrations (Archived):**
+- Google Calendar API - Appointment sync
+- YouTube Data API v3 - Video content synchronization
+
+**Status:** To be reimplemented with new backend architecture
 
 ### Development Tools
 
@@ -524,5 +523,13 @@ Frontend fetches from media_videos table
 
 ---
 
-**Last Updated:** Phase P2 Complete  
-**Next Update:** After Phase P4 (Backend Setup)
+---
+
+## Current Status
+
+**Version:** v0.6.0  
+**Architecture State:** Frontend-Only (Backend Removed)  
+**Last Updated:** Backend Removal Complete  
+**Next Phase:** B1 - Backend Architecture Redesign
+
+**Note:** Backend removed in v0.6.0 — system converted to frontend-only for redevelopment.
