@@ -86,7 +86,10 @@ const SaleChart = () => {
         </div>
         <div className="table-responsive mt-3">
           <table className="table table-nowrap table-borderless table-sm table-centered mb-0">
-            <thead className="bg-light bg-opacity-50">
+            <thead style={{
+              backgroundColor: 'var(--bs-table-thead-bg)',
+              color: 'var(--bs-headings-color)'
+            }}>
               <tr>
                 <th className="py-1">Category</th>
                 <th className="py-1">Orders</th>
