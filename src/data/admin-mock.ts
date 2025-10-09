@@ -1,5 +1,5 @@
 // Mock data for admin dashboard
-// To be replaced with real Supabase queries in Phase 5
+// To be replaced with real backend queries when backend is implemented
 
 export type StatCardData = {
   title: string
