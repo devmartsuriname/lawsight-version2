@@ -59,8 +59,12 @@
 }
 
 .table-responsive {
-    background-color: var(--bs-card-bg);
+    background-color: transparent;
     border-radius: 8px;
+    
+    .table {
+        margin-bottom: 0;
+    }
 }
 
 // Dark mode enhancements

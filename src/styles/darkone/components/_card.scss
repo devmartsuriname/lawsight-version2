@@ -46,6 +46,13 @@
     margin-top: 0;
 }
 
+.card-header {
+    background-color: var(--bs-card-header-bg);
+    color: var(--bs-card-header-color);
+    border-bottom: 1px solid var(--bs-card-border-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 .card-title {
     font-size: 1rem;
     font-family: $font-family-primary;  // Poppins for card titles

@@ -47,7 +47,12 @@ function DataTable<T extends Record<string, any>>({
         color: 'var(--bs-body-color)'
       }}
     >
-      <thead className="bg-light bg-opacity-50">
+      <thead 
+        style={{
+          backgroundColor: 'var(--bs-table-thead-bg)',
+          color: 'var(--bs-headings-color)'
+        }}
+      >
         <tr>
           {columns.map((column) => (
             <th key={column.key} className="py-2">
@@ -56,7 +61,11 @@ function DataTable<T extends Record<string, any>>({
           ))}
         </tr>
       </thead>
-      <tbody>
+      <tbody
+        style={{
+          backgroundColor: 'var(--bs-table-bg)'
+        }}
+      >
         {data.length === 0 ? (
           <tr>
             <td colSpan={columns.length} className="text-center text-theme-muted py-4">

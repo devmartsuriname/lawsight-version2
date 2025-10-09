@@ -28,3 +28,22 @@
 .border-theme {
   border-color: var(--bs-border-color) !important;
 }
+
+// Avatar utilities
+.avatar-sm {
+  width: 32px;
+  height: 32px;
+  font-size: 0.875rem;
+}
+
+// Badge utilities
+.bg-soft-primary {
+  background-color: rgba(139, 92, 246, 0.1) !important;
+  color: var(--vp-purple) !important;
+}
+
+[data-bs-theme="dark"] {
+  .bg-soft-primary {
+    background-color: rgba(139, 92, 246, 0.15) !important;
+  }
+}

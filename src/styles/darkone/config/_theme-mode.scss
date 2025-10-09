@@ -63,6 +63,16 @@ html[data-bs-theme="dark"],
     --#{$prefix}input-placeholder-color: #6c757d;
     --#{$prefix}input-focus-bg: #232837;
     
+    // Card header variables
+    --#{$prefix}card-header-bg: rgba(0, 0, 0, 0.2);
+    --#{$prefix}card-header-color: #dee2e6;
+    
+    // Navigation variables
+    --#{$prefix}nav-border-color: #2b2d36;
+    --#{$prefix}nav-tabs-border-color: #2b2d36;
+    --#{$prefix}nav-tabs-link-active-bg: #1a1d2e;
+    --#{$prefix}nav-tabs-link-active-border-color: #2b2d36 #2b2d36 #1a1d2e;
+    
     // Dropdown variables
     --#{$prefix}dropdown-bg: #1a1d2e;
     --#{$prefix}dropdown-color: #aab8c5;
@@ -112,6 +122,16 @@ html[data-bs-theme="light"],
     --#{$prefix}input-placeholder-color: #8391a2;
     --#{$prefix}input-focus-bg: #ffffff;
     --#{$prefix}input-focus-border-color: #c5a467;
+    
+    // Card header variables
+    --#{$prefix}card-header-bg: #f8f9fa;
+    --#{$prefix}card-header-color: #424e5a;
+    
+    // Navigation variables
+    --#{$prefix}nav-border-color: #dee2e6;
+    --#{$prefix}nav-tabs-border-color: #dee2e6;
+    --#{$prefix}nav-tabs-link-active-bg: #ffffff;
+    --#{$prefix}nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #ffffff;
     
     // Dropdown variables
     --#{$prefix}dropdown-bg: #ffffff;
